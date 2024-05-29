@@ -14,12 +14,12 @@ Neste arquivo você encontrará as instruções para realizar o mini-curso de fi
 
 
 ```{r instalação dos pacotes}
-#| message=FALSE
+#| message: false
+#| error: false
 
 
 pacotes <- c("tidyverse", "quantmod", "timetk", "plotly")
-lapply(pacotes, library, character.only = TRUE)
-
+purrr::walk(pacotes, library, character.only = TRUE)
 ```
 
 # Montando sua carteira
@@ -27,7 +27,7 @@ lapply(pacotes, library, character.only = TRUE)
 Acesse o site [Yahoo Finance](https://finance.yahoo.com/) e escolha 5 ações de empresas que você gostaria de incluir em sua carteira de investimentos. Depois de escolher crie um vetor com os códigos das ações e execute a célula abaixo.
 
 ```{r escolha das ações}
-#| message=FALSE
+
 
 # Vetor com os códigos das ações numa variável chamada tickers
 
@@ -35,3 +35,25 @@ Acesse o site [Yahoo Finance](https://finance.yahoo.com/) e escolha 5 ações de
 
 ```
 
+# Coletando os dados com o pacote quantmod
+
+1. Escolha um período de tempo para coletar os dados das ações, por exemplo, de 01/01/2020 até 01/01/2021.
+
+2. Utilize a função `getSymbols` do pacote `quantmod` para coletar os dados das ações escolhidas.
+
+3. Visualize os dados coletados.
+
+```{r download dos dados}
+
+# coloque o codigo para baixar os dados com quantmode abaixo. Consulte a documentação do quantmode para saber como fazer isso.
+
+
+```
+
+# Trabalhando com os dados
+
+Converta os dados diários para dados mensais usando a função `to.monthly` do pacote `quantmod`. Depois, utilize a função `tk_tbl` do pacote `timetk` para converter os dados para um tibble.
+
+```{r}
+
+```
