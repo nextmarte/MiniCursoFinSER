@@ -1,12 +1,14 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "MiniCursoFinSER"
+  title: "Mini-Cursos - Explorando finanças com R "
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: Início
+        icon: bi-house
       - about.qmd
 
 format:
