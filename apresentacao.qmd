@@ -1,5 +1,5 @@
 ---
-title: <h3> Mini-Curso - Explorando finanças com R </h3>
+title:  Mini-Curso - Explorando finanças com R 
 author:
   - name: Marcus Ramalho & Ariel Levy
 format:
@@ -13,13 +13,37 @@ format:
       logo: images/uff.png
 filters:
   - reveal-header
-css: styles.css
 date: today
 footer: PPGAd Universidade Federal de Fluminense
-
+fontsize: 1.2em
 incremental: true
 ---
 
+
+
 ## Ariel Levy
+
+::: {style="display: flex; justify-content: space-between;"}
+
+::: {.columns}
+
+
+::: {.column width="30%"}
+
+![](images/Ariel.jpg)
+
+:::
+::: {.column width="70%"}
+
+<p style="text-align: justify;">
+Doutor em Economia (Universidade Federal Fluminense - 2013), mestre em Administração (IBMEC -2003) e engenheiro eletricista (Universidade Federal Fluminense - 1982). Sou Professor Associado da Universidade Federal Fluminense vinculado ao Departamento de Administração da Faculdade de Administração e Ciências Contábeis e fui coordenador do Curso de Graduação em Administração (2016-2021). Professor do quadro permanente do PPGAd - UFF e colaborador no MBA de Logística (LOGEMP - UFF), no MBA de Finanças (UFF), no MBA de Marketing (UFF) e dos cursos de Extensão em Ciências dos Dados (UFF) como atual coordenador. Possui experiência em Administração, com ênfase em Finanças Quantitativas; Finanças publicas; Planejamento e Controle: Ciências dos Dados: na linguagem R e na análise e visualização de dados. Organizador dos Seminários de Estatística R - Evento Internacional de Divulgação de Aplicações e Desenvolvimento de Linguagens R. Coordenador do Grupo de Pesquisa (CNPQ/UFF) - Métodos Quantitativos Aplicados à Administração.
+</p>
+
+:::
+
+:::
+
+
+:::
 
 ## Marcus Ramalho
