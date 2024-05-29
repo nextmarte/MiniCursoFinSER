@@ -12,6 +12,9 @@ website:
       - href: apresentacao.qmd
         text: Apresentação
         icon: bi-file-earmark-text
+      - href: exercicios.qmd
+        text: Exercícios
+        icon: bi-file-earmark-text
 
 format:
   html:

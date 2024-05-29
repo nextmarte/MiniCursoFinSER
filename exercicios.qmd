@@ -5,25 +5,21 @@ date: today
 format: html
 execute: 
   echo: true
-filters:
-  - webr
-webr:
-  packages: ['purrr', 'dplyr', 'quantmod', 'timetk', 'ggplot2', 'plotly']
 
 ---
 
 # Instruções
 
-Neste arquivo você encontrará as instruções e recursos para realizar o mini-curso de finanças com R. Para começar, execute a célula abaixo.
+Neste arquivo você encontrará as instruções para realizar o mini-curso de finanças com R. Todos os pacotes necessários já estão instalados no ambiente da Posit Cloud  . Para começar, execute a célula abaixo.
 
 
-```{webr-r}
+```{r instalação dos pacotes}
+#| message=FALSE
 
-# Lista de pacotes necessários para o mini-curso
-pacotes <- c("dplyr", "quantmod", "timetk", "ggplot2", "plotly") 
 
-# Podemos usar a função walk do pacote purrr para instalar e carregar os pacotes
-purrr::walk(pacotes, ~if(!require(.x, character.only = TRUE)) library(.x, character.only = TRUE))
+pacotes <- c("tidyverse", "quantmod", "timetk", "plotly")
+lapply(pacotes, library, character.only = TRUE)
+
 ```
 
 # Montando sua carteira
