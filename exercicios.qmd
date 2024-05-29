@@ -1,0 +1,41 @@
+---
+title: Mini-curso de finanças com R
+author: "seu nome"
+date: today
+format: html
+execute: 
+  echo: true
+filters:
+  - webr
+webr:
+  packages: ['purrr', 'dplyr', 'quantmod', 'timetk', 'ggplot2', 'plotly']
+
+---
+
+# Instruções
+
+Neste arquivo você encontrará as instruções e recursos para realizar o mini-curso de finanças com R. Para começar, execute a célula abaixo.
+
+
+```{webr-r}
+
+# Lista de pacotes necessários para o mini-curso
+pacotes <- c("dplyr", "quantmod", "timetk", "ggplot2", "plotly") 
+
+# Podemos usar a função walk do pacote purrr para instalar e carregar os pacotes
+purrr::walk(pacotes, ~if(!require(.x, character.only = TRUE)) library(.x, character.only = TRUE))
+```
+
+# Montando sua carteira
+
+Acesse o site [Yahoo Finance](https://finance.yahoo.com/) e escolha 5 ações de empresas que você gostaria de incluir em sua carteira de investimentos. Depois de escolher crie um vetor com os códigos das ações e execute a célula abaixo.
+
+```{r escolha das ações}
+#| message=FALSE
+
+# Vetor com os códigos das ações numa variável chamada tickers
+
+
+
+```
+
