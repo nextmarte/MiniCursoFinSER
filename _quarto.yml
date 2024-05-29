@@ -3,13 +3,15 @@ project:
   output-dir: docs
 
 website:
-  title: "Mini-Cursos - Explorando finanças com R "
+  title: "Mini-Curso - Explorando finanças com R"
   navbar:
     left:
       - href: index.qmd
         text: Início
         icon: bi-house
-      - about.qmd
+      - href: apresentacao.qmd
+        text: Apresentação
+        icon: bi-file-earmark-text
 
 format:
   html:

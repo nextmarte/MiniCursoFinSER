@@ -1,0 +1,25 @@
+---
+title: <h3> Mini-Curso - Explorando finanças com R </h3>
+author:
+  - name: Marcus Ramalho & Ariel Levy
+format:
+  revealjs:
+      incremental: true
+      transition: slide
+      background-transition: fade
+      theme: night
+      header: VIII SER - Seminário Internacional de Estatística com R
+      header-logo: images/ser.png
+      logo: images/uff.png
+filters:
+  - reveal-header
+css: styles.css
+date: today
+footer: PPGAd Universidade Federal de Fluminense
+
+incremental: true
+---
+
+# title
+
+content
