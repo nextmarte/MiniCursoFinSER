@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "MiniCursoFinSER",
+    "title": "Mini-curso de finanças com R",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será dividido em 3 partes:\n\nIntrodução aos conceitos de finanças que serão utilizados no curso\nAnálise de dados financeiros com R\nVisualização de dados financeiros com R\n\n\n\nEsperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso.\n\n\n\nPara se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud"
   },
   {
     "objectID": "exercicios.html",
@@ -26,5 +26,19 @@
     "title": "",
     "section": "Marcus Ramalho",
     "text": "Marcus Ramalho\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+  },
+  {
+    "objectID": "index.html#pré-requisitos",
+    "href": "index.html#pré-requisitos",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Esperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso."
+  },
+  {
+    "objectID": "index.html#preparação",
+    "href": "index.html#preparação",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Para se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud"
   }
 ]
