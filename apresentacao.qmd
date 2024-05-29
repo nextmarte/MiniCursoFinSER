@@ -49,7 +49,6 @@ Doutor em Economia (Universidade Federal Fluminense - 2013), mestre em Administr
 ## Marcus Ramalho
 
 
-
 ::: {.columns}
 
 
@@ -69,4 +68,28 @@ Possui graduação em Administração pela Universidade Federal Fluminense (2020
 :::
 
 
-:::
+## Objetivo
+
+- Relembrar conceitos de finanças
+- Apresentar o R como ferramenta para análise de dados financeiros
+
+## Introdução
+
+
+## Teoria dos Mercados Eficientes
+
+
+## Retornos de um ativo
+
+
+Retorno Linear = $\frac{P_{t} - P_{t-1}}{P_{t-1}}$
+
+Retorno Logarítmico = $ln(\frac{P_{t}}{P_{t-1}})$
+
+
+## Exercício 1
+
+- Calcular o retorno de um ativo dado que o preço de compra é 100 e o preço de venda é 120.
+
+
+

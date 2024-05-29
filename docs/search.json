@@ -25,7 +25,7 @@
     "href": "apresentacao.html#marcus-ramalho",
     "title": "Mini-Curso - Explorando finanças com R",
     "section": "Marcus Ramalho",
-    "text": "Marcus Ramalho\n\n\n\n\n\nPossui graduação em Administração pela Universidade Federal Fluminense (2020) e é candidato ao título de mestre em Administração pelo programa de pós-graduação em administração da UFF (PPGAd-UFF). É professor convidado dos MBAs de Ciências de Dados e de Finanças Corporativas e Mercados de Capitais na UFF. Tem experiência em ciência de dados com R e Python, programação funcional e desenvolvimento de bots, mapeamento e automação de processos administrativos. Tem interesse em Administração da Informação, Gestão do Conhecimento Pessoal, Economia Política, Finanças, R e Python.\n\n\n\n:::\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+    "text": "Marcus Ramalho\n\n\n\n\n\nPossui graduação em Administração pela Universidade Federal Fluminense (2020) e é candidato ao título de mestre em Administração pelo programa de pós-graduação em administração da UFF (PPGAd-UFF). É professor convidado dos MBAs de Ciências de Dados e de Finanças Corporativas e Mercados de Capitais na UFF. Tem experiência em ciência de dados com R e Python, programação funcional e desenvolvimento de bots, mapeamento e automação de processos administrativos. Tem interesse em Administração da Informação, Gestão do Conhecimento Pessoal, Economia Política, Finanças, R e Python."
   },
   {
     "objectID": "index.html#pré-requisitos",
@@ -40,5 +40,40 @@
     "title": "Mini-curso de finanças com R",
     "section": "",
     "text": "Para se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud"
+  },
+  {
+    "objectID": "apresentacao.html#objetivo",
+    "href": "apresentacao.html#objetivo",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Objetivo",
+    "text": "Objetivo\n\nRelembrar conceitos de finanças\nApresentar o R como ferramenta para análise de dados financeiros"
+  },
+  {
+    "objectID": "apresentacao.html#introdução",
+    "href": "apresentacao.html#introdução",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Introdução",
+    "text": "Introdução"
+  },
+  {
+    "objectID": "apresentacao.html#teoria-dos-mercados-eficientes",
+    "href": "apresentacao.html#teoria-dos-mercados-eficientes",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Teoria dos Mercados Eficientes",
+    "text": "Teoria dos Mercados Eficientes"
+  },
+  {
+    "objectID": "apresentacao.html#retornos-de-um-ativo",
+    "href": "apresentacao.html#retornos-de-um-ativo",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Retornos de um ativo",
+    "text": "Retornos de um ativo\n\nRetorno Linear\nRetorno Logarítmico\n\nRetorno Linear = \\(\\frac{P_{t} - P_{t-1}}{P_{t-1}}\\)\nRetorno Logarítmico = \\(ln(\\frac{P_{t}}{P_{t-1}})\\)"
+  },
+  {
+    "objectID": "apresentacao.html#exercício-1",
+    "href": "apresentacao.html#exercício-1",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Exercício 1",
+    "text": "Exercício 1\n\nCalcular o retorno de um ativo dado que o preço de compra é 100 e o preço de venda é 120.\n\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
   }
 ]
