@@ -82,6 +82,8 @@ Possui graduação em Administração pela Universidade Federal Fluminense (2020
 
 8.  Beta do portifólio e de cada ativo.
 
+9.  Índice sharpe
+
 ## Relembrando conceitos de finanças
 
 ::: panel-tabset
@@ -93,7 +95,7 @@ Possui graduação em Administração pela Universidade Federal Fluminense (2020
 
 -   Quais os riscos?
 
--   Como escolher seus ativos? [Análise Fundamentalista](https://fundamentus.com.br/)
+-   Como escolher seus ativos?
 
 ## Motivação
 
@@ -367,7 +369,7 @@ head(portfolio_returns_xts,3)
 ::: panel-tabset
 ## Exercício 2
 
-`r countdown(minutes = 5, seconds = 00)`
+`r countdown(minutes = 10, seconds = 00)`
 
 Determinado agente possui uma carteira formada pelas seguintes posições: R\$25000,00 no ativo A e R\$50000,00 no ativo B.
 
@@ -606,8 +608,6 @@ beta_long <- PerformanceAnalytics::CAPM.beta(cbind(asset_returns_xts, portfolio_
 
 beta_long
 
-# adicionando pesos ao data frame
-
 ```
 
 ## Beta vs Retorno
@@ -635,6 +635,10 @@ beta
 :::
 
 ## Indice sharpe
+
+$$ SR = \frac{R_p - R_f}{\sigma_p}$$
+
+Onde $R_p$ é o retorno da carteira, $R_f$ é a taxa livre de risco e $\sigma_p$ é o desvio padrão da carteira.
 
 ```{r}
 # Calculando o índice sharpe com perfomance analytics
