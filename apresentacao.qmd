@@ -125,8 +125,9 @@ pacotes <- c("tidyverse", "quantmod", "timetk", "plotly", "PerformanceAnalytics"
 purrr::walk(pacotes, library, character.only = TRUE)
 
 # Ativos escolhidos
-tickers <- c("VALE3.SA","PETR4.SA","AZUL4.SA","ABEV3.SA","BBDC4.SA","^BVSP")
+tickers <- c("VALE3.SA","PETR4.SA","CMIG4.SA","RADL3.SA","ITUB4.SA","^BVSP")
 
+# w <- c(0.15, 0.25, 0.1, 0.2, 0.3)
 ```
 
 ## Importar preços dos ativos
@@ -322,10 +323,12 @@ pbp
 O somatório dos pesos deve ser igual a 1.
 
 ```{r}
-set.seed(123) 
+set.seed(1234) 
 w <- runif(5) # Gerando 4 pesos aleatórios
 w <- w / sum(w) # Normalizando os pesos para que a soma seja 1
 w
+
+
 ```
 
 O cálculo do retorno de uma carteira depende do retorno de cada ativo e de seu peso na carteira e pode ser obtido pela média ponderada:
@@ -342,7 +345,8 @@ retorno_ativos <- asset_returns_xts[, tickers[1:5]]
 portfolio_returns_xts<-PerformanceAnalytics::Return.portfolio(retorno_ativos,
                  weights = w,
                  rebalance_on = "months",
-                 type= "discrete") %>% 
+                 type= "discrete",
+                 verbose = FALSE) %>% 
   `colnames<-`("CARTEIRA")
 head(portfolio_returns_xts,3)
 ```
@@ -511,7 +515,7 @@ risco_retorno <- cbind(asset_returns_xts, portfolio_returns_xts) %>%
 risco_retorno
 
 rr <- ggplot(risco_retorno) +
-  aes(x = Retorno, y = Risco, colour = Ativo) +
+  aes(x = Risco, y = Retorno, colour = Ativo) +
   geom_point() +
   scale_color_hue(direction = 1) +
   labs(title = "Risco vs Retorno dos Ativos") +
@@ -537,24 +541,12 @@ ggplotly(rr)
 
 :::
 
-## Matriz de covariância
-
-```{r}
-# Matriz de covariância
-
-cov_matrix <- cov(retorno_ativos)
-
-cov_matrix %>% head(10)
-```
-
 ## Beta da carteira e de cada ativo.
 
 ```{r}
 # Calculando o beta do portifólio e de cada ativo
 
-
-
-beta_long <- CAPM.beta(cbind(asset_returns_xts, portfolio_returns_xts), asset_returns_xts$'^BVSP', Rf = 0) %>%
+beta_long <- PerformanceAnalytics::CAPM.beta(cbind(asset_returns_xts, portfolio_returns_xts), asset_returns_xts$'^BVSP', Rf = 0) %>%
   as.data.frame() %>%
   rownames_to_column(var = "indice") %>%
   pivot_longer(cols = -indice, names_to = "Ativo", values_to = "beta") %>%
@@ -564,34 +556,34 @@ beta_long <- CAPM.beta(cbind(asset_returns_xts, portfolio_returns_xts), asset_re
 
 beta_long
 
+# adicionando pesos ao data frame
 
 ```
 
 ## Beta vs Retorno
 
 ```{r}
-ggplot(beta_long) +
-  aes(x = Retorno, y = beta, colour = Ativo) +
+plotly::ggplotly(ggplot(beta_long) +
+  aes(y = Retorno, x = beta, colour = Ativo) +
   geom_point() +
   scale_color_hue(direction = 1) +
-  labs(x = "Retorno", y = "Beta", title = "Beta vs Retorno") +
+  labs(y = "Retorno", x = "Beta", title = "Beta vs Retorno") +
   theme_minimal() +
   theme(
     plot.title = element_text(size = 16L,
     face = "bold",
     hjust = 0.5)
-  )
+  ))
 ```
 
 ## Indice sharpe
 
-
 ```{r}
 # Calculando o índice sharpe com perfomance analytics
 
-sharpe_carteira <- SharpeRatio(portfolio_returns_xts, Rf = 0, p = 0.95, FUN = "StdDev")
+sharpe_carteira <- PerformanceAnalytics::SharpeRatio(portfolio_returns_xts, Rf = 0, p = 0.95, FUN = "StdDev")
 
-sharpe_ativos <- SharpeRatio(asset_returns_xts, Rf = 0, p = 0.95, FUN = "StdDev")
+sharpe_ativos <- PerformanceAnalytics::SharpeRatio(asset_returns_xts, Rf = 0, p = 0.95, FUN = "StdDev")
 
 sharpe_carteira
 
@@ -599,14 +591,6 @@ sharpe_ativos %>% view
 
 ```
 
-## notas
-calcula o risco de cada ativo. [x]
-calcula o cv de cada ativo [x]
-identifica qual a ordem dos ativos mais eficientes isoladamente.
+## Exercícios
 
-matriz covari~^ancia
-beta do portifólio e de cada ativo beta covariancia/ variancia do mercado
-
-comparar carteiras sharpe  
-
-o inverso do cv 
+Selecione uma carteira adicionando pelo menos 6 ativos que supere o IBOV em resultados com no máximo 20% a mais de risco. 
