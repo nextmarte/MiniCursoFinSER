@@ -15,14 +15,16 @@ filters:
   - reveal-header
 date: today
 footer: PPGAd Universidade Federal de Fluminense
-fontsize: 1.4em
-incremental: true
-toc: true
+# fontsize: 1.4em
+incremental: false
+toc: false
+css: styles.css
 execute: 
   echo: true
 ---
 
 ```{r}
+#| echo: false
 library(countdown)
 ```
 
@@ -35,11 +37,13 @@ library(countdown)
 :::
 
 ::: {.column width="70%"}
-<p style="text-align: justify;">
+
+
 
 Doutor em Economia (Universidade Federal Fluminense - 2013), mestre em Administração (IBMEC -2003) e engenheiro eletricista (Universidade Federal Fluminense - 1982). Sou Professor Associado da Universidade Federal Fluminense vinculado ao Departamento de Administração da Faculdade de Administração e Ciências Contábeis e fui coordenador do Curso de Graduação em Administração (2016-2021). Professor do quadro permanente do PPGAd - UFF e colaborador no MBA de Logística (LOGEMP - UFF), no MBA de Finanças (UFF), no MBA de Marketing (UFF) e dos cursos de Extensão em Ciências dos Dados (UFF) como atual coordenador. Possui experiência em Administração, com ênfase em Finanças Quantitativas; Finanças publicas; Planejamento e Controle: Ciências dos Dados: na linguagem R e na análise e visualização de dados. Organizador dos Seminários de Estatística R - Evento Internacional de Divulgação de Aplicações e Desenvolvimento de Linguagens R. Coordenador do Grupo de Pesquisa (CNPQ/UFF) - Métodos Quantitativos Aplicados à Administração.
 
-</p>
+
+
 :::
 :::
 :::
@@ -52,11 +56,11 @@ Doutor em Economia (Universidade Federal Fluminense - 2013), mestre em Administr
 :::
 
 ::: {.column width="70%"}
-<p style="text-align: justify;">
+
 
 Possui graduação em Administração pela Universidade Federal Fluminense (2020) e é candidato ao título de mestre em Administração pelo programa de pós-graduação em administração da UFF (PPGAd-UFF). É professor convidado dos MBAs de Ciências de Dados e de Finanças Corporativas e Mercados de Capitais na UFF. Tem experiência em ciência de dados com R e Python, programação funcional e desenvolvimento de bots, mapeamento e automação de processos administrativos. Tem interesse em Administração da Informação, Gestão do Conhecimento Pessoal, Economia Política, Finanças, R e Python.
 
-</p>
+
 :::
 :::
 
@@ -242,6 +246,12 @@ g1 <- ggplot(asset_returns_tbl) +
   scale_color_hue(direction = 1) +
   labs(title = "Retornos de 2019 a 2024")+ #Aqui nos podemos mudar as legendas
   theme_minimal()
+
+```
+
+## ggplot2
+
+```{r}
 g1
 ```
 
@@ -481,13 +491,46 @@ ggplotly(comp_mkt)
 $$\bar{X}=\sum_{i=1}^n{\pi_iX_i}$$
 
 ```{r}
+
+
 # desvio padrao dos precos dos ativos
 
-desvio_padrao <- apply(prices, 2, sd)
+mean_value <- mean(asset_returns_tbl$value, na.rm = TRUE)
+sd_value <- sd(asset_returns_tbl$value, na.rm = TRUE)
 
-desvio_padrao
+distribuicaodp <- plotly::ggplotly(asset_returns_tbl %>%
+  filter(assets %in% "PETR4.SA") %>%
+  mutate(faixa_inferior = if_else(value < (mean_value - sd_value), value, as.numeric(NA)),
+         faixa_superior = if_else(value > (mean_value + sd_value), value, as.numeric(NA)),
+         faixa_central = if_else(value > (mean_value - sd_value) & value < (mean_value + sd_value), value, as.numeric(NA))) %>%
+  ggplot() +
+  geom_point(aes(x = Data, y = faixa_inferior), color = "red") +
+  geom_point(aes(x = Data, y = faixa_superior), color = "green") +
+  geom_point(aes(x = Data, y = faixa_central), color = "blue") +
+  geom_hline(yintercept = (mean_value + sd_value), color = "purple", linetype = "dotted") +
+  geom_hline(yintercept = (mean_value - sd_value), color = "purple", linetype = "dotted") +
+  labs(
+    x = "Data",
+    y = "Retornos",
+    title = "Distribuição padronizada - PETR4.SA",
+    color = "Ativo"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16L, face = "bold", hjust = 0.5),
+    axis.title.y = element_text(face = "bold"),
+    axis.title.x = element_text(face = "bold")
+  ))
 
 
+
+```
+
+## Distribuição padronizada
+
+```{r}
+#| echo: false
+distribuicaodp
 ```
 
 ## Risco do ativo
@@ -504,29 +547,42 @@ $$ CV= \frac{\sigma}{\bar{K}}$$
 
 ```{r}
 
+# Cria o data frame risco_retorno
 risco_retorno <- cbind(asset_returns_xts, portfolio_returns_xts) %>% 
   tk_tbl(preserve_index = FALSE) %>%
   #Calcula o desvio padrão, a média e o coeficiente de variação
   summarise(across(everything(), list(Desvio_padrao = sd, Retorno_Medio = mean, Risco = ~sd(.)/mean(.)))) %>% 
   pivot_longer(cols = everything(), names_to = "Ativo", values_to = "Valor") %>%
-  separate(Ativo, into = c("Ativo", "Medida"), sep = "_") %>%
+  separate(Ativo, into = c("Ativo", "Medida"), sep = "_", extra = "drop") %>%
   pivot_wider(names_from = "Medida", values_from = "Valor")
 
-risco_retorno
+# Imprime o data frame risco_retorno
+print(risco_retorno)
 
-rr <- ggplot(risco_retorno) +
-  aes(x = Risco, y = Retorno, colour = Ativo) +
+# Calcula o peso total
+peso_total <- sum(w)
+
+# Adiciona a nova linha
+pesos_ativos <- rbind(pesos_ativos, data.frame(Ativo = "CARTEIRA", Peso = peso_total))
+
+# Junta o novo data frame ao data frame risco_retorno
+risco_retorno <- risco_retorno %>%
+  left_join(pesos_ativos, by = "Ativo")
+
+# Cria o gráfico
+rr <- plotly::ggplotly(ggplot(risco_retorno) +
+  aes(x = Risco, y = Retorno, colour = Ativo, size = Peso) + # Adiciona a estética size = Peso
   geom_point() +
   scale_color_hue(direction = 1) +
-  labs(title = "Risco vs Retorno dos Ativos") +
+  labs(title = "Risco vs Retorno dos Ativos", size = "Pesos e", colour = "ativos") +
   theme_minimal() +
   theme(
     plot.title = element_text(size = 16L,
     face = "bold",
     hjust = 0.5)
-  )
+  ))
 
-
+rr
 ```
 
 :::
@@ -536,10 +592,14 @@ rr <- ggplot(risco_retorno) +
 
 ```{r}
 #| echo: false
-ggplotly(rr)
+rr
 ```
 
 :::
+
+## Beta
+
+::: panel-tabset
 
 ## Beta da carteira e de cada ativo.
 
@@ -563,7 +623,7 @@ beta_long
 ## Beta vs Retorno
 
 ```{r}
-plotly::ggplotly(ggplot(beta_long) +
+beta <- plotly::ggplotly(ggplot(beta_long) +
   aes(y = Retorno, x = beta, colour = Ativo) +
   geom_point() +
   scale_color_hue(direction = 1) +
@@ -576,6 +636,14 @@ plotly::ggplotly(ggplot(beta_long) +
   ))
 ```
 
+## Gráfico - Beta vs Retorno
+
+```{r}
+beta
+```
+
+:::
+
 ## Indice sharpe
 
 ```{r}
@@ -587,7 +655,7 @@ sharpe_ativos <- PerformanceAnalytics::SharpeRatio(asset_returns_xts, Rf = 0, p 
 
 sharpe_carteira
 
-sharpe_ativos %>% view
+sharpe_ativos %>% head()
 
 ```
 

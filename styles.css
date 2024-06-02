@@ -1,5 +1,43 @@
 /* css styles */
 
 .p {
-  color: red !important;
+  font-size: small ;
+  text-align: justify;
+}
+
+.sourceCode.r {
+  font-size: 16px;
+}
+
+.title {
+  font-size: 48px !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.date {
+  font-size: 25px;
+  color: rgb(255, 255, 255) !important;
+  text-align: center;
+}
+
+.quarto-title-author-name {
+  font-size: 25px;
+}
+
+:root {
+  --r-main-font-size: 20px;
+}
+
+.panel-tabset-tabby {
+  font-size: 20px !important;
+}
+
+.slide-logo {
+  transform: scale(2) translate(-30px, -10px) !important; /* Ajuste estes valores conforme necessário */
+}
+
+.footer {
+  font-size: 30px !important;
+  color: #898e8b !important;
+  text-align: center !important;
 }
