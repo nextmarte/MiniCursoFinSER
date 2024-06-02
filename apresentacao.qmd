@@ -564,13 +564,40 @@ beta_long <- CAPM.beta(cbind(asset_returns_xts, portfolio_returns_xts), asset_re
 
 beta_long
 
-esquisse::esquisser(beta_long)
-
-
 
 ```
 
+## Beta vs Retorno
 
+```{r}
+ggplot(beta_long) +
+  aes(x = Retorno, y = beta, colour = Ativo) +
+  geom_point() +
+  scale_color_hue(direction = 1) +
+  labs(x = "Retorno", y = "Beta", title = "Beta vs Retorno") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16L,
+    face = "bold",
+    hjust = 0.5)
+  )
+```
+
+## Indice sharpe
+
+
+```{r}
+# Calculando o índice sharpe com perfomance analytics
+
+sharpe_carteira <- SharpeRatio(portfolio_returns_xts, Rf = 0, p = 0.95, FUN = "StdDev")
+
+sharpe_ativos <- SharpeRatio(asset_returns_xts, Rf = 0, p = 0.95, FUN = "StdDev")
+
+sharpe_carteira
+
+sharpe_ativos %>% view
+
+```
 
 ## notas
 calcula o risco de cada ativo. [x]

@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="seu nome">
+<meta name="dcterms.date" content="2024-06-02">
 
 <title>Mini-Curso - Explorando finanças com R - Mini-curso de finanças com R</title>
 <style>
@@ -19,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -89,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="./index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Início</span></a>
   </li>  
@@ -99,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Apresentação</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exercicios.html"> <i class="bi bi-file-earmark-text" role="img">
+    <a class="nav-link active" href="./exercicios.html" aria-current="page"> <i class="bi bi-file-earmark-text" role="img">
 </i> 
 <span class="menu-text">Exercícios</span></a>
   </li>  
@@ -119,12 +155,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bem-vindoa" id="toc-bem-vindoa" class="nav-link active" data-scroll-target="#bem-vindoa">Bem-vindo(a)!!</a>
-  <ul class="collapse">
-  <li><a href="#pré-requisitos" id="toc-pré-requisitos" class="nav-link" data-scroll-target="#pré-requisitos">Pré-requisitos</a></li>
-  <li><a href="#preparação" id="toc-preparação" class="nav-link" data-scroll-target="#preparação">Preparação</a></li>
-  <li><a href="#instrutores" id="toc-instrutores" class="nav-link" data-scroll-target="#instrutores">Instrutores</a></li>
-  </ul></li>
+  <li><a href="#instruções" id="toc-instruções" class="nav-link active" data-scroll-target="#instruções">Instruções</a></li>
+  <li><a href="#montando-sua-carteira" id="toc-montando-sua-carteira" class="nav-link" data-scroll-target="#montando-sua-carteira">Montando sua carteira</a></li>
+  <li><a href="#coletando-os-dados-com-o-pacote-quantmod" id="toc-coletando-os-dados-com-o-pacote-quantmod" class="nav-link" data-scroll-target="#coletando-os-dados-com-o-pacote-quantmod">Coletando os dados com o pacote quantmod</a></li>
+  <li><a href="#trabalhando-com-os-dados" id="toc-trabalhando-com-os-dados" class="nav-link" data-scroll-target="#trabalhando-com-os-dados">Trabalhando com os dados</a></li>
   </ul>
 </nav>
     </div>
@@ -140,7 +174,19 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>seu nome </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 2, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -150,36 +196,37 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bem-vindoa" class="level1">
-<h1>Bem-vindo(a)!!</h1>
-<p>Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será dividido em 3 partes:</p>
+<section id="instruções" class="level1">
+<h1>Instruções</h1>
+<p>Neste arquivo você encontrará as instruções para realizar o mini-curso de finanças com R. Todos os pacotes necessários já estão instalados no ambiente da Posit Cloud . Para começar, execute a célula abaixo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacotes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"quantmod"</span>, <span class="st">"timetk"</span>, <span class="st">"plotly"</span>,<span class="st">"PerformanceAnalytics"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">walk</span>(pacotes, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="montando-sua-carteira" class="level1">
+<h1>Montando sua carteira</h1>
+<p>Acesse o site <a href="https://finance.yahoo.com/">Yahoo Finance</a> e escolha 5 ações de empresas que você gostaria de incluir em sua carteira de investimentos. Depois de escolher crie um vetor com os códigos das ações e execute a célula abaixo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor com os códigos das ações numa variável chamada tickers</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="coletando-os-dados-com-o-pacote-quantmod" class="level1">
+<h1>Coletando os dados com o pacote quantmod</h1>
 <ol type="1">
-<li><p>Importar os preços dos ativos da internet em arquivos .csv ou .xls</p></li>
-<li><p>Transformar os preços diários em mensais.</p></li>
-<li><p>Obter os retornos mensais.</p></li>
-<li><p>Visualizar os retornos mensais.</p></li>
-<li><p>Calcular o retorno do portifólio utilizando os retornos mensais e pesos.</p></li>
-<li><p>Visualizar o retorno do portifólio.</p></li>
+<li><p>Escolha um período de tempo para coletar os dados das ações, por exemplo, de 01/01/2020 até 01/01/2021.</p></li>
+<li><p>Utilize a função <code>getSymbols</code> do pacote <code>quantmod</code> para coletar os dados das ações escolhidas.</p></li>
+<li><p>Visualize os dados coletados.</p></li>
 </ol>
-<section id="pré-requisitos" class="level2">
-<h2 class="anchored" data-anchor-id="pré-requisitos">Pré-requisitos</h2>
-<p>Esperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># coloque o codigo para baixar os dados com quantmode abaixo. Consulte a documentação do quantmode para saber como fazer isso.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="preparação" class="level2">
-<h2 class="anchored" data-anchor-id="preparação">Preparação</h2>
-<p>Para se preparar para o curso, você pode baixar o repositório do curso no link abaixo:</p>
-<p><a href="https://github.com/nextmarte/MiniCursoFinSER">Repositório no GitHub</a></p>
-<p><a href="https://cloud.positivestudio.com/">Link para o ambiente de desenvolvimento Posit Cloud</a></p>
-</section>
-<section id="instrutores" class="level2">
-<h2 class="anchored" data-anchor-id="instrutores">Instrutores</h2>
-<ul>
-<li>Marcus Ramalho</li>
-<li>Ariel Levy</li>
-</ul>
+<section id="trabalhando-com-os-dados" class="level1">
+<h1>Trabalhando com os dados</h1>
+<p>Converta os dados diários para dados mensais usando a função <code>to.monthly</code> do pacote <code>quantmod</code>. Depois, utilize a função <code>tk_tbl</code> do pacote <code>timetk</code> para converter os dados para um tibble.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
