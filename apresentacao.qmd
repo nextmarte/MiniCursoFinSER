@@ -553,10 +553,18 @@ cov_matrix %>% head(10)
 # Calculando o beta do portifólio e de cada ativo
 
 
-beta <- CAPM.beta(cbind(retorno_ativos, portfolio_returns_xts), asset_returns_xts$'^BVSP', Rf = 0)
 
-beta
+beta_long <- CAPM.beta(cbind(asset_returns_xts, portfolio_returns_xts), asset_returns_xts$'^BVSP', Rf = 0) %>%
+  as.data.frame() %>%
+  rownames_to_column(var = "indice") %>%
+  pivot_longer(cols = -indice, names_to = "Ativo", values_to = "beta") %>%
+  select(-indice) %>% 
+  inner_join(risco_retorno, by = "Ativo") %>%
+  select(Ativo,Desvio, beta, Risco, Retorno)
 
+beta_long
+
+esquisse::esquisser(beta_long)
 
 
 
