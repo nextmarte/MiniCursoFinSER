@@ -76,7 +76,7 @@ Possui graduação em Administração pela Universidade Federal Fluminense (2020
 
 7.  Análise do risco.
 
-8.  Comparar carteiras.
+8.  Beta do portifólio e de cada ativo.
 
 ## Relembrando conceitos de finanças
 
@@ -125,7 +125,7 @@ pacotes <- c("tidyverse", "quantmod", "timetk", "plotly", "PerformanceAnalytics"
 purrr::walk(pacotes, library, character.only = TRUE)
 
 # Ativos escolhidos
-tickers <- c("VALE3.SA","PETR4.SA","AZUL4.SA","ABEV3.SA","^BVSP")
+tickers <- c("VALE3.SA","PETR4.SA","AZUL4.SA","ABEV3.SA","BBDC4.SA","^BVSP")
 
 ```
 
@@ -322,7 +322,10 @@ pbp
 O somatório dos pesos deve ser igual a 1.
 
 ```{r}
-w <- c(0.2, 0.2, 0.2, 0.2, 0.2)
+set.seed(123) 
+w <- runif(5) # Gerando 4 pesos aleatórios
+w <- w / sum(w) # Normalizando os pesos para que a soma seja 1
+w
 ```
 
 O cálculo do retorno de uma carteira depende do retorno de cada ativo e de seu peso na carteira e pode ser obtido pela média ponderada:
@@ -332,7 +335,11 @@ $$ \bar{k}=\sum_{i=i}^n{w_i*k_i}$$
 ## Retorno da carteira
 
 ```{r}
-portfolio_returns_xts<-PerformanceAnalytics::Return.portfolio(asset_returns_xts,
+
+# removendo o índice do IBOV da lista de ativos para calcular o retorno da carteira
+retorno_ativos <- asset_returns_xts[, tickers[1:5]]
+
+portfolio_returns_xts<-PerformanceAnalytics::Return.portfolio(retorno_ativos,
                  weights = w,
                  rebalance_on = "months",
                  type= "discrete") %>% 
@@ -419,7 +426,7 @@ p <- ggplot(comparacao, aes(x = Data, y = value, colour = assets)) +
     x = "Data",
     y = "Retornos",
     title = "Retorno dos ativos vs carteira",
-    fill = "Ativos"
+    colour = "Ativos"  
   ) +
   theme_minimal() +
   theme(
@@ -428,14 +435,23 @@ p <- ggplot(comparacao, aes(x = Data, y = value, colour = assets)) +
     axis.title.x = element_text(face = "bold")
   )
 
-comp_mkt <- plotly::ggplotly(comparacao %>%
+comp_mkt <- comparacao %>%
  filter(assets %in% c("X.BVSP", "CARTEIRA")) %>%
  ggplot() +
   aes(x = Data, y = value, colour = assets) +
   geom_line() +
   scale_color_hue(direction = 1) +
-  labs(title = "Carteira VS Índice do mercado - 2020 - 2023")+
-  theme_minimal())
+  labs(title = "Carteira VS Índice do mercado - 2020 - 2023",
+        x = "Data",
+        y = "Retornos",
+        colour = "Ativos"  
+  )+
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16L, face = "bold", hjust = 0.5),
+    axis.title.y = element_text(face = "bold"),
+    axis.title.x = element_text(face = "bold")
+  )
   
 ```
 
@@ -448,7 +464,7 @@ ggplotly(p)
 ## Mercado vs Carteira
 
 ```{r}
-comp_mkt
+ggplotly(comp_mkt)
 ```
 :::
 
@@ -456,34 +472,101 @@ comp_mkt
 
 ::: panel-tabset
 
+## Desvio padrão
 
+$$\bar{X}=\sum_{i=1}^n{\pi_iX_i}$$
+
+```{r}
+# desvio padrao dos precos dos ativos
+
+desvio_padrao <- apply(prices, 2, sd)
+
+desvio_padrao
+
+
+```
 
 ## Risco do ativo
 
 ::: {.columns}
 
 ::: {.column}
+
+$$ CV= \frac{\sigma}{\bar{K}}$$
+
 ![](images/paste-1.png){width="505"}
 :::
 ::: {.column}
 
 ```{r}
-asset_risk_xts <- PerformanceAnalytics::StdDev(asset_returns_xts)
 
-plot(asset_risk_xts)
+risco_retorno <- cbind(asset_returns_xts, portfolio_returns_xts) %>% 
+  tk_tbl(preserve_index = FALSE) %>%
+  #Calcula o desvio padrão, a média e o coeficiente de variação
+  summarise(across(everything(), list(Desvio_padrao = sd, Retorno_Medio = mean, Risco = ~sd(.)/mean(.)))) %>% 
+  pivot_longer(cols = everything(), names_to = "Ativo", values_to = "Valor") %>%
+  separate(Ativo, into = c("Ativo", "Medida"), sep = "_") %>%
+  pivot_wider(names_from = "Medida", values_from = "Valor")
+
+risco_retorno
+
+rr <- ggplot(risco_retorno) +
+  aes(x = Retorno, y = Risco, colour = Ativo) +
+  geom_point() +
+  scale_color_hue(direction = 1) +
+  labs(title = "Risco vs Retorno dos Ativos") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16L,
+    face = "bold",
+    hjust = 0.5)
+  )
+
+
 ```
 
 :::
 ::: 
 
+## Risco vs Retorno 
 
-
+```{r}
+#| echo: false
+ggplotly(rr)
+```
 
 :::
 
+## Matriz de covariância
 
-calcula o risco de cada ativo.
-calcula o cv de cada ativo 
+```{r}
+# Matriz de covariância
+
+cov_matrix <- cov(retorno_ativos)
+
+cov_matrix %>% head(10)
+```
+
+## Beta da carteira e de cada ativo.
+
+```{r}
+# Calculando o beta do portifólio e de cada ativo
+
+
+beta <- CAPM.beta(cbind(retorno_ativos, portfolio_returns_xts), asset_returns_xts$'^BVSP', Rf = 0)
+
+beta
+
+
+
+
+```
+
+
+
+## notas
+calcula o risco de cada ativo. [x]
+calcula o cv de cada ativo [x]
 identifica qual a ordem dos ativos mais eficientes isoladamente.
 
 matriz covari~^ancia
