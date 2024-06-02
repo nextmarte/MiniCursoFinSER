@@ -550,39 +550,29 @@ $$ CV= \frac{\sigma}{\bar{K}}$$
 # Cria o data frame risco_retorno
 risco_retorno <- cbind(asset_returns_xts, portfolio_returns_xts) %>% 
   tk_tbl(preserve_index = FALSE) %>%
-  #Calcula o desvio padrão, a média e o coeficiente de variação
   summarise(across(everything(), list(Desvio_padrao = sd, Retorno_Medio = mean, Risco = ~sd(.)/mean(.)))) %>% 
   pivot_longer(cols = everything(), names_to = "Ativo", values_to = "Valor") %>%
   separate(Ativo, into = c("Ativo", "Medida"), sep = "_", extra = "drop") %>%
   pivot_wider(names_from = "Medida", values_from = "Valor")
 
-# Imprime o data frame risco_retorno
-print(risco_retorno)
+pesos_ativos <- tibble(Ativo = tickers[1:5], Peso = w)
+pesos_ativos <- pesos_ativos %>% add_row(Ativo = "CARTEIRA", Peso = 1)
 
-# Calcula o peso total
-peso_total <- sum(w)
 
-# Adiciona a nova linha
-pesos_ativos <- rbind(pesos_ativos, data.frame(Ativo = "CARTEIRA", Peso = peso_total))
 
 # Junta o novo data frame ao data frame risco_retorno
 risco_retorno <- risco_retorno %>%
   left_join(pesos_ativos, by = "Ativo")
 
 # Cria o gráfico
-rr <- plotly::ggplotly(ggplot(risco_retorno) +
-  aes(x = Risco, y = Retorno, colour = Ativo, size = Peso) + # Adiciona a estética size = Peso
+rr <- plotly::ggplotly(risco_retorno %>%
+  ggplot(aes(x = Risco, y = Retorno, colour = Ativo, size = Peso)) +
   geom_point() +
   scale_color_hue(direction = 1) +
   labs(title = "Risco vs Retorno dos Ativos", size = "Pesos e", colour = "ativos") +
   theme_minimal() +
-  theme(
-    plot.title = element_text(size = 16L,
-    face = "bold",
-    hjust = 0.5)
-  ))
+  theme(plot.title = element_text(size = 16L, face = "bold", hjust = 0.5)))
 
-rr
 ```
 
 :::
