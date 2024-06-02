@@ -11,10 +11,10 @@
 <script src="site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/grid-htext-1.0.0/grid_htext.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.554">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Marcus Ramalho &amp; Ariel Levy">
-  <meta name="dcterms.date" content="2024-05-29">
+  <meta name="dcterms.date" content="2024-06-01">
   <title>Mini-Curso - Explorando finanças com R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -33,6 +33,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -324,6 +389,17 @@
       margin-right: 0; 
     }
   </style>
+  <link href="site_libs/countdown-0.5.0/countdown.css" rel="stylesheet">
+  <script src="site_libs/countdown-0.5.0/countdown.js"></script>
+  <link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+  <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+  <link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+  <script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+  <link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+  <script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
@@ -340,7 +416,34 @@ Marcus Ramalho &amp; Ariel Levy
 </div>
 </div>
 
-  <p class="date">2024-05-29</p>
+  <p class="date">2024-06-01</p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li class="fragment"></li>
+<li class="fragment"><a href="#/ariel-levy" id="/toc-ariel-levy">Ariel Levy</a></li>
+<li class="fragment"><a href="#/marcus-ramalho" id="/toc-marcus-ramalho">Marcus Ramalho</a></li>
+<li class="fragment"><a href="#/sumário" id="/toc-sumário">Sumário</a></li>
+<li class="fragment"><a href="#/relembrando-conceitos-de-finanças" id="/toc-relembrando-conceitos-de-finanças">Relembrando conceitos de finanças</a></li>
+<li class="fragment"><a href="#/importar-os-preços-dos-ativos-da-internet-direto-do-yahoo.com" id="/toc-importar-os-preços-dos-ativos-da-internet-direto-do-yahoo.com">Importar os preços dos ativos da internet direto do yahoo.com</a></li>
+<li class="fragment"><a href="#/retornos-de-um-ativo" id="/toc-retornos-de-um-ativo">Retornos de um ativo</a></li>
+<li class="fragment"><a href="#/exercícios" id="/toc-exercícios">Exercícios</a></li>
+<li class="fragment"><a href="#/transformar-os-preços-diários-em-mensais-e-obter-os-retornos." id="/toc-transformar-os-preços-diários-em-mensais-e-obter-os-retornos.">Transformar os preços diários em mensais e obter os retornos.</a></li>
+<li class="fragment"><a href="#/visualização-dos-dados" id="/toc-visualização-dos-dados">Visualização dos dados</a></li>
+<li class="fragment"><a href="#/não-sabe-usar-o-ggplot2" id="/toc-não-sabe-usar-o-ggplot2">Não sabe usar o ggplot2?</a></li>
+<li class="fragment"><a href="#/retorno-da-carteira." id="/toc-retorno-da-carteira.">Retorno da carteira.</a></li>
+<li class="fragment"><a href="#/exercícios-1" id="/toc-exercícios-1">Exercícios</a></li>
+<li class="fragment"><a href="#/visualizar-o-retorno-da-carteira." id="/toc-visualizar-o-retorno-da-carteira.">Visualizar o retorno da carteira.</a></li>
+<li class="fragment"><a href="#/análise-do-risco." id="/toc-análise-do-risco.">Análise do risco.</a></li>
+</ul>
+</nav>
+</section>
+<section class="slide level2">
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(countdown)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="ariel-levy" class="slide level2">
 <h2>Ariel Levy</h2>
@@ -350,8 +453,8 @@ Marcus Ramalho &amp; Ariel Levy
 <p><img data-src="images/Ariel.jpg"></p>
 </div><div class="column" style="width:70%;">
 <p style="text-align: justify;">
-Doutor em Economia (Universidade Federal Fluminense - 2013), mestre em Administração (IBMEC -2003) e engenheiro eletricista (Universidade Federal Fluminense - 1982). Sou Professor Associado da Universidade Federal Fluminense vinculado ao Departamento de Administração da Faculdade de Administração e Ciências Contábeis e fui coordenador do Curso de Graduação em Administração (2016-2021). Professor do quadro permanente do PPGAd - UFF e colaborador no MBA de Logística (LOGEMP - UFF), no MBA de Finanças (UFF), no MBA de Marketing (UFF) e dos cursos de Extensão em Ciências dos Dados (UFF) como atual coordenador. Possui experiência em Administração, com ênfase em Finanças Quantitativas; Finanças publicas; Planejamento e Controle: Ciências dos Dados: na linguagem R e na análise e visualização de dados. Organizador dos Seminários de Estatística R - Evento Internacional de Divulgação de Aplicações e Desenvolvimento de Linguagens R. Coordenador do Grupo de Pesquisa (CNPQ/UFF) - Métodos Quantitativos Aplicados à Administração.
-</p>
+</p><p>Doutor em Economia (Universidade Federal Fluminense - 2013), mestre em Administração (IBMEC -2003) e engenheiro eletricista (Universidade Federal Fluminense - 1982). Sou Professor Associado da Universidade Federal Fluminense vinculado ao Departamento de Administração da Faculdade de Administração e Ciências Contábeis e fui coordenador do Curso de Graduação em Administração (2016-2021). Professor do quadro permanente do PPGAd - UFF e colaborador no MBA de Logística (LOGEMP - UFF), no MBA de Finanças (UFF), no MBA de Marketing (UFF) e dos cursos de Extensão em Ciências dos Dados (UFF) como atual coordenador. Possui experiência em Administração, com ênfase em Finanças Quantitativas; Finanças publicas; Planejamento e Controle: Ciências dos Dados: na linguagem R e na análise e visualização de dados. Organizador dos Seminários de Estatística R - Evento Internacional de Divulgação de Aplicações e Desenvolvimento de Linguagens R. Coordenador do Grupo de Pesquisa (CNPQ/UFF) - Métodos Quantitativos Aplicados à Administração.</p>
+<p></p>
 </div>
 </div>
 </div>
@@ -363,38 +466,470 @@ Doutor em Economia (Universidade Federal Fluminense - 2013), mestre em Administr
 <p><img data-src="images/Marcus.jpg"></p>
 </div><div class="column" style="width:70%;">
 <p style="text-align: justify;">
-Possui graduação em Administração pela Universidade Federal Fluminense (2020) e é candidato ao título de mestre em Administração pelo programa de pós-graduação em administração da UFF (PPGAd-UFF). É professor convidado dos MBAs de Ciências de Dados e de Finanças Corporativas e Mercados de Capitais na UFF. Tem experiência em ciência de dados com R e Python, programação funcional e desenvolvimento de bots, mapeamento e automação de processos administrativos. Tem interesse em Administração da Informação, Gestão do Conhecimento Pessoal, Economia Política, Finanças, R e Python.
-</p>
+</p><p>Possui graduação em Administração pela Universidade Federal Fluminense (2020) e é candidato ao título de mestre em Administração pelo programa de pós-graduação em administração da UFF (PPGAd-UFF). É professor convidado dos MBAs de Ciências de Dados e de Finanças Corporativas e Mercados de Capitais na UFF. Tem experiência em ciência de dados com R e Python, programação funcional e desenvolvimento de bots, mapeamento e automação de processos administrativos. Tem interesse em Administração da Informação, Gestão do Conhecimento Pessoal, Economia Política, Finanças, R e Python.</p>
+<p></p>
 </div>
 </div>
 </section>
-<section id="objetivo" class="slide level2">
-<h2>Objetivo</h2>
+<section id="sumário" class="slide level2">
+<h2>Sumário</h2>
+<ol type="1">
+<li class="fragment"><p>Relembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.</p></li>
+<li class="fragment"><p>Importar os preços dos ativos da internet direto do yahoo.com</p></li>
+<li class="fragment"><p>Transformar os preços diários em mensais e obter os retornos.</p></li>
+<li class="fragment"><p>Visualização dos dados.</p></li>
+<li class="fragment"><p>Retorno da carteira</p></li>
+<li class="fragment"><p>Visualizar o retorno da carteira.</p></li>
+<li class="fragment"><p>Análise do risco.</p></li>
+<li class="fragment"><p>Comparar carteiras.</p></li>
+</ol>
+</section>
+<section id="relembrando-conceitos-de-finanças" class="slide level2">
+<h2>Relembrando conceitos de finanças</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Qual a sua motivação para investir?</a></li><li><a href="#tabset-1-2">Motivação</a></li><li><a href="#tabset-1-3">Renda variável</a></li><li><a href="#tabset-1-4">OHLC</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
 <ul>
-<li class="fragment">Relembrar conceitos de finanças</li>
-<li class="fragment">Apresentar o R como ferramenta para análise de dados financeiros</li>
+<li class="fragment"><p>Qual a motivação para investir?</p></li>
+<li class="fragment"><p>Já investiu em renda variável?</p></li>
+<li class="fragment"><p>Quais os riscos?</p></li>
+<li class="fragment"><p>Como escolher seus ativos? <a href="https://fundamentus.com.br/">Análise Fundamentalista</a></p></li>
 </ul>
+</div>
+<div id="tabset-1-2">
+<p><img data-src="https://jonmgomes.com/wp-content/uploads/2020/05/Comp_1.gif"></p>
+</div>
+<div id="tabset-1-3">
+<p><img data-src="images/candles.jpg"></p>
+</div>
+<div id="tabset-1-4">
+<p><img data-src="images/candles2.jpg"></p>
+</div>
+</div>
+</div>
 </section>
-<section id="introdução" class="slide level2">
-<h2>Introdução</h2>
-</section>
-<section id="teoria-dos-mercados-eficientes" class="slide level2">
-<h2>Teoria dos Mercados Eficientes</h2>
+<section id="importar-os-preços-dos-ativos-da-internet-direto-do-yahoo.com" class="slide level2">
+<h2>Importar os preços dos ativos da internet direto do yahoo.com</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Fundamentus</a></li><li><a href="#tabset-2-2">carregar pacotes e selecionar ativos</a></li><li><a href="#tabset-2-3">Importar preços dos ativos</a></li><li><a href="#tabset-2-4">Prices</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div>
+<iframe src="https://fundamentus.com.br/" width="1900" height="550">
+</iframe>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="do">## pacote utilizados</span></span>
+<span id="cb2-2"><a></a>pacotes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"quantmod"</span>, <span class="st">"timetk"</span>, <span class="st">"plotly"</span>, <span class="st">"PerformanceAnalytics"</span>)</span>
+<span id="cb2-3"><a></a>purrr<span class="sc">::</span><span class="fu">walk</span>(pacotes, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-4"><a></a></span>
+<span id="cb2-5"><a></a><span class="co"># Ativos escolhidos</span></span>
+<span id="cb2-6"><a></a>tickers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"VALE3.SA"</span>,<span class="st">"PETR4.SA"</span>,<span class="st">"AZUL4.SA"</span>,<span class="st">"ABEV3.SA"</span>,<span class="st">"^BVSP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-3">
+<ul>
+<li class="fragment">O Formato XTS</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>prices_raw <span class="ot">&lt;-</span> </span>
+<span id="cb3-2"><a></a>  <span class="fu">getSymbols</span>(tickers, </span>
+<span id="cb3-3"><a></a>             <span class="at">src =</span> <span class="st">'yahoo'</span>, </span>
+<span id="cb3-4"><a></a>             <span class="at">from =</span> <span class="st">"2019-12-31"</span>,</span>
+<span id="cb3-5"><a></a>             <span class="at">to =</span> <span class="st">"2024-05-31"</span>,</span>
+<span id="cb3-6"><a></a>             <span class="at">auto.assign =</span> <span class="cn">TRUE</span>, <span class="co">#obs auto asign carrega os resultados para o ambiente</span></span>
+<span id="cb3-7"><a></a>             <span class="at">warnings =</span> <span class="cn">FALSE</span>,)</span>
+<span id="cb3-8"><a></a></span>
+<span id="cb3-9"><a></a>prices<span class="ot">&lt;-</span>prices_raw <span class="sc">%&gt;%</span>             </span>
+<span id="cb3-10"><a></a>  <span class="fu">map</span>(<span class="sc">~</span><span class="fu">Ad</span>(<span class="fu">get</span>(.))) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-11"><a></a>  <span class="fu">reduce</span>(merge) <span class="sc">%&gt;%</span></span>
+<span id="cb3-12"><a></a>  <span class="st">`</span><span class="at">colnames&lt;-</span><span class="st">`</span>(tickers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-4">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>prices <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">tk_tbl</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  index      VALE3.SA PETR4.SA AZUL4.SA ABEV3.SA `^BVSP`
+  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+1 2020-01-02     36.4     11.2     58.8     16.2  118573
+2 2020-01-03     36.1     11.1     56.8     15.9  117707
+3 2020-01-06     35.9     11.3     55       16.0  116878
+4 2020-01-07     36.2     11.2     56.8     16.1  116662
+5 2020-01-08     36.2     11.2     56.9     16.0  116247
+6 2020-01-09     35.7     11.1     57.3     15.9  115947</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="retornos-de-um-ativo" class="slide level2">
 <h2>Retornos de um ativo</h2>
-<ul>
-<li class="fragment">Retorno Linear</li>
-<li class="fragment">Retorno Logarítmico</li>
-</ul>
 <p>Retorno Linear = <span class="math inline">\(\frac{P_{t} - P_{t-1}}{P_{t-1}}\)</span></p>
 <p>Retorno Logarítmico = <span class="math inline">\(ln(\frac{P_{t}}{P_{t-1}})\)</span></p>
 </section>
-<section id="exercício-1" class="slide level2">
-<h2>Exercício 1</h2>
-<ul>
-<li class="fragment">Calcular o retorno de um ativo dado que o preço de compra é 100 e o preço de venda é 120.</li>
-</ul>
+<section id="exercícios" class="slide level2">
+<h2>Exercícios</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Exercício 1</a></li><li><a href="#tabset-3-2">” ”</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p></p><div class="countdown" id="timer_0a8c3cdf" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div><p></p>
+<p>Suponha que uma ação caia 50% e depois suba 50%, de quanto foi a variação total no período? dica (Componha o retorno destes dois períodos utilizando juros compostos.)</p>
+</div>
+<div id="tabset-3-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>valor_inicial <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb6-2"><a></a>valor_apos_queda <span class="ot">&lt;-</span> valor_inicial <span class="sc">-</span> (valor_inicial <span class="sc">*</span> <span class="fl">0.50</span>)</span>
+<span id="cb6-3"><a></a>valor_final <span class="ot">&lt;-</span> valor_apos_queda <span class="sc">+</span> (valor_apos_queda <span class="sc">*</span> <span class="fl">0.50</span>)</span>
+<span id="cb6-4"><a></a></span>
+<span id="cb6-5"><a></a>variacao_total <span class="ot">&lt;-</span> (valor_final <span class="sc">-</span> valor_inicial) <span class="sc">/</span> valor_inicial</span>
+<span id="cb6-6"><a></a>variacao_total</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.25</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="transformar-os-preços-diários-em-mensais-e-obter-os-retornos." class="slide level2">
+<h2>Transformar os preços diários em mensais e obter os retornos.</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Preços mensais</a></li><li><a href="#tabset-4-2">Retornos mensais</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>prices_monthly <span class="ot">&lt;-</span> <span class="fu">to.monthly</span>(prices, <span class="at">indexAt =</span> <span class="st">"lastof"</span>, <span class="at">OHLC =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-2"><a></a></span>
+<span id="cb8-3"><a></a><span class="fu">head</span>(prices_monthly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           VALE3.SA  PETR4.SA AZUL4.SA  ABEV3.SA  ^BVSP
+2020-01-31 33.69224 10.416773    59.26 15.037832 113761
+2020-02-29 29.69769  9.278069    44.44 12.249305 104172
+2020-03-31 28.96715  5.122342    17.55 10.042071  73020
+2020-04-30 30.06632  6.608883    17.40  9.553446  80506
+2020-05-31 35.52195  7.447353    14.28 10.513845  87403
+2020-06-30 37.47901  7.890385    20.11 11.912323  95056</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>asset_returns_xts <span class="ot">&lt;-</span></span>
+<span id="cb10-2"><a></a> PerformanceAnalytics<span class="sc">::</span><span class="fu">Return.calculate</span>(prices_monthly, </span>
+<span id="cb10-3"><a></a>                   <span class="at">method =</span> <span class="st">"discrete"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb10-5"><a></a><span class="fu">head</span>(asset_returns_xts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              VALE3.SA    PETR4.SA     AZUL4.SA    ABEV3.SA       ^BVSP
+2020-02-29 -0.11855984 -0.10931450 -0.250084376 -0.18543414 -0.08429075
+2020-03-31 -0.02459932 -0.44790857 -0.605085514 -0.18019255 -0.29904389
+2020-04-30  0.03794548  0.29020734 -0.008546987 -0.04865784  0.10251986
+2020-05-31  0.18145315  0.12687007 -0.179310342  0.10052913  0.08567063
+2020-06-30  0.05509432  0.05948856  0.408263374  0.13301295  0.08755992
+2020-07-31  0.08565819  0.03018329  0.009945244 -0.01697329  0.08264602</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualização-dos-dados" class="slide level2">
+<h2>Visualização dos dados</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Preços com quantmod</a></li><li><a href="#tabset-5-2">Retornos com ggplot2</a></li><li><a href="#tabset-5-3">Com plotly</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="do">## Visualizar os preços com quantmod</span></span>
+<span id="cb12-2"><a></a>graficoscandle <span class="ot">&lt;-</span> <span class="fu">chartSeries</span>(<span class="fu">head</span>(BVSP, <span class="dv">30</span>), </span>
+<span id="cb12-3"><a></a>            <span class="at">TA =</span> <span class="st">"addVo()"</span>,</span>
+<span id="cb12-4"><a></a>            <span class="at">type =</span> <span class="st">"candlesticks"</span>,</span>
+<span id="cb12-5"><a></a>            <span class="at">time.scale =</span> <span class="st">"years"</span>,)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="apresentacao_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-5-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>asset_returns_tbl <span class="ot">&lt;-</span> asset_returns_xts <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a></a>  <span class="fu">tk_tbl</span>(<span class="at">rename_index =</span> <span class="st">"Data"</span>) <span class="sc">%&gt;%</span> <span class="co">#converte em um data frame para plotar com ggplot</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="st">"Data"</span> ,<span class="at">names_to =</span> <span class="st">"assets"</span>)<span class="co">#seleciona todas as colunas menos data</span></span>
+<span id="cb13-4"><a></a></span>
+<span id="cb13-5"><a></a><span class="co">#plotando com o ggplot e com o plotly</span></span>
+<span id="cb13-6"><a></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(asset_returns_tbl) <span class="sc">+</span></span>
+<span id="cb13-7"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> Data, <span class="at">y =</span> value, <span class="at">colour =</span> assets) <span class="sc">+</span></span>
+<span id="cb13-8"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb13-9"><a></a>  <span class="fu">scale_color_hue</span>(<span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb13-10"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Retornos de 2019 a 2024"</span>)<span class="sc">+</span> <span class="co">#Aqui nos podemos mudar as legendas</span></span>
+<span id="cb13-11"><a></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb13-12"><a></a>g1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="apresentacao_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-5-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>plotly<span class="sc">::</span><span class="fu">ggplotly</span>(g1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-f362decd906eaf320cb1" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f362decd906eaf320cb1">{"x":{"data":[{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.08429074990550367,-0.29904388895288558,0.10251985757326754,0.085670633244727012,0.087559923572417375,0.082646019188688857,-0.034427472014925353,-0.047962644285441169,-0.0068813885394755081,0.1589747956403269,0.095676291235030408,-0.027651584999916157,-0.051479652089960082,0.059971827145908208,0.019376854090573881,0.061584268339865744,0.0046428345059263965,-0.039439441018280452,-0.024794541916733026,-0.065683905675150034,-0.067382117337514313,-0.015323523444217946,0.028523769808173505,0.072179504302531949,0.0067089013061891745,0.060605257110533772,-0.10102584188201569,0.032212911120174992,-0.11503264452048023,0.046914006210549752,0.061629428585276091,0.0046930781662299914,0.054527113607241162,-0.030602307884554092,-0.021824938214533351,0.031818305750197728,-0.075749568403621903,-0.029066443029771682,0.02502895506566416,0.037373601961084635,0.090017076660358963,0.032653890775445227,-0.050851627399686739,0.0071106426362081976,-0.029348432205207442,0.12538888496075806,0.053828211511729229,-0.047941275105265135,0.0099254806186988009,-0.0070841729964347122,-0.017032769737561071,-0.025547155427082968],"text":["Data: 2020-02-29<br />value: -0.0842907499<br />assets: ^BVSP","Data: 2020-03-31<br />value: -0.2990438890<br />assets: ^BVSP","Data: 2020-04-30<br />value:  0.1025198576<br />assets: ^BVSP","Data: 2020-05-31<br />value:  0.0856706332<br />assets: ^BVSP","Data: 2020-06-30<br />value:  0.0875599236<br />assets: ^BVSP","Data: 2020-07-31<br />value:  0.0826460192<br />assets: ^BVSP","Data: 2020-08-31<br />value: -0.0344274720<br />assets: ^BVSP","Data: 2020-09-30<br />value: -0.0479626443<br />assets: ^BVSP","Data: 2020-10-31<br />value: -0.0068813885<br />assets: ^BVSP","Data: 2020-11-30<br />value:  0.1589747956<br />assets: ^BVSP","Data: 2020-12-31<br />value:  0.0956762912<br />assets: ^BVSP","Data: 2021-01-31<br />value: -0.0276515850<br />assets: ^BVSP","Data: 2021-02-28<br />value: -0.0514796521<br />assets: ^BVSP","Data: 2021-03-31<br />value:  0.0599718271<br />assets: ^BVSP","Data: 2021-04-30<br />value:  0.0193768541<br />assets: ^BVSP","Data: 2021-05-31<br />value:  0.0615842683<br />assets: ^BVSP","Data: 2021-06-30<br />value:  0.0046428345<br />assets: ^BVSP","Data: 2021-07-31<br />value: -0.0394394410<br />assets: ^BVSP","Data: 2021-08-31<br />value: -0.0247945419<br />assets: ^BVSP","Data: 2021-09-30<br />value: -0.0656839057<br />assets: ^BVSP","Data: 2021-10-31<br />value: -0.0673821173<br />assets: ^BVSP","Data: 2021-11-30<br />value: -0.0153235234<br />assets: ^BVSP","Data: 2021-12-31<br />value:  0.0285237698<br />assets: ^BVSP","Data: 2022-01-31<br />value:  0.0721795043<br />assets: ^BVSP","Data: 2022-02-28<br />value:  0.0067089013<br />assets: ^BVSP","Data: 2022-03-31<br />value:  0.0606052571<br />assets: ^BVSP","Data: 2022-04-30<br />value: -0.1010258419<br />assets: ^BVSP","Data: 2022-05-31<br />value:  0.0322129111<br />assets: ^BVSP","Data: 2022-06-30<br />value: -0.1150326445<br />assets: ^BVSP","Data: 2022-07-31<br />value:  0.0469140062<br />assets: ^BVSP","Data: 2022-08-31<br />value:  0.0616294286<br />assets: ^BVSP","Data: 2022-09-30<br />value:  0.0046930782<br />assets: ^BVSP","Data: 2022-10-31<br />value:  0.0545271136<br />assets: ^BVSP","Data: 2022-11-30<br />value: -0.0306023079<br />assets: ^BVSP","Data: 2022-12-31<br />value: -0.0218249382<br />assets: ^BVSP","Data: 2023-01-31<br />value:  0.0318183058<br />assets: ^BVSP","Data: 2023-02-28<br />value: -0.0757495684<br />assets: ^BVSP","Data: 2023-03-31<br />value: -0.0290664430<br />assets: ^BVSP","Data: 2023-04-30<br />value:  0.0250289551<br />assets: ^BVSP","Data: 2023-05-31<br />value:  0.0373736020<br />assets: ^BVSP","Data: 2023-06-30<br />value:  0.0900170767<br />assets: ^BVSP","Data: 2023-07-31<br />value:  0.0326538908<br />assets: ^BVSP","Data: 2023-08-31<br />value: -0.0508516274<br />assets: ^BVSP","Data: 2023-09-30<br />value:  0.0071106426<br />assets: ^BVSP","Data: 2023-10-31<br />value: -0.0293484322<br />assets: ^BVSP","Data: 2023-11-30<br />value:  0.1253888850<br />assets: ^BVSP","Data: 2023-12-31<br />value:  0.0538282115<br />assets: ^BVSP","Data: 2024-01-31<br />value: -0.0479412751<br />assets: ^BVSP","Data: 2024-02-29<br />value:  0.0099254806<br />assets: ^BVSP","Data: 2024-03-31<br />value: -0.0070841730<br />assets: ^BVSP","Data: 2024-04-30<br />value: -0.0170327697<br />assets: ^BVSP","Data: 2024-05-31<br />value: -0.0255471554<br />assets: ^BVSP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"^BVSP","legendgroup":"^BVSP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.18543413973976919,-0.18019254726230494,-0.048657842566982024,0.10052913327598034,0.13301294581573542,-0.016973293359942465,-0.11438840560070096,0.018683987113946143,-0.028708013463964899,0.14778307725394568,0.14905567241911788,-0.029903349563300319,-0.072137550308453924,0.090584806653083438,-0.022890772887165567,0.20147258172811688,-0.049025100467912641,-0.025190414274304462,0.027644272154725202,-0.10526314100298984,0.11045744591252071,-0.054738060880953565,-0.0023791687309798748,-0.029182894571881279,0.015363994424024474,0.013157925828893857,-0.057142839503556031,-0.022727328946807401,-0.055673003442786029,0.11417922078966392,0.022772914038348802,0.017681696668049751,0.029601037037631173,-0.004999998349377921,-0.039883408683539456,-0.059228711254313504,-0.019765725186981387,0.070201624882447744,-0.011863207732153436,0.017655338553210775,0.069396281115909009,-0.03569115594294181,-0.06864055413907566,-0.052745704085374268,-0.019069458087769386,0.064541263670852,0.055344388992095928,-0.047341561558741474,-0.038226299917158646,-0.0071542252093572678,-0.027221790137587187,-0.051851784407118351],"text":["Data: 2020-02-29<br />value: -0.1854341397<br />assets: ABEV3.SA","Data: 2020-03-31<br />value: -0.1801925473<br />assets: ABEV3.SA","Data: 2020-04-30<br />value: -0.0486578426<br />assets: ABEV3.SA","Data: 2020-05-31<br />value:  0.1005291333<br />assets: ABEV3.SA","Data: 2020-06-30<br />value:  0.1330129458<br />assets: ABEV3.SA","Data: 2020-07-31<br />value: -0.0169732934<br />assets: ABEV3.SA","Data: 2020-08-31<br />value: -0.1143884056<br />assets: ABEV3.SA","Data: 2020-09-30<br />value:  0.0186839871<br />assets: ABEV3.SA","Data: 2020-10-31<br />value: -0.0287080135<br />assets: ABEV3.SA","Data: 2020-11-30<br />value:  0.1477830773<br />assets: ABEV3.SA","Data: 2020-12-31<br />value:  0.1490556724<br />assets: ABEV3.SA","Data: 2021-01-31<br />value: -0.0299033496<br />assets: ABEV3.SA","Data: 2021-02-28<br />value: -0.0721375503<br />assets: ABEV3.SA","Data: 2021-03-31<br />value:  0.0905848067<br />assets: ABEV3.SA","Data: 2021-04-30<br />value: -0.0228907729<br />assets: ABEV3.SA","Data: 2021-05-31<br />value:  0.2014725817<br />assets: ABEV3.SA","Data: 2021-06-30<br />value: -0.0490251005<br />assets: ABEV3.SA","Data: 2021-07-31<br />value: -0.0251904143<br />assets: ABEV3.SA","Data: 2021-08-31<br />value:  0.0276442722<br />assets: ABEV3.SA","Data: 2021-09-30<br />value: -0.1052631410<br />assets: ABEV3.SA","Data: 2021-10-31<br />value:  0.1104574459<br />assets: ABEV3.SA","Data: 2021-11-30<br />value: -0.0547380609<br />assets: ABEV3.SA","Data: 2021-12-31<br />value: -0.0023791687<br />assets: ABEV3.SA","Data: 2022-01-31<br />value: -0.0291828946<br />assets: ABEV3.SA","Data: 2022-02-28<br />value:  0.0153639944<br />assets: ABEV3.SA","Data: 2022-03-31<br />value:  0.0131579258<br />assets: ABEV3.SA","Data: 2022-04-30<br />value: -0.0571428395<br />assets: ABEV3.SA","Data: 2022-05-31<br />value: -0.0227273289<br />assets: ABEV3.SA","Data: 2022-06-30<br />value: -0.0556730034<br />assets: ABEV3.SA","Data: 2022-07-31<br />value:  0.1141792208<br />assets: ABEV3.SA","Data: 2022-08-31<br />value:  0.0227729140<br />assets: ABEV3.SA","Data: 2022-09-30<br />value:  0.0176816967<br />assets: ABEV3.SA","Data: 2022-10-31<br />value:  0.0296010370<br />assets: ABEV3.SA","Data: 2022-11-30<br />value: -0.0049999983<br />assets: ABEV3.SA","Data: 2022-12-31<br />value: -0.0398834087<br />assets: ABEV3.SA","Data: 2023-01-31<br />value: -0.0592287113<br />assets: ABEV3.SA","Data: 2023-02-28<br />value: -0.0197657252<br />assets: ABEV3.SA","Data: 2023-03-31<br />value:  0.0702016249<br />assets: ABEV3.SA","Data: 2023-04-30<br />value: -0.0118632077<br />assets: ABEV3.SA","Data: 2023-05-31<br />value:  0.0176553386<br />assets: ABEV3.SA","Data: 2023-06-30<br />value:  0.0693962811<br />assets: ABEV3.SA","Data: 2023-07-31<br />value: -0.0356911559<br />assets: ABEV3.SA","Data: 2023-08-31<br />value: -0.0686405541<br />assets: ABEV3.SA","Data: 2023-09-30<br />value: -0.0527457041<br />assets: ABEV3.SA","Data: 2023-10-31<br />value: -0.0190694581<br />assets: ABEV3.SA","Data: 2023-11-30<br />value:  0.0645412637<br />assets: ABEV3.SA","Data: 2023-12-31<br />value:  0.0553443890<br />assets: ABEV3.SA","Data: 2024-01-31<br />value: -0.0473415616<br />assets: ABEV3.SA","Data: 2024-02-29<br />value: -0.0382262999<br />assets: ABEV3.SA","Data: 2024-03-31<br />value: -0.0071542252<br />assets: ABEV3.SA","Data: 2024-04-30<br />value: -0.0272217901<br />assets: ABEV3.SA","Data: 2024-05-31<br />value: -0.0518517844<br />assets: ABEV3.SA"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(163,165,0,1)","dash":"solid"},"hoveron":"points","name":"ABEV3.SA","legendgroup":"ABEV3.SA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.25008437587888188,-0.6050855135150075,-0.0085469871823993238,-0.17931034218164077,0.4082633743976507,0.0099452436360381036,0.093549959059150201,0.097703744517982694,-0.075061525295331943,0.68603111947243156,0.033666458808143007,0.026463128135295388,0.0064451740344508845,-0.067733992693445044,0.017173092525309519,0.11688311688311681,0.020697660224382242,-0.11369327712832988,-0.030077170636207184,-0.034985415076577597,-0.31694586807307912,-0.059911605475953977,0.041916231170336271,0.19909681250418898,-0.13420055774767525,-0.054171640555072398,-0.081521770765879409,-0.084660844840005356,-0.38438589066634088,-0.052504084506944659,0.4057971367980413,-0.10733775188944916,0.09578796658693256,-0.23868565580337164,-0.10342015730500953,0.076294290202135739,-0.39831224599871262,0.68723696211532181,-0.097256866356137173,0.55156546170878951,0.29732938370680584,-0.19030190902383537,-0.18135598042133649,-0.0006901469316630271,-0.1104972015453739,0.31133534468773427,-0.05210178760017814,-0.16302314634844006,-0.097761156957858586,0.078577319873878393,-0.25230061130962667,-0.048205155592698334],"text":["Data: 2020-02-29<br />value: -0.2500843759<br />assets: AZUL4.SA","Data: 2020-03-31<br />value: -0.6050855135<br />assets: AZUL4.SA","Data: 2020-04-30<br />value: -0.0085469872<br />assets: AZUL4.SA","Data: 2020-05-31<br />value: -0.1793103422<br />assets: AZUL4.SA","Data: 2020-06-30<br />value:  0.4082633744<br />assets: AZUL4.SA","Data: 2020-07-31<br />value:  0.0099452436<br />assets: AZUL4.SA","Data: 2020-08-31<br />value:  0.0935499591<br />assets: AZUL4.SA","Data: 2020-09-30<br />value:  0.0977037445<br />assets: AZUL4.SA","Data: 2020-10-31<br />value: -0.0750615253<br />assets: AZUL4.SA","Data: 2020-11-30<br />value:  0.6860311195<br />assets: AZUL4.SA","Data: 2020-12-31<br />value:  0.0336664588<br />assets: AZUL4.SA","Data: 2021-01-31<br />value:  0.0264631281<br />assets: AZUL4.SA","Data: 2021-02-28<br />value:  0.0064451740<br />assets: AZUL4.SA","Data: 2021-03-31<br />value: -0.0677339927<br />assets: AZUL4.SA","Data: 2021-04-30<br />value:  0.0171730925<br />assets: AZUL4.SA","Data: 2021-05-31<br />value:  0.1168831169<br />assets: AZUL4.SA","Data: 2021-06-30<br />value:  0.0206976602<br />assets: AZUL4.SA","Data: 2021-07-31<br />value: -0.1136932771<br />assets: AZUL4.SA","Data: 2021-08-31<br />value: -0.0300771706<br />assets: AZUL4.SA","Data: 2021-09-30<br />value: -0.0349854151<br />assets: AZUL4.SA","Data: 2021-10-31<br />value: -0.3169458681<br />assets: AZUL4.SA","Data: 2021-11-30<br />value: -0.0599116055<br />assets: AZUL4.SA","Data: 2021-12-31<br />value:  0.0419162312<br />assets: AZUL4.SA","Data: 2022-01-31<br />value:  0.1990968125<br />assets: AZUL4.SA","Data: 2022-02-28<br />value: -0.1342005577<br />assets: AZUL4.SA","Data: 2022-03-31<br />value: -0.0541716406<br />assets: AZUL4.SA","Data: 2022-04-30<br />value: -0.0815217708<br />assets: AZUL4.SA","Data: 2022-05-31<br />value: -0.0846608448<br />assets: AZUL4.SA","Data: 2022-06-30<br />value: -0.3843858907<br />assets: AZUL4.SA","Data: 2022-07-31<br />value: -0.0525040845<br />assets: AZUL4.SA","Data: 2022-08-31<br />value:  0.4057971368<br />assets: AZUL4.SA","Data: 2022-09-30<br />value: -0.1073377519<br />assets: AZUL4.SA","Data: 2022-10-31<br />value:  0.0957879666<br />assets: AZUL4.SA","Data: 2022-11-30<br />value: -0.2386856558<br />assets: AZUL4.SA","Data: 2022-12-31<br />value: -0.1034201573<br />assets: AZUL4.SA","Data: 2023-01-31<br />value:  0.0762942902<br />assets: AZUL4.SA","Data: 2023-02-28<br />value: -0.3983122460<br />assets: AZUL4.SA","Data: 2023-03-31<br />value:  0.6872369621<br />assets: AZUL4.SA","Data: 2023-04-30<br />value: -0.0972568664<br />assets: AZUL4.SA","Data: 2023-05-31<br />value:  0.5515654617<br />assets: AZUL4.SA","Data: 2023-06-30<br />value:  0.2973293837<br />assets: AZUL4.SA","Data: 2023-07-31<br />value: -0.1903019090<br />assets: AZUL4.SA","Data: 2023-08-31<br />value: -0.1813559804<br />assets: AZUL4.SA","Data: 2023-09-30<br />value: -0.0006901469<br />assets: AZUL4.SA","Data: 2023-10-31<br />value: -0.1104972015<br />assets: AZUL4.SA","Data: 2023-11-30<br />value:  0.3113353447<br />assets: AZUL4.SA","Data: 2023-12-31<br />value: -0.0521017876<br />assets: AZUL4.SA","Data: 2024-01-31<br />value: -0.1630231463<br />assets: AZUL4.SA","Data: 2024-02-29<br />value: -0.0977611570<br />assets: AZUL4.SA","Data: 2024-03-31<br />value:  0.0785773199<br />assets: AZUL4.SA","Data: 2024-04-30<br />value: -0.2523006113<br />assets: AZUL4.SA","Data: 2024-05-31<br />value: -0.0482051556<br />assets: AZUL4.SA"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,191,125,1)","dash":"solid"},"hoveron":"points","name":"AZUL4.SA","legendgroup":"AZUL4.SA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.10931449856437625,-0.4479085721099092,0.29020733863137704,0.12687007123390304,0.059488555394013654,0.030183285685183137,-0.013964036630943366,-0.10415719243336863,-0.034166299419922774,0.31467773963937207,0.13815283460151395,-0.058221457774338514,-0.16672917111297247,0.083633064878801955,0.013068263979386208,0.13759531493814725,0.095273699281001489,-0.08562681653099069,0.0705845613916809,0.0014707959624831179,-0.0029374464687192958,0.083977703395811343,0.085953215688118867,0.13708253527456948,0.051004597642328342,-0.016176396511714874,-0.0096800786901946045,0.10628061063874639,-0.070858258527423224,0.22269968916671878,0.19239201534740347,-0.10322001946802462,0.0003356277246571171,-0.043190369413647178,-0.08102040645985964,0.064081683361818964,-0.031837329613443655,-0.070919146803114619,0.13847379105367863,0.10210968178149504,0.20458485036109297,0.053504861132755321,0.065815210427760062,0.08453339089908618,0.0028868053037820474,0.074189776670868124,0.037037083459861897,0.094522029483841141,-0.01521106224757951,-0.069257509418406027,0.15598474543228202,-0.06240362003983102],"text":["Data: 2020-02-29<br />value: -0.1093144986<br />assets: PETR4.SA","Data: 2020-03-31<br />value: -0.4479085721<br />assets: PETR4.SA","Data: 2020-04-30<br />value:  0.2902073386<br />assets: PETR4.SA","Data: 2020-05-31<br />value:  0.1268700712<br />assets: PETR4.SA","Data: 2020-06-30<br />value:  0.0594885554<br />assets: PETR4.SA","Data: 2020-07-31<br />value:  0.0301832857<br />assets: PETR4.SA","Data: 2020-08-31<br />value: -0.0139640366<br />assets: PETR4.SA","Data: 2020-09-30<br />value: -0.1041571924<br />assets: PETR4.SA","Data: 2020-10-31<br />value: -0.0341662994<br />assets: PETR4.SA","Data: 2020-11-30<br />value:  0.3146777396<br />assets: PETR4.SA","Data: 2020-12-31<br />value:  0.1381528346<br />assets: PETR4.SA","Data: 2021-01-31<br />value: -0.0582214578<br />assets: PETR4.SA","Data: 2021-02-28<br />value: -0.1667291711<br />assets: PETR4.SA","Data: 2021-03-31<br />value:  0.0836330649<br />assets: PETR4.SA","Data: 2021-04-30<br />value:  0.0130682640<br />assets: PETR4.SA","Data: 2021-05-31<br />value:  0.1375953149<br />assets: PETR4.SA","Data: 2021-06-30<br />value:  0.0952736993<br />assets: PETR4.SA","Data: 2021-07-31<br />value: -0.0856268165<br />assets: PETR4.SA","Data: 2021-08-31<br />value:  0.0705845614<br />assets: PETR4.SA","Data: 2021-09-30<br />value:  0.0014707960<br />assets: PETR4.SA","Data: 2021-10-31<br />value: -0.0029374465<br />assets: PETR4.SA","Data: 2021-11-30<br />value:  0.0839777034<br />assets: PETR4.SA","Data: 2021-12-31<br />value:  0.0859532157<br />assets: PETR4.SA","Data: 2022-01-31<br />value:  0.1370825353<br />assets: PETR4.SA","Data: 2022-02-28<br />value:  0.0510045976<br />assets: PETR4.SA","Data: 2022-03-31<br />value: -0.0161763965<br />assets: PETR4.SA","Data: 2022-04-30<br />value: -0.0096800787<br />assets: PETR4.SA","Data: 2022-05-31<br />value:  0.1062806106<br />assets: PETR4.SA","Data: 2022-06-30<br />value: -0.0708582585<br />assets: PETR4.SA","Data: 2022-07-31<br />value:  0.2226996892<br />assets: PETR4.SA","Data: 2022-08-31<br />value:  0.1923920153<br />assets: PETR4.SA","Data: 2022-09-30<br />value: -0.1032200195<br />assets: PETR4.SA","Data: 2022-10-31<br />value:  0.0003356277<br />assets: PETR4.SA","Data: 2022-11-30<br />value: -0.0431903694<br />assets: PETR4.SA","Data: 2022-12-31<br />value: -0.0810204065<br />assets: PETR4.SA","Data: 2023-01-31<br />value:  0.0640816834<br />assets: PETR4.SA","Data: 2023-02-28<br />value: -0.0318373296<br />assets: PETR4.SA","Data: 2023-03-31<br />value: -0.0709191468<br />assets: PETR4.SA","Data: 2023-04-30<br />value:  0.1384737911<br />assets: PETR4.SA","Data: 2023-05-31<br />value:  0.1021096818<br />assets: PETR4.SA","Data: 2023-06-30<br />value:  0.2045848504<br />assets: PETR4.SA","Data: 2023-07-31<br />value:  0.0535048611<br />assets: PETR4.SA","Data: 2023-08-31<br />value:  0.0658152104<br />assets: PETR4.SA","Data: 2023-09-30<br />value:  0.0845333909<br />assets: PETR4.SA","Data: 2023-10-31<br />value:  0.0028868053<br />assets: PETR4.SA","Data: 2023-11-30<br />value:  0.0741897767<br />assets: PETR4.SA","Data: 2023-12-31<br />value:  0.0370370835<br />assets: PETR4.SA","Data: 2024-01-31<br />value:  0.0945220295<br />assets: PETR4.SA","Data: 2024-02-29<br />value: -0.0152110622<br />assets: PETR4.SA","Data: 2024-03-31<br />value: -0.0692575094<br />assets: PETR4.SA","Data: 2024-04-30<br />value:  0.1559847454<br />assets: PETR4.SA","Data: 2024-05-31<br />value: -0.0624036200<br />assets: PETR4.SA"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,176,246,1)","dash":"solid"},"hoveron":"points","name":"PETR4.SA","legendgroup":"PETR4.SA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.11855984322852497,-0.024599321329377477,0.037945484103974803,0.18145315357784519,0.055094322116069794,0.085658192074869355,-0.016966045315226275,0.031852518803801022,0.024361192930950626,0.2881916658719117,0.12115376129516231,0.0057175493154246748,0.074701687337693334,0.083194371824813818,0.11278957386799005,0.05283435710146045,0.0061549073061013537,-0.039646823699297729,-0.092680906640426275,-0.1471464986166986,-0.060729366167751153,-0.023180955608773868,0.11451027454921214,0.037326871761524494,0.14109072340355144,0.075806072054846796,-0.12876557813362066,0.035058044371496955,-0.11193596497371217,-0.088949718695408464,-0.02733947743523979,0.11689929540647359,-0.06815661661056216,0.27677630875574399,0.040514542507896101,0.063343847654005803,-0.097238360441057492,-0.038288335044610267,-0.09826873655632451,-0.1186463547024964,0.0064252799501791635,0.076923151420488223,-0.030604701260918632,0.038414302820733104,0.021012030867975318,0.080915446859112894,0.045362132370995845,-0.1222797113253854,-0.01136373528054857,-0.051335340418137254,0.040440555818244128,-0.00079000215416780151],"text":["Data: 2020-02-29<br />value: -0.1185598432<br />assets: VALE3.SA","Data: 2020-03-31<br />value: -0.0245993213<br />assets: VALE3.SA","Data: 2020-04-30<br />value:  0.0379454841<br />assets: VALE3.SA","Data: 2020-05-31<br />value:  0.1814531536<br />assets: VALE3.SA","Data: 2020-06-30<br />value:  0.0550943221<br />assets: VALE3.SA","Data: 2020-07-31<br />value:  0.0856581921<br />assets: VALE3.SA","Data: 2020-08-31<br />value: -0.0169660453<br />assets: VALE3.SA","Data: 2020-09-30<br />value:  0.0318525188<br />assets: VALE3.SA","Data: 2020-10-31<br />value:  0.0243611929<br />assets: VALE3.SA","Data: 2020-11-30<br />value:  0.2881916659<br />assets: VALE3.SA","Data: 2020-12-31<br />value:  0.1211537613<br />assets: VALE3.SA","Data: 2021-01-31<br />value:  0.0057175493<br />assets: VALE3.SA","Data: 2021-02-28<br />value:  0.0747016873<br />assets: VALE3.SA","Data: 2021-03-31<br />value:  0.0831943718<br />assets: VALE3.SA","Data: 2021-04-30<br />value:  0.1127895739<br />assets: VALE3.SA","Data: 2021-05-31<br />value:  0.0528343571<br />assets: VALE3.SA","Data: 2021-06-30<br />value:  0.0061549073<br />assets: VALE3.SA","Data: 2021-07-31<br />value: -0.0396468237<br />assets: VALE3.SA","Data: 2021-08-31<br />value: -0.0926809066<br />assets: VALE3.SA","Data: 2021-09-30<br />value: -0.1471464986<br />assets: VALE3.SA","Data: 2021-10-31<br />value: -0.0607293662<br />assets: VALE3.SA","Data: 2021-11-30<br />value: -0.0231809556<br />assets: VALE3.SA","Data: 2021-12-31<br />value:  0.1145102745<br />assets: VALE3.SA","Data: 2022-01-31<br />value:  0.0373268718<br />assets: VALE3.SA","Data: 2022-02-28<br />value:  0.1410907234<br />assets: VALE3.SA","Data: 2022-03-31<br />value:  0.0758060721<br />assets: VALE3.SA","Data: 2022-04-30<br />value: -0.1287655781<br />assets: VALE3.SA","Data: 2022-05-31<br />value:  0.0350580444<br />assets: VALE3.SA","Data: 2022-06-30<br />value: -0.1119359650<br />assets: VALE3.SA","Data: 2022-07-31<br />value: -0.0889497187<br />assets: VALE3.SA","Data: 2022-08-31<br />value: -0.0273394774<br />assets: VALE3.SA","Data: 2022-09-30<br />value:  0.1168992954<br />assets: VALE3.SA","Data: 2022-10-31<br />value: -0.0681566166<br />assets: VALE3.SA","Data: 2022-11-30<br />value:  0.2767763088<br />assets: VALE3.SA","Data: 2022-12-31<br />value:  0.0405145425<br />assets: VALE3.SA","Data: 2023-01-31<br />value:  0.0633438477<br />assets: VALE3.SA","Data: 2023-02-28<br />value: -0.0972383604<br />assets: VALE3.SA","Data: 2023-03-31<br />value: -0.0382883350<br />assets: VALE3.SA","Data: 2023-04-30<br />value: -0.0982687366<br />assets: VALE3.SA","Data: 2023-05-31<br />value: -0.1186463547<br />assets: VALE3.SA","Data: 2023-06-30<br />value:  0.0064252800<br />assets: VALE3.SA","Data: 2023-07-31<br />value:  0.0769231514<br />assets: VALE3.SA","Data: 2023-08-31<br />value: -0.0306047013<br />assets: VALE3.SA","Data: 2023-09-30<br />value:  0.0384143028<br />assets: VALE3.SA","Data: 2023-10-31<br />value:  0.0210120309<br />assets: VALE3.SA","Data: 2023-11-30<br />value:  0.0809154469<br />assets: VALE3.SA","Data: 2023-12-31<br />value:  0.0453621324<br />assets: VALE3.SA","Data: 2024-01-31<br />value: -0.1222797113<br />assets: VALE3.SA","Data: 2024-02-29<br />value: -0.0113637353<br />assets: VALE3.SA","Data: 2024-03-31<br />value: -0.0513353404<br />assets: VALE3.SA","Data: 2024-04-30<br />value:  0.0404405558<br />assets: VALE3.SA","Data: 2024-05-31<br />value: -0.0007900022<br />assets: VALE3.SA"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(231,107,243,1)","dash":"solid"},"hoveron":"points","name":"VALE3.SA","legendgroup":"VALE3.SA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":48.146118721461193,"r":7.3059360730593621,"b":44.56621004566211,"l":48.949771689497723},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Retornos de 2019 a 2024","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18243.349999999999,19951.650000000001],"tickmode":"array","ticktext":["2020","2021","2022","2023","2024"],"tickvals":[18262,18628,18993,19358,19723],"categoryorder":"array","categoryarray":["2020","2021","2022","2023","2024"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Data","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.66970163729652399,0.7518530858968383],"tickmode":"array","ticktext":["-0.4","0.0","0.4"],"tickvals":[-0.40000000000000002,0,0.40000000000000024],"categoryorder":"array","categoryarray":["-0.4","0.0","0.4"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"value","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"assets","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"33f43f4bd5c9":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"33f43f4bd5c9","visdat":{"33f43f4bd5c9":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="não-sabe-usar-o-ggplot2" class="slide level2">
+<h2>Não sabe usar o ggplot2?</h2>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Esquisse</a></li><li><a href="#tabset-6-2">Box Plot dos retornos</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>esquisse<span class="sc">::</span><span class="fu">esquisser</span>(asset_returns_tbl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="apresentacao_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-6-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>pbp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(asset_returns_tbl) <span class="sc">+</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> value, <span class="at">fill =</span> assets) <span class="sc">+</span></span>
+<span id="cb16-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb16-4"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"OrRd"</span>, <span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-6"><a></a>    <span class="at">x =</span> <span class="st">"Ativos"</span>,</span>
+<span id="cb16-7"><a></a>    <span class="at">y =</span> <span class="st">"Retornos"</span>,</span>
+<span id="cb16-8"><a></a>    <span class="at">title =</span> <span class="st">"Box Plot - Retorno dos ativos"</span>,</span>
+<span id="cb16-9"><a></a>    <span class="at">fill =</span> <span class="st">"Ativos"</span></span>
+<span id="cb16-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb16-11"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb16-12"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb16-13"><a></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>L,</span>
+<span id="cb16-14"><a></a>    <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb16-15"><a></a>    <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb16-16"><a></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb16-17"><a></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb16-18"><a></a>  )</span>
+<span id="cb16-19"><a></a></span>
+<span id="cb16-20"><a></a>pbp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="retorno-da-carteira." class="slide level2">
+<h2>Retorno da carteira.</h2>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Pesos dos ativos</a></li><li><a href="#tabset-7-2">Retorno da carteira</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<p>O somatório dos pesos deve ser igual a 1.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>O cálculo do retorno de uma carteira depende do retorno de cada ativo e de seu peso na carteira e pode ser obtido pela média ponderada:</p>
+<p><span class="math display">\[ \bar{k}=\sum_{i=i}^n{w_i*k_i}\]</span></p>
+</div>
+<div id="tabset-7-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>portfolio_returns_xts<span class="ot">&lt;-</span>PerformanceAnalytics<span class="sc">::</span><span class="fu">Return.portfolio</span>(asset_returns_xts,</span>
+<span id="cb18-2"><a></a>                 <span class="at">weights =</span> w,</span>
+<span id="cb18-3"><a></a>                 <span class="at">rebalance_on =</span> <span class="st">"months"</span>,</span>
+<span id="cb18-4"><a></a>                 <span class="at">type=</span> <span class="st">"discrete"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-5"><a></a>  <span class="st">`</span><span class="at">colnames&lt;-</span><span class="st">`</span>(<span class="st">"CARTEIRA"</span>)</span>
+<span id="cb18-6"><a></a><span class="fu">head</span>(portfolio_returns_xts,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              CARTEIRA
+2020-02-29 -0.14953672
+2020-03-31 -0.31136597
+2020-04-30  0.07469357</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercícios-1" class="slide level2">
+<h2>Exercícios</h2>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Exercício 2</a></li><li><a href="#tabset-8-2">“”</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<p></p><div class="countdown" id="timer_2f3a33ba" data-update-every="1" tabindex="0" style="right:0;bottom:0;"> <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div> <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code> </div><p></p>
+<p>Determinado agente possui uma carteira formada pelas seguintes posições: R$25000,00 no ativo A e R$50000,00 no ativo B.</p>
+<p>Quais os pesos de sua carteira?</p>
+<p>Se para a manutenção destas posições o agente tivesse emprestado R$40000,00 ao Banco X, qual seria a estrutura dos pesos de sua carteira?</p>
+</div>
+<div id="tabset-8-2">
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># Valores das posições</span></span>
+<span id="cb20-2"><a></a>ativo_A <span class="ot">&lt;-</span> <span class="dv">25000</span></span>
+<span id="cb20-3"><a></a>ativo_B <span class="ot">&lt;-</span> <span class="dv">50000</span></span>
+<span id="cb20-4"><a></a></span>
+<span id="cb20-5"><a></a><span class="co"># Valor total da carteira</span></span>
+<span id="cb20-6"><a></a>total <span class="ot">&lt;-</span> ativo_A <span class="sc">+</span> ativo_B</span>
+<span id="cb20-7"><a></a></span>
+<span id="cb20-8"><a></a><span class="co"># Pesos</span></span>
+<span id="cb20-9"><a></a>peso_A <span class="ot">&lt;-</span> ativo_A <span class="sc">/</span> total</span>
+<span id="cb20-10"><a></a>peso_B <span class="ot">&lt;-</span> ativo_B <span class="sc">/</span> total</span>
+<span id="cb20-11"><a></a></span>
+<span id="cb20-12"><a></a>peso_A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3333333</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>peso_B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6666667</code></pre>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>emprestimo <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">40000</span></span>
+<span id="cb24-2"><a></a></span>
+<span id="cb24-3"><a></a>total <span class="ot">&lt;-</span> total <span class="sc">+</span> emprestimo</span>
+<span id="cb24-4"><a></a></span>
+<span id="cb24-5"><a></a>peso_A <span class="ot">&lt;-</span> ativo_A <span class="sc">/</span> total</span>
+<span id="cb24-6"><a></a>peso_B <span class="ot">&lt;-</span> ativo_B <span class="sc">/</span> total</span>
+<span id="cb24-7"><a></a>emprestimo <span class="ot">&lt;-</span> emprestimo <span class="sc">/</span> total</span>
+<span id="cb24-8"><a></a></span>
+<span id="cb24-9"><a></a>peso_A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7142857</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>peso_B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.428571</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>emprestimo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.142857</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">sum</span>(peso_A, peso_B, emprestimo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualizar-o-retorno-da-carteira." class="slide level2">
+<h2>Visualizar o retorno da carteira.</h2>
+<div class="panel-tabset">
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Retorno da carteira</a></li><li><a href="#tabset-9-2">Códigos</a></li><li><a href="#tabset-9-3">Ativos vs Carteira</a></li><li><a href="#tabset-9-4">Mercado vs Carteira</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">plot</span>(portfolio_returns_xts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="apresentacao_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-9-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>comparacao <span class="ot">&lt;-</span> <span class="fu">cbind</span>(asset_returns_xts, portfolio_returns_xts) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a></a>  <span class="fu">tk_tbl</span>(<span class="at">rename_index =</span> <span class="st">"Data"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-3"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Data, <span class="at">names_to =</span> <span class="st">"assets"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
+<span id="cb33-4"><a></a></span>
+<span id="cb33-5"><a></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comparacao, <span class="fu">aes</span>(<span class="at">x =</span> Data, <span class="at">y =</span> value, <span class="at">colour =</span> assets)) <span class="sc">+</span></span>
+<span id="cb33-6"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb33-7"><a></a>  <span class="fu">scale_color_hue</span>(<span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb33-8"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb33-9"><a></a>    <span class="at">x =</span> <span class="st">"Data"</span>,</span>
+<span id="cb33-10"><a></a>    <span class="at">y =</span> <span class="st">"Retornos"</span>,</span>
+<span id="cb33-11"><a></a>    <span class="at">title =</span> <span class="st">"Retorno dos ativos vs carteira"</span>,</span>
+<span id="cb33-12"><a></a>    <span class="at">fill =</span> <span class="st">"Ativos"</span></span>
+<span id="cb33-13"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb33-14"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb33-15"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb33-16"><a></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>L, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb33-17"><a></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb33-18"><a></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb33-19"><a></a>  )</span>
+<span id="cb33-20"><a></a></span>
+<span id="cb33-21"><a></a>comp_mkt <span class="ot">&lt;-</span> plotly<span class="sc">::</span><span class="fu">ggplotly</span>(comparacao <span class="sc">%&gt;%</span></span>
+<span id="cb33-22"><a></a> <span class="fu">filter</span>(assets <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"X.BVSP"</span>, <span class="st">"CARTEIRA"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb33-23"><a></a> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb33-24"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> Data, <span class="at">y =</span> value, <span class="at">colour =</span> assets) <span class="sc">+</span></span>
+<span id="cb33-25"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb33-26"><a></a>  <span class="fu">scale_color_hue</span>(<span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb33-27"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Carteira VS Índice do mercado - 2020 - 2023"</span>)<span class="sc">+</span></span>
+<span id="cb33-28"><a></a>  <span class="fu">theme_minimal</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-9-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">ggplotly</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-64a9eb628e970fe15b74" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-64a9eb628e970fe15b74">{"x":{"data":[{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.18543413973976919,-0.18019254726230494,-0.048657842566982024,0.10052913327598034,0.13301294581573542,-0.016973293359942465,-0.11438840560070096,0.018683987113946143,-0.028708013463964899,0.14778307725394568,0.14905567241911788,-0.029903349563300319,-0.072137550308453924,0.090584806653083438,-0.022890772887165567,0.20147258172811688,-0.049025100467912641,-0.025190414274304462,0.027644272154725202,-0.10526314100298984,0.11045744591252071,-0.054738060880953565,-0.0023791687309798748,-0.029182894571881279,0.015363994424024474,0.013157925828893857,-0.057142839503556031,-0.022727328946807401,-0.055673003442786029,0.11417922078966392,0.022772914038348802,0.017681696668049751,0.029601037037631173,-0.004999998349377921,-0.039883408683539456,-0.059228711254313504,-0.019765725186981387,0.070201624882447744,-0.011863207732153436,0.017655338553210775,0.069396281115909009,-0.03569115594294181,-0.06864055413907566,-0.052745704085374268,-0.019069458087769386,0.064541263670852,0.055344388992095928,-0.047341561558741474,-0.038226299917158646,-0.0071542252093572678,-0.027221790137587187,-0.051851784407118351],"text":["Data: 2020-02-29<br />value: -0.1854341397<br />assets: ABEV3.SA","Data: 2020-03-31<br />value: -0.1801925473<br />assets: ABEV3.SA","Data: 2020-04-30<br />value: -0.0486578426<br />assets: ABEV3.SA","Data: 2020-05-31<br />value:  0.1005291333<br />assets: ABEV3.SA","Data: 2020-06-30<br />value:  0.1330129458<br />assets: ABEV3.SA","Data: 2020-07-31<br />value: -0.0169732934<br />assets: ABEV3.SA","Data: 2020-08-31<br />value: -0.1143884056<br />assets: ABEV3.SA","Data: 2020-09-30<br />value:  0.0186839871<br />assets: ABEV3.SA","Data: 2020-10-31<br />value: -0.0287080135<br />assets: ABEV3.SA","Data: 2020-11-30<br />value:  0.1477830773<br />assets: ABEV3.SA","Data: 2020-12-31<br />value:  0.1490556724<br />assets: ABEV3.SA","Data: 2021-01-31<br />value: -0.0299033496<br />assets: ABEV3.SA","Data: 2021-02-28<br />value: -0.0721375503<br />assets: ABEV3.SA","Data: 2021-03-31<br />value:  0.0905848067<br />assets: ABEV3.SA","Data: 2021-04-30<br />value: -0.0228907729<br />assets: ABEV3.SA","Data: 2021-05-31<br />value:  0.2014725817<br />assets: ABEV3.SA","Data: 2021-06-30<br />value: -0.0490251005<br />assets: ABEV3.SA","Data: 2021-07-31<br />value: -0.0251904143<br />assets: ABEV3.SA","Data: 2021-08-31<br />value:  0.0276442722<br />assets: ABEV3.SA","Data: 2021-09-30<br />value: -0.1052631410<br />assets: ABEV3.SA","Data: 2021-10-31<br />value:  0.1104574459<br />assets: ABEV3.SA","Data: 2021-11-30<br />value: -0.0547380609<br />assets: ABEV3.SA","Data: 2021-12-31<br />value: -0.0023791687<br />assets: ABEV3.SA","Data: 2022-01-31<br />value: -0.0291828946<br />assets: ABEV3.SA","Data: 2022-02-28<br />value:  0.0153639944<br />assets: ABEV3.SA","Data: 2022-03-31<br />value:  0.0131579258<br />assets: ABEV3.SA","Data: 2022-04-30<br />value: -0.0571428395<br />assets: ABEV3.SA","Data: 2022-05-31<br />value: -0.0227273289<br />assets: ABEV3.SA","Data: 2022-06-30<br />value: -0.0556730034<br />assets: ABEV3.SA","Data: 2022-07-31<br />value:  0.1141792208<br />assets: ABEV3.SA","Data: 2022-08-31<br />value:  0.0227729140<br />assets: ABEV3.SA","Data: 2022-09-30<br />value:  0.0176816967<br />assets: ABEV3.SA","Data: 2022-10-31<br />value:  0.0296010370<br />assets: ABEV3.SA","Data: 2022-11-30<br />value: -0.0049999983<br />assets: ABEV3.SA","Data: 2022-12-31<br />value: -0.0398834087<br />assets: ABEV3.SA","Data: 2023-01-31<br />value: -0.0592287113<br />assets: ABEV3.SA","Data: 2023-02-28<br />value: -0.0197657252<br />assets: ABEV3.SA","Data: 2023-03-31<br />value:  0.0702016249<br />assets: ABEV3.SA","Data: 2023-04-30<br />value: -0.0118632077<br />assets: ABEV3.SA","Data: 2023-05-31<br />value:  0.0176553386<br />assets: ABEV3.SA","Data: 2023-06-30<br />value:  0.0693962811<br />assets: ABEV3.SA","Data: 2023-07-31<br />value: -0.0356911559<br />assets: ABEV3.SA","Data: 2023-08-31<br />value: -0.0686405541<br />assets: ABEV3.SA","Data: 2023-09-30<br />value: -0.0527457041<br />assets: ABEV3.SA","Data: 2023-10-31<br />value: -0.0190694581<br />assets: ABEV3.SA","Data: 2023-11-30<br />value:  0.0645412637<br />assets: ABEV3.SA","Data: 2023-12-31<br />value:  0.0553443890<br />assets: ABEV3.SA","Data: 2024-01-31<br />value: -0.0473415616<br />assets: ABEV3.SA","Data: 2024-02-29<br />value: -0.0382262999<br />assets: ABEV3.SA","Data: 2024-03-31<br />value: -0.0071542252<br />assets: ABEV3.SA","Data: 2024-04-30<br />value: -0.0272217901<br />assets: ABEV3.SA","Data: 2024-05-31<br />value: -0.0518517844<br />assets: ABEV3.SA"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"ABEV3.SA","legendgroup":"ABEV3.SA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.25008437587888188,-0.6050855135150075,-0.0085469871823993238,-0.17931034218164077,0.4082633743976507,0.0099452436360381036,0.093549959059150201,0.097703744517982694,-0.075061525295331943,0.68603111947243156,0.033666458808143007,0.026463128135295388,0.0064451740344508845,-0.067733992693445044,0.017173092525309519,0.11688311688311681,0.020697660224382242,-0.11369327712832988,-0.030077170636207184,-0.034985415076577597,-0.31694586807307912,-0.059911605475953977,0.041916231170336271,0.19909681250418898,-0.13420055774767525,-0.054171640555072398,-0.081521770765879409,-0.084660844840005356,-0.38438589066634088,-0.052504084506944659,0.4057971367980413,-0.10733775188944916,0.09578796658693256,-0.23868565580337164,-0.10342015730500953,0.076294290202135739,-0.39831224599871262,0.68723696211532181,-0.097256866356137173,0.55156546170878951,0.29732938370680584,-0.19030190902383537,-0.18135598042133649,-0.0006901469316630271,-0.1104972015453739,0.31133534468773427,-0.05210178760017814,-0.16302314634844006,-0.097761156957858586,0.078577319873878393,-0.25230061130962667,-0.048205155592698334],"text":["Data: 2020-02-29<br />value: -0.2500843759<br />assets: AZUL4.SA","Data: 2020-03-31<br />value: -0.6050855135<br />assets: AZUL4.SA","Data: 2020-04-30<br />value: -0.0085469872<br />assets: AZUL4.SA","Data: 2020-05-31<br />value: -0.1793103422<br />assets: AZUL4.SA","Data: 2020-06-30<br />value:  0.4082633744<br />assets: AZUL4.SA","Data: 2020-07-31<br />value:  0.0099452436<br />assets: AZUL4.SA","Data: 2020-08-31<br />value:  0.0935499591<br />assets: AZUL4.SA","Data: 2020-09-30<br />value:  0.0977037445<br />assets: AZUL4.SA","Data: 2020-10-31<br />value: -0.0750615253<br />assets: AZUL4.SA","Data: 2020-11-30<br />value:  0.6860311195<br />assets: AZUL4.SA","Data: 2020-12-31<br />value:  0.0336664588<br />assets: AZUL4.SA","Data: 2021-01-31<br />value:  0.0264631281<br />assets: AZUL4.SA","Data: 2021-02-28<br />value:  0.0064451740<br />assets: AZUL4.SA","Data: 2021-03-31<br />value: -0.0677339927<br />assets: AZUL4.SA","Data: 2021-04-30<br />value:  0.0171730925<br />assets: AZUL4.SA","Data: 2021-05-31<br />value:  0.1168831169<br />assets: AZUL4.SA","Data: 2021-06-30<br />value:  0.0206976602<br />assets: AZUL4.SA","Data: 2021-07-31<br />value: -0.1136932771<br />assets: AZUL4.SA","Data: 2021-08-31<br />value: -0.0300771706<br />assets: AZUL4.SA","Data: 2021-09-30<br />value: -0.0349854151<br />assets: AZUL4.SA","Data: 2021-10-31<br />value: -0.3169458681<br />assets: AZUL4.SA","Data: 2021-11-30<br />value: -0.0599116055<br />assets: AZUL4.SA","Data: 2021-12-31<br />value:  0.0419162312<br />assets: AZUL4.SA","Data: 2022-01-31<br />value:  0.1990968125<br />assets: AZUL4.SA","Data: 2022-02-28<br />value: -0.1342005577<br />assets: AZUL4.SA","Data: 2022-03-31<br />value: -0.0541716406<br />assets: AZUL4.SA","Data: 2022-04-30<br />value: -0.0815217708<br />assets: AZUL4.SA","Data: 2022-05-31<br />value: -0.0846608448<br />assets: AZUL4.SA","Data: 2022-06-30<br />value: -0.3843858907<br />assets: AZUL4.SA","Data: 2022-07-31<br />value: -0.0525040845<br />assets: AZUL4.SA","Data: 2022-08-31<br />value:  0.4057971368<br />assets: AZUL4.SA","Data: 2022-09-30<br />value: -0.1073377519<br />assets: AZUL4.SA","Data: 2022-10-31<br />value:  0.0957879666<br />assets: AZUL4.SA","Data: 2022-11-30<br />value: -0.2386856558<br />assets: AZUL4.SA","Data: 2022-12-31<br />value: -0.1034201573<br />assets: AZUL4.SA","Data: 2023-01-31<br />value:  0.0762942902<br />assets: AZUL4.SA","Data: 2023-02-28<br />value: -0.3983122460<br />assets: AZUL4.SA","Data: 2023-03-31<br />value:  0.6872369621<br />assets: AZUL4.SA","Data: 2023-04-30<br />value: -0.0972568664<br />assets: AZUL4.SA","Data: 2023-05-31<br />value:  0.5515654617<br />assets: AZUL4.SA","Data: 2023-06-30<br />value:  0.2973293837<br />assets: AZUL4.SA","Data: 2023-07-31<br />value: -0.1903019090<br />assets: AZUL4.SA","Data: 2023-08-31<br />value: -0.1813559804<br />assets: AZUL4.SA","Data: 2023-09-30<br />value: -0.0006901469<br />assets: AZUL4.SA","Data: 2023-10-31<br />value: -0.1104972015<br />assets: AZUL4.SA","Data: 2023-11-30<br />value:  0.3113353447<br />assets: AZUL4.SA","Data: 2023-12-31<br />value: -0.0521017876<br />assets: AZUL4.SA","Data: 2024-01-31<br />value: -0.1630231463<br />assets: AZUL4.SA","Data: 2024-02-29<br />value: -0.0977611570<br />assets: AZUL4.SA","Data: 2024-03-31<br />value:  0.0785773199<br />assets: AZUL4.SA","Data: 2024-04-30<br />value: -0.2523006113<br />assets: AZUL4.SA","Data: 2024-05-31<br />value: -0.0482051556<br />assets: AZUL4.SA"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(183,159,0,1)","dash":"solid"},"hoveron":"points","name":"AZUL4.SA","legendgroup":"AZUL4.SA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.14953672146341113,-0.31136596863389687,0.074693570111847629,0.063042529830162897,0.14868382425917726,0.038291889444967531,-0.01723920010052904,-0.00077591725661585453,-0.024091206757548833,0.31913167957559763,0.10754100367179364,-0.016719142977366874,-0.041839902427848408,0.049930015561832519,0.027903402315218928,0.11407392779814152,0.01554880016989979,-0.060719354530240466,-0.0098647571293920544,-0.0703216328817865,-0.067507470426908522,-0.013835288402817558,0.053704864496972204,0.08330056585418677,0.015993531805683636,0.015844243585497519,-0.075627221795053323,0.013232678468721337,-0.14757715242614844,0.048467822592915821,0.13105040346676589,-0.014256740223343889,0.022419025669180082,-0.0081404045390414126,-0.041126873631009198,0.035261883142768902,-0.12458064592876339,0.12383293242405458,-0.008777212905054399,0.11801154586041673,0.13355057435886941,-0.012582232327617571,-0.053127530558651381,0.015324497067798148,-0.027003251133318584,0.1312741433698652,0.027894005746900818,-0.057212732970798097,-0.03052735475688928,-0.011250785633691307,-0.020025973986849688,-0.037759543524179651],"text":["Data: 2020-02-29<br />value: -0.1495367215<br />assets: CARTEIRA","Data: 2020-03-31<br />value: -0.3113659686<br />assets: CARTEIRA","Data: 2020-04-30<br />value:  0.0746935701<br />assets: CARTEIRA","Data: 2020-05-31<br />value:  0.0630425298<br />assets: CARTEIRA","Data: 2020-06-30<br />value:  0.1486838243<br />assets: CARTEIRA","Data: 2020-07-31<br />value:  0.0382918894<br />assets: CARTEIRA","Data: 2020-08-31<br />value: -0.0172392001<br />assets: CARTEIRA","Data: 2020-09-30<br />value: -0.0007759173<br />assets: CARTEIRA","Data: 2020-10-31<br />value: -0.0240912068<br />assets: CARTEIRA","Data: 2020-11-30<br />value:  0.3191316796<br />assets: CARTEIRA","Data: 2020-12-31<br />value:  0.1075410037<br />assets: CARTEIRA","Data: 2021-01-31<br />value: -0.0167191430<br />assets: CARTEIRA","Data: 2021-02-28<br />value: -0.0418399024<br />assets: CARTEIRA","Data: 2021-03-31<br />value:  0.0499300156<br />assets: CARTEIRA","Data: 2021-04-30<br />value:  0.0279034023<br />assets: CARTEIRA","Data: 2021-05-31<br />value:  0.1140739278<br />assets: CARTEIRA","Data: 2021-06-30<br />value:  0.0155488002<br />assets: CARTEIRA","Data: 2021-07-31<br />value: -0.0607193545<br />assets: CARTEIRA","Data: 2021-08-31<br />value: -0.0098647571<br />assets: CARTEIRA","Data: 2021-09-30<br />value: -0.0703216329<br />assets: CARTEIRA","Data: 2021-10-31<br />value: -0.0675074704<br />assets: CARTEIRA","Data: 2021-11-30<br />value: -0.0138352884<br />assets: CARTEIRA","Data: 2021-12-31<br />value:  0.0537048645<br />assets: CARTEIRA","Data: 2022-01-31<br />value:  0.0833005659<br />assets: CARTEIRA","Data: 2022-02-28<br />value:  0.0159935318<br />assets: CARTEIRA","Data: 2022-03-31<br />value:  0.0158442436<br />assets: CARTEIRA","Data: 2022-04-30<br />value: -0.0756272218<br />assets: CARTEIRA","Data: 2022-05-31<br />value:  0.0132326785<br />assets: CARTEIRA","Data: 2022-06-30<br />value: -0.1475771524<br />assets: CARTEIRA","Data: 2022-07-31<br />value:  0.0484678226<br />assets: CARTEIRA","Data: 2022-08-31<br />value:  0.1310504035<br />assets: CARTEIRA","Data: 2022-09-30<br />value: -0.0142567402<br />assets: CARTEIRA","Data: 2022-10-31<br />value:  0.0224190257<br />assets: CARTEIRA","Data: 2022-11-30<br />value: -0.0081404045<br />assets: CARTEIRA","Data: 2022-12-31<br />value: -0.0411268736<br />assets: CARTEIRA","Data: 2023-01-31<br />value:  0.0352618831<br />assets: CARTEIRA","Data: 2023-02-28<br />value: -0.1245806459<br />assets: CARTEIRA","Data: 2023-03-31<br />value:  0.1238329324<br />assets: CARTEIRA","Data: 2023-04-30<br />value: -0.0087772129<br />assets: CARTEIRA","Data: 2023-05-31<br />value:  0.1180115459<br />assets: CARTEIRA","Data: 2023-06-30<br />value:  0.1335505744<br />assets: CARTEIRA","Data: 2023-07-31<br />value: -0.0125822323<br />assets: CARTEIRA","Data: 2023-08-31<br />value: -0.0531275306<br />assets: CARTEIRA","Data: 2023-09-30<br />value:  0.0153244971<br />assets: CARTEIRA","Data: 2023-10-31<br />value: -0.0270032511<br />assets: CARTEIRA","Data: 2023-11-30<br />value:  0.1312741434<br />assets: CARTEIRA","Data: 2023-12-31<br />value:  0.0278940057<br />assets: CARTEIRA","Data: 2024-01-31<br />value: -0.0572127330<br />assets: CARTEIRA","Data: 2024-02-29<br />value: -0.0305273548<br />assets: CARTEIRA","Data: 2024-03-31<br />value: -0.0112507856<br />assets: CARTEIRA","Data: 2024-04-30<br />value: -0.0200259740<br />assets: CARTEIRA","Data: 2024-05-31<br />value: -0.0377595435<br />assets: CARTEIRA"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,186,56,1)","dash":"solid"},"hoveron":"points","name":"CARTEIRA","legendgroup":"CARTEIRA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.10931449856437625,-0.4479085721099092,0.29020733863137704,0.12687007123390304,0.059488555394013654,0.030183285685183137,-0.013964036630943366,-0.10415719243336863,-0.034166299419922774,0.31467773963937207,0.13815283460151395,-0.058221457774338514,-0.16672917111297247,0.083633064878801955,0.013068263979386208,0.13759531493814725,0.095273699281001489,-0.08562681653099069,0.0705845613916809,0.0014707959624831179,-0.0029374464687192958,0.083977703395811343,0.085953215688118867,0.13708253527456948,0.051004597642328342,-0.016176396511714874,-0.0096800786901946045,0.10628061063874639,-0.070858258527423224,0.22269968916671878,0.19239201534740347,-0.10322001946802462,0.0003356277246571171,-0.043190369413647178,-0.08102040645985964,0.064081683361818964,-0.031837329613443655,-0.070919146803114619,0.13847379105367863,0.10210968178149504,0.20458485036109297,0.053504861132755321,0.065815210427760062,0.08453339089908618,0.0028868053037820474,0.074189776670868124,0.037037083459861897,0.094522029483841141,-0.01521106224757951,-0.069257509418406027,0.15598474543228202,-0.06240362003983102],"text":["Data: 2020-02-29<br />value: -0.1093144986<br />assets: PETR4.SA","Data: 2020-03-31<br />value: -0.4479085721<br />assets: PETR4.SA","Data: 2020-04-30<br />value:  0.2902073386<br />assets: PETR4.SA","Data: 2020-05-31<br />value:  0.1268700712<br />assets: PETR4.SA","Data: 2020-06-30<br />value:  0.0594885554<br />assets: PETR4.SA","Data: 2020-07-31<br />value:  0.0301832857<br />assets: PETR4.SA","Data: 2020-08-31<br />value: -0.0139640366<br />assets: PETR4.SA","Data: 2020-09-30<br />value: -0.1041571924<br />assets: PETR4.SA","Data: 2020-10-31<br />value: -0.0341662994<br />assets: PETR4.SA","Data: 2020-11-30<br />value:  0.3146777396<br />assets: PETR4.SA","Data: 2020-12-31<br />value:  0.1381528346<br />assets: PETR4.SA","Data: 2021-01-31<br />value: -0.0582214578<br />assets: PETR4.SA","Data: 2021-02-28<br />value: -0.1667291711<br />assets: PETR4.SA","Data: 2021-03-31<br />value:  0.0836330649<br />assets: PETR4.SA","Data: 2021-04-30<br />value:  0.0130682640<br />assets: PETR4.SA","Data: 2021-05-31<br />value:  0.1375953149<br />assets: PETR4.SA","Data: 2021-06-30<br />value:  0.0952736993<br />assets: PETR4.SA","Data: 2021-07-31<br />value: -0.0856268165<br />assets: PETR4.SA","Data: 2021-08-31<br />value:  0.0705845614<br />assets: PETR4.SA","Data: 2021-09-30<br />value:  0.0014707960<br />assets: PETR4.SA","Data: 2021-10-31<br />value: -0.0029374465<br />assets: PETR4.SA","Data: 2021-11-30<br />value:  0.0839777034<br />assets: PETR4.SA","Data: 2021-12-31<br />value:  0.0859532157<br />assets: PETR4.SA","Data: 2022-01-31<br />value:  0.1370825353<br />assets: PETR4.SA","Data: 2022-02-28<br />value:  0.0510045976<br />assets: PETR4.SA","Data: 2022-03-31<br />value: -0.0161763965<br />assets: PETR4.SA","Data: 2022-04-30<br />value: -0.0096800787<br />assets: PETR4.SA","Data: 2022-05-31<br />value:  0.1062806106<br />assets: PETR4.SA","Data: 2022-06-30<br />value: -0.0708582585<br />assets: PETR4.SA","Data: 2022-07-31<br />value:  0.2226996892<br />assets: PETR4.SA","Data: 2022-08-31<br />value:  0.1923920153<br />assets: PETR4.SA","Data: 2022-09-30<br />value: -0.1032200195<br />assets: PETR4.SA","Data: 2022-10-31<br />value:  0.0003356277<br />assets: PETR4.SA","Data: 2022-11-30<br />value: -0.0431903694<br />assets: PETR4.SA","Data: 2022-12-31<br />value: -0.0810204065<br />assets: PETR4.SA","Data: 2023-01-31<br />value:  0.0640816834<br />assets: PETR4.SA","Data: 2023-02-28<br />value: -0.0318373296<br />assets: PETR4.SA","Data: 2023-03-31<br />value: -0.0709191468<br />assets: PETR4.SA","Data: 2023-04-30<br />value:  0.1384737911<br />assets: PETR4.SA","Data: 2023-05-31<br />value:  0.1021096818<br />assets: PETR4.SA","Data: 2023-06-30<br />value:  0.2045848504<br />assets: PETR4.SA","Data: 2023-07-31<br />value:  0.0535048611<br />assets: PETR4.SA","Data: 2023-08-31<br />value:  0.0658152104<br />assets: PETR4.SA","Data: 2023-09-30<br />value:  0.0845333909<br />assets: PETR4.SA","Data: 2023-10-31<br />value:  0.0028868053<br />assets: PETR4.SA","Data: 2023-11-30<br />value:  0.0741897767<br />assets: PETR4.SA","Data: 2023-12-31<br />value:  0.0370370835<br />assets: PETR4.SA","Data: 2024-01-31<br />value:  0.0945220295<br />assets: PETR4.SA","Data: 2024-02-29<br />value: -0.0152110622<br />assets: PETR4.SA","Data: 2024-03-31<br />value: -0.0692575094<br />assets: PETR4.SA","Data: 2024-04-30<br />value:  0.1559847454<br />assets: PETR4.SA","Data: 2024-05-31<br />value: -0.0624036200<br />assets: PETR4.SA"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","name":"PETR4.SA","legendgroup":"PETR4.SA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.11855984322852497,-0.024599321329377477,0.037945484103974803,0.18145315357784519,0.055094322116069794,0.085658192074869355,-0.016966045315226275,0.031852518803801022,0.024361192930950626,0.2881916658719117,0.12115376129516231,0.0057175493154246748,0.074701687337693334,0.083194371824813818,0.11278957386799005,0.05283435710146045,0.0061549073061013537,-0.039646823699297729,-0.092680906640426275,-0.1471464986166986,-0.060729366167751153,-0.023180955608773868,0.11451027454921214,0.037326871761524494,0.14109072340355144,0.075806072054846796,-0.12876557813362066,0.035058044371496955,-0.11193596497371217,-0.088949718695408464,-0.02733947743523979,0.11689929540647359,-0.06815661661056216,0.27677630875574399,0.040514542507896101,0.063343847654005803,-0.097238360441057492,-0.038288335044610267,-0.09826873655632451,-0.1186463547024964,0.0064252799501791635,0.076923151420488223,-0.030604701260918632,0.038414302820733104,0.021012030867975318,0.080915446859112894,0.045362132370995845,-0.1222797113253854,-0.01136373528054857,-0.051335340418137254,0.040440555818244128,-0.00079000215416780151],"text":["Data: 2020-02-29<br />value: -0.1185598432<br />assets: VALE3.SA","Data: 2020-03-31<br />value: -0.0245993213<br />assets: VALE3.SA","Data: 2020-04-30<br />value:  0.0379454841<br />assets: VALE3.SA","Data: 2020-05-31<br />value:  0.1814531536<br />assets: VALE3.SA","Data: 2020-06-30<br />value:  0.0550943221<br />assets: VALE3.SA","Data: 2020-07-31<br />value:  0.0856581921<br />assets: VALE3.SA","Data: 2020-08-31<br />value: -0.0169660453<br />assets: VALE3.SA","Data: 2020-09-30<br />value:  0.0318525188<br />assets: VALE3.SA","Data: 2020-10-31<br />value:  0.0243611929<br />assets: VALE3.SA","Data: 2020-11-30<br />value:  0.2881916659<br />assets: VALE3.SA","Data: 2020-12-31<br />value:  0.1211537613<br />assets: VALE3.SA","Data: 2021-01-31<br />value:  0.0057175493<br />assets: VALE3.SA","Data: 2021-02-28<br />value:  0.0747016873<br />assets: VALE3.SA","Data: 2021-03-31<br />value:  0.0831943718<br />assets: VALE3.SA","Data: 2021-04-30<br />value:  0.1127895739<br />assets: VALE3.SA","Data: 2021-05-31<br />value:  0.0528343571<br />assets: VALE3.SA","Data: 2021-06-30<br />value:  0.0061549073<br />assets: VALE3.SA","Data: 2021-07-31<br />value: -0.0396468237<br />assets: VALE3.SA","Data: 2021-08-31<br />value: -0.0926809066<br />assets: VALE3.SA","Data: 2021-09-30<br />value: -0.1471464986<br />assets: VALE3.SA","Data: 2021-10-31<br />value: -0.0607293662<br />assets: VALE3.SA","Data: 2021-11-30<br />value: -0.0231809556<br />assets: VALE3.SA","Data: 2021-12-31<br />value:  0.1145102745<br />assets: VALE3.SA","Data: 2022-01-31<br />value:  0.0373268718<br />assets: VALE3.SA","Data: 2022-02-28<br />value:  0.1410907234<br />assets: VALE3.SA","Data: 2022-03-31<br />value:  0.0758060721<br />assets: VALE3.SA","Data: 2022-04-30<br />value: -0.1287655781<br />assets: VALE3.SA","Data: 2022-05-31<br />value:  0.0350580444<br />assets: VALE3.SA","Data: 2022-06-30<br />value: -0.1119359650<br />assets: VALE3.SA","Data: 2022-07-31<br />value: -0.0889497187<br />assets: VALE3.SA","Data: 2022-08-31<br />value: -0.0273394774<br />assets: VALE3.SA","Data: 2022-09-30<br />value:  0.1168992954<br />assets: VALE3.SA","Data: 2022-10-31<br />value: -0.0681566166<br />assets: VALE3.SA","Data: 2022-11-30<br />value:  0.2767763088<br />assets: VALE3.SA","Data: 2022-12-31<br />value:  0.0405145425<br />assets: VALE3.SA","Data: 2023-01-31<br />value:  0.0633438477<br />assets: VALE3.SA","Data: 2023-02-28<br />value: -0.0972383604<br />assets: VALE3.SA","Data: 2023-03-31<br />value: -0.0382883350<br />assets: VALE3.SA","Data: 2023-04-30<br />value: -0.0982687366<br />assets: VALE3.SA","Data: 2023-05-31<br />value: -0.1186463547<br />assets: VALE3.SA","Data: 2023-06-30<br />value:  0.0064252800<br />assets: VALE3.SA","Data: 2023-07-31<br />value:  0.0769231514<br />assets: VALE3.SA","Data: 2023-08-31<br />value: -0.0306047013<br />assets: VALE3.SA","Data: 2023-09-30<br />value:  0.0384143028<br />assets: VALE3.SA","Data: 2023-10-31<br />value:  0.0210120309<br />assets: VALE3.SA","Data: 2023-11-30<br />value:  0.0809154469<br />assets: VALE3.SA","Data: 2023-12-31<br />value:  0.0453621324<br />assets: VALE3.SA","Data: 2024-01-31<br />value: -0.1222797113<br />assets: VALE3.SA","Data: 2024-02-29<br />value: -0.0113637353<br />assets: VALE3.SA","Data: 2024-03-31<br />value: -0.0513353404<br />assets: VALE3.SA","Data: 2024-04-30<br />value:  0.0404405558<br />assets: VALE3.SA","Data: 2024-05-31<br />value: -0.0007900022<br />assets: VALE3.SA"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(97,156,255,1)","dash":"solid"},"hoveron":"points","name":"VALE3.SA","legendgroup":"VALE3.SA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.08429074990550367,-0.29904388895288558,0.10251985757326754,0.085670633244727012,0.087559923572417375,0.082646019188688857,-0.034427472014925353,-0.047962644285441169,-0.0068813885394755081,0.1589747956403269,0.095676291235030408,-0.027651584999916157,-0.051479652089960082,0.059971827145908208,0.019376854090573881,0.061584268339865744,0.0046428345059263965,-0.039439441018280452,-0.024794541916733026,-0.065683905675150034,-0.067382117337514313,-0.015323523444217946,0.028523769808173505,0.072179504302531949,0.0067089013061891745,0.060605257110533772,-0.10102584188201569,0.032212911120174992,-0.11503264452048023,0.046914006210549752,0.061629428585276091,0.0046930781662299914,0.054527113607241162,-0.030602307884554092,-0.021824938214533351,0.031818305750197728,-0.075749568403621903,-0.029066443029771682,0.02502895506566416,0.037373601961084635,0.090017076660358963,0.032653890775445227,-0.050851627399686739,0.0071106426362081976,-0.029348432205207442,0.12538888496075806,0.053828211511729229,-0.047941275105265135,0.0099254806186988009,-0.0070841729964347122,-0.017032769737561071,-0.025547155427082968],"text":["Data: 2020-02-29<br />value: -0.0842907499<br />assets: X.BVSP","Data: 2020-03-31<br />value: -0.2990438890<br />assets: X.BVSP","Data: 2020-04-30<br />value:  0.1025198576<br />assets: X.BVSP","Data: 2020-05-31<br />value:  0.0856706332<br />assets: X.BVSP","Data: 2020-06-30<br />value:  0.0875599236<br />assets: X.BVSP","Data: 2020-07-31<br />value:  0.0826460192<br />assets: X.BVSP","Data: 2020-08-31<br />value: -0.0344274720<br />assets: X.BVSP","Data: 2020-09-30<br />value: -0.0479626443<br />assets: X.BVSP","Data: 2020-10-31<br />value: -0.0068813885<br />assets: X.BVSP","Data: 2020-11-30<br />value:  0.1589747956<br />assets: X.BVSP","Data: 2020-12-31<br />value:  0.0956762912<br />assets: X.BVSP","Data: 2021-01-31<br />value: -0.0276515850<br />assets: X.BVSP","Data: 2021-02-28<br />value: -0.0514796521<br />assets: X.BVSP","Data: 2021-03-31<br />value:  0.0599718271<br />assets: X.BVSP","Data: 2021-04-30<br />value:  0.0193768541<br />assets: X.BVSP","Data: 2021-05-31<br />value:  0.0615842683<br />assets: X.BVSP","Data: 2021-06-30<br />value:  0.0046428345<br />assets: X.BVSP","Data: 2021-07-31<br />value: -0.0394394410<br />assets: X.BVSP","Data: 2021-08-31<br />value: -0.0247945419<br />assets: X.BVSP","Data: 2021-09-30<br />value: -0.0656839057<br />assets: X.BVSP","Data: 2021-10-31<br />value: -0.0673821173<br />assets: X.BVSP","Data: 2021-11-30<br />value: -0.0153235234<br />assets: X.BVSP","Data: 2021-12-31<br />value:  0.0285237698<br />assets: X.BVSP","Data: 2022-01-31<br />value:  0.0721795043<br />assets: X.BVSP","Data: 2022-02-28<br />value:  0.0067089013<br />assets: X.BVSP","Data: 2022-03-31<br />value:  0.0606052571<br />assets: X.BVSP","Data: 2022-04-30<br />value: -0.1010258419<br />assets: X.BVSP","Data: 2022-05-31<br />value:  0.0322129111<br />assets: X.BVSP","Data: 2022-06-30<br />value: -0.1150326445<br />assets: X.BVSP","Data: 2022-07-31<br />value:  0.0469140062<br />assets: X.BVSP","Data: 2022-08-31<br />value:  0.0616294286<br />assets: X.BVSP","Data: 2022-09-30<br />value:  0.0046930782<br />assets: X.BVSP","Data: 2022-10-31<br />value:  0.0545271136<br />assets: X.BVSP","Data: 2022-11-30<br />value: -0.0306023079<br />assets: X.BVSP","Data: 2022-12-31<br />value: -0.0218249382<br />assets: X.BVSP","Data: 2023-01-31<br />value:  0.0318183058<br />assets: X.BVSP","Data: 2023-02-28<br />value: -0.0757495684<br />assets: X.BVSP","Data: 2023-03-31<br />value: -0.0290664430<br />assets: X.BVSP","Data: 2023-04-30<br />value:  0.0250289551<br />assets: X.BVSP","Data: 2023-05-31<br />value:  0.0373736020<br />assets: X.BVSP","Data: 2023-06-30<br />value:  0.0900170767<br />assets: X.BVSP","Data: 2023-07-31<br />value:  0.0326538908<br />assets: X.BVSP","Data: 2023-08-31<br />value: -0.0508516274<br />assets: X.BVSP","Data: 2023-09-30<br />value:  0.0071106426<br />assets: X.BVSP","Data: 2023-10-31<br />value: -0.0293484322<br />assets: X.BVSP","Data: 2023-11-30<br />value:  0.1253888850<br />assets: X.BVSP","Data: 2023-12-31<br />value:  0.0538282115<br />assets: X.BVSP","Data: 2024-01-31<br />value: -0.0479412751<br />assets: X.BVSP","Data: 2024-02-29<br />value:  0.0099254806<br />assets: X.BVSP","Data: 2024-03-31<br />value: -0.0070841730<br />assets: X.BVSP","Data: 2024-04-30<br />value: -0.0170327697<br />assets: X.BVSP","Data: 2024-05-31<br />value: -0.0255471554<br />assets: X.BVSP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(245,100,227,1)","dash":"solid"},"hoveron":"points","name":"X.BVSP","legendgroup":"X.BVSP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":51.865504358655045,"r":7.3059360730593621,"b":44.56621004566211,"l":48.949771689497723},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"<b> Retorno dos ativos vs carteira <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":21.253632212536321},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18243.349999999999,19951.650000000001],"tickmode":"array","ticktext":["2020","2021","2022","2023","2024"],"tickvals":[18262,18628,18993,19358,19723],"categoryorder":"array","categoryarray":["2020","2021","2022","2023","2024"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"<b> Data <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.66970163729652399,0.7518530858968383],"tickmode":"array","ticktext":["-0.4","0.0","0.4"],"tickvals":[-0.40000000000000002,0,0.40000000000000024],"categoryorder":"array","categoryarray":["-0.4","0.0","0.4"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"<b> Retornos <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"assets","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"33f43117cbc11":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"33f43117cbc11","visdat":{"33f43117cbc11":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div id="tabset-9-4">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>comp_mkt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-c788c334c2d4454367fd" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-c788c334c2d4454367fd">{"x":{"data":[{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.14953672146341113,-0.31136596863389687,0.074693570111847629,0.063042529830162897,0.14868382425917726,0.038291889444967531,-0.01723920010052904,-0.00077591725661585453,-0.024091206757548833,0.31913167957559763,0.10754100367179364,-0.016719142977366874,-0.041839902427848408,0.049930015561832519,0.027903402315218928,0.11407392779814152,0.01554880016989979,-0.060719354530240466,-0.0098647571293920544,-0.0703216328817865,-0.067507470426908522,-0.013835288402817558,0.053704864496972204,0.08330056585418677,0.015993531805683636,0.015844243585497519,-0.075627221795053323,0.013232678468721337,-0.14757715242614844,0.048467822592915821,0.13105040346676589,-0.014256740223343889,0.022419025669180082,-0.0081404045390414126,-0.041126873631009198,0.035261883142768902,-0.12458064592876339,0.12383293242405458,-0.008777212905054399,0.11801154586041673,0.13355057435886941,-0.012582232327617571,-0.053127530558651381,0.015324497067798148,-0.027003251133318584,0.1312741433698652,0.027894005746900818,-0.057212732970798097,-0.03052735475688928,-0.011250785633691307,-0.020025973986849688,-0.037759543524179651],"text":["Data: 2020-02-29<br />value: -0.1495367215<br />assets: CARTEIRA","Data: 2020-03-31<br />value: -0.3113659686<br />assets: CARTEIRA","Data: 2020-04-30<br />value:  0.0746935701<br />assets: CARTEIRA","Data: 2020-05-31<br />value:  0.0630425298<br />assets: CARTEIRA","Data: 2020-06-30<br />value:  0.1486838243<br />assets: CARTEIRA","Data: 2020-07-31<br />value:  0.0382918894<br />assets: CARTEIRA","Data: 2020-08-31<br />value: -0.0172392001<br />assets: CARTEIRA","Data: 2020-09-30<br />value: -0.0007759173<br />assets: CARTEIRA","Data: 2020-10-31<br />value: -0.0240912068<br />assets: CARTEIRA","Data: 2020-11-30<br />value:  0.3191316796<br />assets: CARTEIRA","Data: 2020-12-31<br />value:  0.1075410037<br />assets: CARTEIRA","Data: 2021-01-31<br />value: -0.0167191430<br />assets: CARTEIRA","Data: 2021-02-28<br />value: -0.0418399024<br />assets: CARTEIRA","Data: 2021-03-31<br />value:  0.0499300156<br />assets: CARTEIRA","Data: 2021-04-30<br />value:  0.0279034023<br />assets: CARTEIRA","Data: 2021-05-31<br />value:  0.1140739278<br />assets: CARTEIRA","Data: 2021-06-30<br />value:  0.0155488002<br />assets: CARTEIRA","Data: 2021-07-31<br />value: -0.0607193545<br />assets: CARTEIRA","Data: 2021-08-31<br />value: -0.0098647571<br />assets: CARTEIRA","Data: 2021-09-30<br />value: -0.0703216329<br />assets: CARTEIRA","Data: 2021-10-31<br />value: -0.0675074704<br />assets: CARTEIRA","Data: 2021-11-30<br />value: -0.0138352884<br />assets: CARTEIRA","Data: 2021-12-31<br />value:  0.0537048645<br />assets: CARTEIRA","Data: 2022-01-31<br />value:  0.0833005659<br />assets: CARTEIRA","Data: 2022-02-28<br />value:  0.0159935318<br />assets: CARTEIRA","Data: 2022-03-31<br />value:  0.0158442436<br />assets: CARTEIRA","Data: 2022-04-30<br />value: -0.0756272218<br />assets: CARTEIRA","Data: 2022-05-31<br />value:  0.0132326785<br />assets: CARTEIRA","Data: 2022-06-30<br />value: -0.1475771524<br />assets: CARTEIRA","Data: 2022-07-31<br />value:  0.0484678226<br />assets: CARTEIRA","Data: 2022-08-31<br />value:  0.1310504035<br />assets: CARTEIRA","Data: 2022-09-30<br />value: -0.0142567402<br />assets: CARTEIRA","Data: 2022-10-31<br />value:  0.0224190257<br />assets: CARTEIRA","Data: 2022-11-30<br />value: -0.0081404045<br />assets: CARTEIRA","Data: 2022-12-31<br />value: -0.0411268736<br />assets: CARTEIRA","Data: 2023-01-31<br />value:  0.0352618831<br />assets: CARTEIRA","Data: 2023-02-28<br />value: -0.1245806459<br />assets: CARTEIRA","Data: 2023-03-31<br />value:  0.1238329324<br />assets: CARTEIRA","Data: 2023-04-30<br />value: -0.0087772129<br />assets: CARTEIRA","Data: 2023-05-31<br />value:  0.1180115459<br />assets: CARTEIRA","Data: 2023-06-30<br />value:  0.1335505744<br />assets: CARTEIRA","Data: 2023-07-31<br />value: -0.0125822323<br />assets: CARTEIRA","Data: 2023-08-31<br />value: -0.0531275306<br />assets: CARTEIRA","Data: 2023-09-30<br />value:  0.0153244971<br />assets: CARTEIRA","Data: 2023-10-31<br />value: -0.0270032511<br />assets: CARTEIRA","Data: 2023-11-30<br />value:  0.1312741434<br />assets: CARTEIRA","Data: 2023-12-31<br />value:  0.0278940057<br />assets: CARTEIRA","Data: 2024-01-31<br />value: -0.0572127330<br />assets: CARTEIRA","Data: 2024-02-29<br />value: -0.0305273548<br />assets: CARTEIRA","Data: 2024-03-31<br />value: -0.0112507856<br />assets: CARTEIRA","Data: 2024-04-30<br />value: -0.0200259740<br />assets: CARTEIRA","Data: 2024-05-31<br />value: -0.0377595435<br />assets: CARTEIRA"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"CARTEIRA","legendgroup":"CARTEIRA","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18321,18352,18382,18413,18443,18474,18505,18535,18566,18596,18627,18658,18686,18717,18747,18778,18808,18839,18870,18900,18931,18961,18992,19023,19051,19082,19112,19143,19173,19204,19235,19265,19296,19326,19357,19388,19416,19447,19477,19508,19538,19569,19600,19630,19661,19691,19722,19753,19782,19813,19843,19874],"y":[-0.08429074990550367,-0.29904388895288558,0.10251985757326754,0.085670633244727012,0.087559923572417375,0.082646019188688857,-0.034427472014925353,-0.047962644285441169,-0.0068813885394755081,0.1589747956403269,0.095676291235030408,-0.027651584999916157,-0.051479652089960082,0.059971827145908208,0.019376854090573881,0.061584268339865744,0.0046428345059263965,-0.039439441018280452,-0.024794541916733026,-0.065683905675150034,-0.067382117337514313,-0.015323523444217946,0.028523769808173505,0.072179504302531949,0.0067089013061891745,0.060605257110533772,-0.10102584188201569,0.032212911120174992,-0.11503264452048023,0.046914006210549752,0.061629428585276091,0.0046930781662299914,0.054527113607241162,-0.030602307884554092,-0.021824938214533351,0.031818305750197728,-0.075749568403621903,-0.029066443029771682,0.02502895506566416,0.037373601961084635,0.090017076660358963,0.032653890775445227,-0.050851627399686739,0.0071106426362081976,-0.029348432205207442,0.12538888496075806,0.053828211511729229,-0.047941275105265135,0.0099254806186988009,-0.0070841729964347122,-0.017032769737561071,-0.025547155427082968],"text":["Data: 2020-02-29<br />value: -0.0842907499<br />assets: X.BVSP","Data: 2020-03-31<br />value: -0.2990438890<br />assets: X.BVSP","Data: 2020-04-30<br />value:  0.1025198576<br />assets: X.BVSP","Data: 2020-05-31<br />value:  0.0856706332<br />assets: X.BVSP","Data: 2020-06-30<br />value:  0.0875599236<br />assets: X.BVSP","Data: 2020-07-31<br />value:  0.0826460192<br />assets: X.BVSP","Data: 2020-08-31<br />value: -0.0344274720<br />assets: X.BVSP","Data: 2020-09-30<br />value: -0.0479626443<br />assets: X.BVSP","Data: 2020-10-31<br />value: -0.0068813885<br />assets: X.BVSP","Data: 2020-11-30<br />value:  0.1589747956<br />assets: X.BVSP","Data: 2020-12-31<br />value:  0.0956762912<br />assets: X.BVSP","Data: 2021-01-31<br />value: -0.0276515850<br />assets: X.BVSP","Data: 2021-02-28<br />value: -0.0514796521<br />assets: X.BVSP","Data: 2021-03-31<br />value:  0.0599718271<br />assets: X.BVSP","Data: 2021-04-30<br />value:  0.0193768541<br />assets: X.BVSP","Data: 2021-05-31<br />value:  0.0615842683<br />assets: X.BVSP","Data: 2021-06-30<br />value:  0.0046428345<br />assets: X.BVSP","Data: 2021-07-31<br />value: -0.0394394410<br />assets: X.BVSP","Data: 2021-08-31<br />value: -0.0247945419<br />assets: X.BVSP","Data: 2021-09-30<br />value: -0.0656839057<br />assets: X.BVSP","Data: 2021-10-31<br />value: -0.0673821173<br />assets: X.BVSP","Data: 2021-11-30<br />value: -0.0153235234<br />assets: X.BVSP","Data: 2021-12-31<br />value:  0.0285237698<br />assets: X.BVSP","Data: 2022-01-31<br />value:  0.0721795043<br />assets: X.BVSP","Data: 2022-02-28<br />value:  0.0067089013<br />assets: X.BVSP","Data: 2022-03-31<br />value:  0.0606052571<br />assets: X.BVSP","Data: 2022-04-30<br />value: -0.1010258419<br />assets: X.BVSP","Data: 2022-05-31<br />value:  0.0322129111<br />assets: X.BVSP","Data: 2022-06-30<br />value: -0.1150326445<br />assets: X.BVSP","Data: 2022-07-31<br />value:  0.0469140062<br />assets: X.BVSP","Data: 2022-08-31<br />value:  0.0616294286<br />assets: X.BVSP","Data: 2022-09-30<br />value:  0.0046930782<br />assets: X.BVSP","Data: 2022-10-31<br />value:  0.0545271136<br />assets: X.BVSP","Data: 2022-11-30<br />value: -0.0306023079<br />assets: X.BVSP","Data: 2022-12-31<br />value: -0.0218249382<br />assets: X.BVSP","Data: 2023-01-31<br />value:  0.0318183058<br />assets: X.BVSP","Data: 2023-02-28<br />value: -0.0757495684<br />assets: X.BVSP","Data: 2023-03-31<br />value: -0.0290664430<br />assets: X.BVSP","Data: 2023-04-30<br />value:  0.0250289551<br />assets: X.BVSP","Data: 2023-05-31<br />value:  0.0373736020<br />assets: X.BVSP","Data: 2023-06-30<br />value:  0.0900170767<br />assets: X.BVSP","Data: 2023-07-31<br />value:  0.0326538908<br />assets: X.BVSP","Data: 2023-08-31<br />value: -0.0508516274<br />assets: X.BVSP","Data: 2023-09-30<br />value:  0.0071106426<br />assets: X.BVSP","Data: 2023-10-31<br />value: -0.0293484322<br />assets: X.BVSP","Data: 2023-11-30<br />value:  0.1253888850<br />assets: X.BVSP","Data: 2023-12-31<br />value:  0.0538282115<br />assets: X.BVSP","Data: 2024-01-31<br />value: -0.0479412751<br />assets: X.BVSP","Data: 2024-02-29<br />value:  0.0099254806<br />assets: X.BVSP","Data: 2024-03-31<br />value: -0.0070841730<br />assets: X.BVSP","Data: 2024-04-30<br />value: -0.0170327697<br />assets: X.BVSP","Data: 2024-05-31<br />value: -0.0255471554<br />assets: X.BVSP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","name":"X.BVSP","legendgroup":"X.BVSP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":48.146118721461193,"r":7.3059360730593621,"b":44.56621004566211,"l":48.949771689497723},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Carteira VS Índice do mercado - 2020 - 2023","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18243.349999999999,19951.650000000001],"tickmode":"array","ticktext":["2020","2021","2022","2023","2024"],"tickvals":[18262,18628,18993,19358,19723],"categoryorder":"array","categoryarray":["2020","2021","2022","2023","2024"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Data","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.34289085104437161,0.35065656198607237],"tickmode":"array","ticktext":["-0.2","0.0","0.2"],"tickvals":[-0.20000000000000001,0,0.20000000000000012],"categoryorder":"array","categoryarray":["-0.2","0.0","0.2"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"value","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"assets","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"33f434c51b08c":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"33f434c51b08c","visdat":{"33f434c51b08c":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="análise-do-risco." class="slide level2">
+<h2>Análise do risco.</h2>
+<div class="panel-tabset">
+<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Risco do ativo</a></li></ul>
+<div class="tab-content">
+<div id="tabset-10-1">
+<div class="columns">
+<div class="column">
+<p><img data-src="images/paste-1.png" width="505"></p>
+</div><div class="column">
+
+</div>
+</div>
+</div>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="images/uff.png" class="slide-logo"></p>
@@ -627,6 +1162,44 @@ Possui graduação em Administração pela Universidade Federal Fluminense (2020
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -703,24 +1276,6 @@ Possui graduação em Administração pela Universidade Federal Fluminense (2020
         // clear code selection
         e.clearSelection();
       });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -757,11 +1312,7 @@ Possui graduação em Administração pela Universidade Federal Fluminense (2020
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {

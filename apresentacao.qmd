@@ -15,81 +15,480 @@ filters:
   - reveal-header
 date: today
 footer: PPGAd Universidade Federal de Fluminense
-fontsize: 1.2em
+fontsize: 1.4em
 incremental: true
+toc: true
+execute: 
+  echo: true
 ---
 
-
+```{r}
+library(countdown)
+```
 
 ## Ariel Levy
 
 ::: {style="display: flex; justify-content: space-between;"}
-
-::: {.columns}
-
-
+::: columns
 ::: {.column width="30%"}
-
 ![](images/Ariel.jpg)
-
 :::
+
 ::: {.column width="70%"}
-
 <p style="text-align: justify;">
+
 Doutor em Economia (Universidade Federal Fluminense - 2013), mestre em Administração (IBMEC -2003) e engenheiro eletricista (Universidade Federal Fluminense - 1982). Sou Professor Associado da Universidade Federal Fluminense vinculado ao Departamento de Administração da Faculdade de Administração e Ciências Contábeis e fui coordenador do Curso de Graduação em Administração (2016-2021). Professor do quadro permanente do PPGAd - UFF e colaborador no MBA de Logística (LOGEMP - UFF), no MBA de Finanças (UFF), no MBA de Marketing (UFF) e dos cursos de Extensão em Ciências dos Dados (UFF) como atual coordenador. Possui experiência em Administração, com ênfase em Finanças Quantitativas; Finanças publicas; Planejamento e Controle: Ciências dos Dados: na linguagem R e na análise e visualização de dados. Organizador dos Seminários de Estatística R - Evento Internacional de Divulgação de Aplicações e Desenvolvimento de Linguagens R. Coordenador do Grupo de Pesquisa (CNPQ/UFF) - Métodos Quantitativos Aplicados à Administração.
+
 </p>
-
 :::
-
 :::
-
-
 :::
 
 ## Marcus Ramalho
 
-
-::: {.columns}
-
-
+::: columns
 ::: {.column width="30%"}
-
 ![](images/Marcus.jpg)
-
 :::
+
 ::: {.column width="70%"}
-
 <p style="text-align: justify;">
+
 Possui graduação em Administração pela Universidade Federal Fluminense (2020) e é candidato ao título de mestre em Administração pelo programa de pós-graduação em administração da UFF (PPGAd-UFF). É professor convidado dos MBAs de Ciências de Dados e de Finanças Corporativas e Mercados de Capitais na UFF. Tem experiência em ciência de dados com R e Python, programação funcional e desenvolvimento de bots, mapeamento e automação de processos administrativos. Tem interesse em Administração da Informação, Gestão do Conhecimento Pessoal, Economia Política, Finanças, R e Python.
+
 </p>
-
+:::
 :::
 
+## Sumário
+
+1.  Relembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.
+
+2.  Importar os preços dos ativos da internet direto do yahoo.com
+
+3.  Transformar os preços diários em mensais e obter os retornos.
+
+4.  Visualização dos dados.
+
+5.  Retorno da carteira
+
+6.  Visualizar o retorno da carteira.
+
+7.  Análise do risco.
+
+8.  Comparar carteiras.
+
+## Relembrando conceitos de finanças
+
+::: panel-tabset
+## Qual a sua motivação para investir?
+
+-   Qual a motivação para investir?
+
+-   Já investiu em renda variável?
+
+-   Quais os riscos?
+
+-   Como escolher seus ativos? [Análise Fundamentalista](https://fundamentus.com.br/)
+
+## Motivação
+
+![](https://jonmgomes.com/wp-content/uploads/2020/05/Comp_1.gif)
+
+## Renda variável
+
+![](images/candles.jpg)
+
+## OHLC
+
+![](images/candles2.jpg)
 :::
 
+## Importar os preços dos ativos da internet direto do yahoo.com
 
-## Objetivo
+::: panel-tabset
+## Fundamentus
 
-- Relembrar conceitos de finanças
-- Apresentar o R como ferramenta para análise de dados financeiros
+<div>
 
-## Introdução
+<iframe src="https://fundamentus.com.br/" width="1900" height="550">
 
+</iframe>
 
-## Teoria dos Mercados Eficientes
+</div>
 
+## carregar pacotes e selecionar ativos
+
+```{r}
+## pacote utilizados
+pacotes <- c("tidyverse", "quantmod", "timetk", "plotly", "PerformanceAnalytics")
+purrr::walk(pacotes, library, character.only = TRUE)
+
+# Ativos escolhidos
+tickers <- c("VALE3.SA","PETR4.SA","AZUL4.SA","ABEV3.SA","^BVSP")
+
+```
+
+## Importar preços dos ativos
+
+-   O Formato XTS
+
+```{r}
+prices_raw <- 
+  getSymbols(tickers, 
+             src = 'yahoo', 
+             from = "2019-12-31",
+             to = "2024-05-31",
+             auto.assign = TRUE, #obs auto asign carrega os resultados para o ambiente
+             warnings = FALSE,)
+
+prices<-prices_raw %>%             
+  map(~Ad(get(.))) %>% 
+  reduce(merge) %>%
+  `colnames<-`(tickers)
+
+```
+
+## Prices
+
+```{r}
+prices %>%
+  tk_tbl() %>%
+  head()
+```
+:::
 
 ## Retornos de um ativo
-
 
 Retorno Linear = $\frac{P_{t} - P_{t-1}}{P_{t-1}}$
 
 Retorno Logarítmico = $ln(\frac{P_{t}}{P_{t-1}})$
 
+## Exercícios
 
+::: panel-tabset
 ## Exercício 1
 
-- Calcular o retorno de um ativo dado que o preço de compra é 100 e o preço de venda é 120.
+`r countdown(minutes = 5, seconds = 00)`
+
+Suponha que uma ação caia 50% e depois suba 50%, de quanto foi a variação total no período? dica (Componha o retorno destes dois períodos utilizando juros compostos.)
+
+## " "
+
+```{r}
+
+valor_inicial <- 100
+valor_apos_queda <- valor_inicial - (valor_inicial * 0.50)
+valor_final <- valor_apos_queda + (valor_apos_queda * 0.50)
+
+variacao_total <- (valor_final - valor_inicial) / valor_inicial
+variacao_total
+
+```
+:::
+
+## Transformar os preços diários em mensais e obter os retornos.
+
+::: panel-tabset
+## Preços mensais
+
+```{r}
+prices_monthly <- to.monthly(prices, indexAt = "lastof", OHLC = FALSE)
+
+head(prices_monthly)
+
+```
+
+## Retornos mensais
+
+```{r}
+asset_returns_xts <-
+ PerformanceAnalytics::Return.calculate(prices_monthly, 
+                   method = "discrete") %>% 
+  na.omit()
+head(asset_returns_xts)
+```
+:::
+
+## Visualização dos dados
+
+::: panel-tabset
+## Preços com quantmod
+
+```{r}
+
+## Visualizar os preços com quantmod
+graficoscandle <- chartSeries(head(BVSP, 30), 
+            TA = "addVo()",
+            type = "candlesticks",
+            time.scale = "years",)
 
 
 
+```
+
+## Retornos com ggplot2
+
+```{r}
+asset_returns_tbl <- asset_returns_xts %>% 
+  tk_tbl(rename_index = "Data") %>% #converte em um data frame para plotar com ggplot
+  pivot_longer(!"Data" ,names_to = "assets")#seleciona todas as colunas menos data
+
+#plotando com o ggplot e com o plotly
+g1 <- ggplot(asset_returns_tbl) +
+  aes(x = Data, y = value, colour = assets) +
+  geom_line() +
+  scale_color_hue(direction = 1) +
+  labs(title = "Retornos de 2019 a 2024")+ #Aqui nos podemos mudar as legendas
+  theme_minimal()
+g1
+```
+
+## Com plotly
+
+```{r}
+plotly::ggplotly(g1)
+```
+:::
+
+## Não sabe usar o ggplot2?
+
+::: panel-tabset
+## Esquisse
+
+```{r}
+#| eval: false
+esquisse::esquisser(asset_returns_tbl)
+```
+
+```{r}
+#| echo: false
+pbp <- ggplot(asset_returns_tbl) +
+  aes(x = "", y = value, fill = assets) +
+  geom_boxplot() +
+  scale_fill_brewer(palette = "OrRd", direction = 1) +
+  labs(
+    x = "Ativos",
+    y = "Retornos",
+    title = "Box Plot - Retorno dos ativos",
+    fill = "Ativos"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16L,
+    face = "bold",
+    hjust = 0.5),
+    axis.title.y = element_text(face = "bold"),
+    axis.title.x = element_text(face = "bold")
+  )
+
+pbp
+
+```
+
+## Box Plot dos retornos
+
+```{r}
+#| eval: false
+pbp <- ggplot(asset_returns_tbl) +
+  aes(x = "", y = value, fill = assets) +
+  geom_boxplot() +
+  scale_fill_brewer(palette = "OrRd", direction = 1) +
+  labs(
+    x = "Ativos",
+    y = "Retornos",
+    title = "Box Plot - Retorno dos ativos",
+    fill = "Ativos"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16L,
+    face = "bold",
+    hjust = 0.5),
+    axis.title.y = element_text(face = "bold"),
+    axis.title.x = element_text(face = "bold")
+  )
+
+pbp
+
+```
+:::
+
+## Retorno da carteira.
+
+::: panel-tabset
+## Pesos dos ativos
+
+O somatório dos pesos deve ser igual a 1.
+
+```{r}
+w <- c(0.2, 0.2, 0.2, 0.2, 0.2)
+```
+
+O cálculo do retorno de uma carteira depende do retorno de cada ativo e de seu peso na carteira e pode ser obtido pela média ponderada:
+
+$$ \bar{k}=\sum_{i=i}^n{w_i*k_i}$$
+
+## Retorno da carteira
+
+```{r}
+portfolio_returns_xts<-PerformanceAnalytics::Return.portfolio(asset_returns_xts,
+                 weights = w,
+                 rebalance_on = "months",
+                 type= "discrete") %>% 
+  `colnames<-`("CARTEIRA")
+head(portfolio_returns_xts,3)
+```
+:::
+
+## Exercícios
+
+::: panel-tabset
+## Exercício 2
+
+`r countdown(minutes = 5, seconds = 00)`
+
+Determinado agente possui uma carteira formada pelas seguintes posições: R\$25000,00 no ativo A e R\$50000,00 no ativo B.
+
+Quais os pesos de sua carteira?
+
+Se para a manutenção destas posições o agente tivesse emprestado R\$40000,00 ao Banco X, qual seria a estrutura dos pesos de sua carteira?
+
+## ""
+
+::: columns
+::: column
+```{r}
+# Valores das posições
+ativo_A <- 25000
+ativo_B <- 50000
+
+# Valor total da carteira
+total <- ativo_A + ativo_B
+
+# Pesos
+peso_A <- ativo_A / total
+peso_B <- ativo_B / total
+
+peso_A
+peso_B
+
+```
+:::
+
+::: column
+```{r}
+emprestimo <- -40000
+
+total <- total + emprestimo
+
+peso_A <- ativo_A / total
+peso_B <- ativo_B / total
+emprestimo <- emprestimo / total
+
+peso_A
+peso_B
+emprestimo
+
+sum(peso_A, peso_B, emprestimo)
+```
+:::
+:::
+:::
+
+## Visualizar o retorno da carteira.
+
+::: panel-tabset
+## Retorno da carteira
+
+```{r}
+plot(portfolio_returns_xts)
+```
+
+## Códigos
+
+```{r}
+comparacao <- cbind(asset_returns_xts, portfolio_returns_xts) %>% 
+  tk_tbl(rename_index = "Data") %>% 
+  pivot_longer(-Data, names_to = "assets", values_to = "value")
+
+p <- ggplot(comparacao, aes(x = Data, y = value, colour = assets)) +
+  geom_line() +
+  scale_color_hue(direction = 1) +
+  labs(
+    x = "Data",
+    y = "Retornos",
+    title = "Retorno dos ativos vs carteira",
+    fill = "Ativos"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16L, face = "bold", hjust = 0.5),
+    axis.title.y = element_text(face = "bold"),
+    axis.title.x = element_text(face = "bold")
+  )
+
+comp_mkt <- plotly::ggplotly(comparacao %>%
+ filter(assets %in% c("X.BVSP", "CARTEIRA")) %>%
+ ggplot() +
+  aes(x = Data, y = value, colour = assets) +
+  geom_line() +
+  scale_color_hue(direction = 1) +
+  labs(title = "Carteira VS Índice do mercado - 2020 - 2023")+
+  theme_minimal())
+  
+```
+
+## Ativos vs Carteira
+
+```{r}
+ggplotly(p)
+```
+
+## Mercado vs Carteira
+
+```{r}
+comp_mkt
+```
+:::
+
+## Análise do risco.
+
+::: panel-tabset
+
+
+
+## Risco do ativo
+
+::: {.columns}
+
+::: {.column}
+![](images/paste-1.png){width="505"}
+:::
+::: {.column}
+
+```{r}
+asset_risk_xts <- PerformanceAnalytics::StdDev(asset_returns_xts)
+
+plot(asset_risk_xts)
+```
+
+:::
+::: 
+
+
+
+
+:::
+
+
+calcula o risco de cada ativo.
+calcula o cv de cada ativo 
+identifica qual a ordem dos ativos mais eficientes isoladamente.
+
+matriz covari~^ancia
+beta do portifólio e de cada ativo beta covariancia/ variancia do mercado
+
+comparar carteiras sharpe  
+
+o inverso do cv 

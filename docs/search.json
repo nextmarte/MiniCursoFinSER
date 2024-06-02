@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Mini-curso de finanças com R",
-    "section": "",
-    "text": "Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será dividido em 3 partes:\n\nIntrodução aos conceitos de finanças que serão utilizados no curso\nAnálise de dados financeiros com R\nVisualização de dados financeiros com R\n\n\n\nEsperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso.\n\n\n\nPara se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud"
-  },
-  {
-    "objectID": "exercicios.html",
-    "href": "exercicios.html",
-    "title": "Mini-curso de finanças com R",
-    "section": "",
-    "text": "Instruções\nNeste arquivo você encontrará as instruções para realizar o mini-curso de finanças com R. Todos os pacotes necessários já estão instalados no ambiente da Posit Cloud . Para começar, execute a célula abaixo.\n\npacotes &lt;- c(\"tidyverse\", \"quantmod\", \"timetk\", \"plotly\")\npurrr::walk(pacotes, library, character.only = TRUE)\n\n\n\nMontando sua carteira\nAcesse o site Yahoo Finance e escolha 5 ações de empresas que você gostaria de incluir em sua carteira de investimentos. Depois de escolher crie um vetor com os códigos das ações e execute a célula abaixo.\n\n# Vetor com os códigos das ações numa variável chamada tickers\n\n\n\nColetando os dados com o pacote quantmod\n\nEscolha um período de tempo para coletar os dados das ações, por exemplo, de 01/01/2020 até 01/01/2021.\nUtilize a função getSymbols do pacote quantmod para coletar os dados das ações escolhidas.\nVisualize os dados coletados.\n\n\n# coloque o codigo para baixar os dados com quantmode abaixo. Consulte a documentação do quantmode para saber como fazer isso.\n\n\n\nTrabalhando com os dados\nConverta os dados diários para dados mensais usando a função to.monthly do pacote quantmod. Depois, utilize a função tk_tbl do pacote timetk para converter os dados para um tibble."
-  },
-  {
     "objectID": "apresentacao.html#ariel-levy",
     "href": "apresentacao.html#ariel-levy",
     "title": "Mini-Curso - Explorando finanças com R",
@@ -28,32 +14,18 @@
     "text": "Marcus Ramalho\n\n\n\n\n\nPossui graduação em Administração pela Universidade Federal Fluminense (2020) e é candidato ao título de mestre em Administração pelo programa de pós-graduação em administração da UFF (PPGAd-UFF). É professor convidado dos MBAs de Ciências de Dados e de Finanças Corporativas e Mercados de Capitais na UFF. Tem experiência em ciência de dados com R e Python, programação funcional e desenvolvimento de bots, mapeamento e automação de processos administrativos. Tem interesse em Administração da Informação, Gestão do Conhecimento Pessoal, Economia Política, Finanças, R e Python."
   },
   {
-    "objectID": "index.html#pré-requisitos",
-    "href": "index.html#pré-requisitos",
-    "title": "Mini-curso de finanças com R",
-    "section": "",
-    "text": "Esperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso."
-  },
-  {
-    "objectID": "index.html#preparação",
-    "href": "index.html#preparação",
-    "title": "Mini-curso de finanças com R",
-    "section": "",
-    "text": "Para se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud"
-  },
-  {
-    "objectID": "apresentacao.html#objetivo",
-    "href": "apresentacao.html#objetivo",
+    "objectID": "apresentacao.html#sumário",
+    "href": "apresentacao.html#sumário",
     "title": "Mini-Curso - Explorando finanças com R",
-    "section": "Objetivo",
-    "text": "Objetivo\n\nRelembrar conceitos de finanças\nApresentar o R como ferramenta para análise de dados financeiros"
+    "section": "Sumário",
+    "text": "Sumário\n\nRelembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.\nImportar os preços dos ativos da internet direto do yahoo.com\nTransformar os preços diários em mensais e obter os retornos.\nVisualização dos dados.\nRetorno da carteira\nVisualizar o retorno da carteira.\nAnálise do risco.\nComparar carteiras."
   },
   {
-    "objectID": "apresentacao.html#introdução",
-    "href": "apresentacao.html#introdução",
+    "objectID": "apresentacao.html#relembrando-conceitos-de-finanças",
+    "href": "apresentacao.html#relembrando-conceitos-de-finanças",
     "title": "Mini-Curso - Explorando finanças com R",
-    "section": "Introdução",
-    "text": "Introdução"
+    "section": "Relembrando conceitos de finanças",
+    "text": "Relembrando conceitos de finanças\n\nQual a sua motivação para investir?MotivaçãoRenda variávelOHLC\n\n\n\nQual a motivação para investir?\nJá investiu em renda variável?\nQuais os riscos?\nComo escolher seus ativos? Análise Fundamentalista"
   },
   {
     "objectID": "apresentacao.html#teoria-dos-mercados-eficientes",
@@ -67,13 +39,139 @@
     "href": "apresentacao.html#retornos-de-um-ativo",
     "title": "Mini-Curso - Explorando finanças com R",
     "section": "Retornos de um ativo",
-    "text": "Retornos de um ativo\n\nRetorno Linear\nRetorno Logarítmico\n\nRetorno Linear = \\(\\frac{P_{t} - P_{t-1}}{P_{t-1}}\\)\nRetorno Logarítmico = \\(ln(\\frac{P_{t}}{P_{t-1}})\\)"
+    "text": "Retornos de um ativo\nRetorno Linear = \\(\\frac{P_{t} - P_{t-1}}{P_{t-1}}\\)\nRetorno Logarítmico = \\(ln(\\frac{P_{t}}{P_{t-1}})\\)"
   },
   {
     "objectID": "apresentacao.html#exercício-1",
     "href": "apresentacao.html#exercício-1",
     "title": "Mini-Curso - Explorando finanças com R",
     "section": "Exercício 1",
-    "text": "Exercício 1\n\nCalcular o retorno de um ativo dado que o preço de compra é 100 e o preço de venda é 120.\n\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+    "text": "Exercício 1\n\nSolução\n\n\n\npreco_compra &lt;- 100\npreco_venda &lt;- 120\n\nretorno &lt;- (preco_venda - preco_compra) / preco_compra\nretorno\n\n[1] 0.2\n\n\n\n\n\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+  },
+  {
+    "objectID": "apresentacao.html",
+    "href": "apresentacao.html",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "",
+    "text": "Doutor em Economia (Universidade Federal Fluminense - 2013), mestre em Administração (IBMEC -2003) e engenheiro eletricista (Universidade Federal Fluminense - 1982). Sou Professor Associado da Universidade Federal Fluminense vinculado ao Departamento de Administração da Faculdade de Administração e Ciências Contábeis e fui coordenador do Curso de Graduação em Administração (2016-2021). Professor do quadro permanente do PPGAd - UFF e colaborador no MBA de Logística (LOGEMP - UFF), no MBA de Finanças (UFF), no MBA de Marketing (UFF) e dos cursos de Extensão em Ciências dos Dados (UFF) como atual coordenador. Possui experiência em Administração, com ênfase em Finanças Quantitativas; Finanças publicas; Planejamento e Controle: Ciências dos Dados: na linguagem R e na análise e visualização de dados. Organizador dos Seminários de Estatística R - Evento Internacional de Divulgação de Aplicações e Desenvolvimento de Linguagens R. Coordenador do Grupo de Pesquisa (CNPQ/UFF) - Métodos Quantitativos Aplicados à Administração."
+  },
+  {
+    "objectID": "apresentacao.html#importar-os-preços-dos-ativos-da-internet-direto-do-yahoo.com",
+    "href": "apresentacao.html#importar-os-preços-dos-ativos-da-internet-direto-do-yahoo.com",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Importar os preços dos ativos da internet direto do yahoo.com",
+    "text": "Importar os preços dos ativos da internet direto do yahoo.com\n\nFundamentuscarregar pacotes e selecionar ativosImportar preços dos ativosPrices\n\n\n\n\n\n\n\n\n\n## pacote utilizados\npacotes &lt;- c(\"tidyverse\", \"quantmod\", \"timetk\", \"plotly\", \"PerformanceAnalytics\")\npurrr::walk(pacotes, library, character.only = TRUE)\n\n# Ativos escolhidos\ntickers &lt;- c(\"VALE3.SA\",\"PETR4.SA\",\"AZUL4.SA\",\"ABEV3.SA\",\"^BVSP\")\n\n\n\n\nO Formato XTS\n\n\nprices_raw &lt;- \n  getSymbols(tickers, \n             src = 'yahoo', \n             from = \"2019-12-31\",\n             to = \"2024-05-31\",\n             auto.assign = TRUE, #obs auto asign carrega os resultados para o ambiente\n             warnings = FALSE,)\n\nprices&lt;-prices_raw %&gt;%             \n  map(~Ad(get(.))) %&gt;% \n  reduce(merge) %&gt;%\n  `colnames&lt;-`(tickers)\n\n\n\n\nprices %&gt;%\n  tk_tbl() %&gt;%\n  head()\n\n# A tibble: 6 × 6\n  index      VALE3.SA PETR4.SA AZUL4.SA ABEV3.SA `^BVSP`\n  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;\n1 2020-01-02     36.4     11.2     58.8     16.2  118573\n2 2020-01-03     36.1     11.1     56.8     15.9  117707\n3 2020-01-06     35.9     11.3     55       16.0  116878\n4 2020-01-07     36.2     11.2     56.8     16.1  116662\n5 2020-01-08     36.2     11.2     56.9     16.0  116247\n6 2020-01-09     35.7     11.1     57.3     15.9  115947"
+  },
+  {
+    "objectID": "apresentacao.html#exercícios",
+    "href": "apresentacao.html#exercícios",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Exercícios",
+    "text": "Exercícios\n\nExercício 1” ”\n\n\n −+ 05:00 \nSuponha que uma ação caia 50% e depois suba 50%, de quanto foi a variação total no período? dica (Componha o retorno destes dois períodos utilizando juros compostos.)\n\n\n\nvalor_inicial &lt;- 100\nvalor_apos_queda &lt;- valor_inicial - (valor_inicial * 0.50)\nvalor_final &lt;- valor_apos_queda + (valor_apos_queda * 0.50)\n\nvariacao_total &lt;- (valor_final - valor_inicial) / valor_inicial\nvariacao_total\n\n[1] -0.25"
+  },
+  {
+    "objectID": "apresentacao.html#transformar-os-preços-diários-em-mensais-e-obter-os-retornos.",
+    "href": "apresentacao.html#transformar-os-preços-diários-em-mensais-e-obter-os-retornos.",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Transformar os preços diários em mensais e obter os retornos.",
+    "text": "Transformar os preços diários em mensais e obter os retornos.\n\nPreços mensaisRetornos mensais\n\n\n\nprices_monthly &lt;- to.monthly(prices, indexAt = \"lastof\", OHLC = FALSE)\n\nhead(prices_monthly)\n\n           VALE3.SA  PETR4.SA AZUL4.SA  ABEV3.SA  ^BVSP\n2020-01-31 33.69224 10.416773    59.26 15.037832 113761\n2020-02-29 29.69769  9.278069    44.44 12.249305 104172\n2020-03-31 28.96715  5.122342    17.55 10.042071  73020\n2020-04-30 30.06632  6.608883    17.40  9.553446  80506\n2020-05-31 35.52195  7.447353    14.28 10.513845  87403\n2020-06-30 37.47901  7.890385    20.11 11.912323  95056\n\n\n\n\n\nasset_returns_xts &lt;-\n PerformanceAnalytics::Return.calculate(prices_monthly, \n                   method = \"discrete\") %&gt;% \n  na.omit()\nhead(asset_returns_xts)\n\n              VALE3.SA    PETR4.SA     AZUL4.SA    ABEV3.SA       ^BVSP\n2020-02-29 -0.11855984 -0.10931450 -0.250084376 -0.18543414 -0.08429075\n2020-03-31 -0.02459932 -0.44790857 -0.605085514 -0.18019255 -0.29904389\n2020-04-30  0.03794548  0.29020734 -0.008546987 -0.04865784  0.10251986\n2020-05-31  0.18145315  0.12687007 -0.179310342  0.10052913  0.08567063\n2020-06-30  0.05509432  0.05948856  0.408263374  0.13301295  0.08755992\n2020-07-31  0.08565819  0.03018329  0.009945244 -0.01697329  0.08264602"
+  },
+  {
+    "objectID": "apresentacao.html#visualizar-os-retornos-mensais",
+    "href": "apresentacao.html#visualizar-os-retornos-mensais",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Visualizar os retornos mensais",
+    "text": "Visualizar os retornos mensais\n\n## Visualizar os retornos com quantmod\n\ntail(BVSP)\n\n           BVSP.Open BVSP.High BVSP.Low BVSP.Close BVSP.Volume BVSP.Adjusted\n2024-05-22    127412    127412   125524     125650    12403500        125650\n2024-05-23    125650    125665   124431     124729     9985400        124729\n2024-05-24    124731    125257   124259     124306     9211500        124306\n2024-05-27    124297    124535   124081     124496     4327600        124496\n2024-05-28    124498    125392   123537     123780     9179800        123780\n2024-05-29    123780    123780   122458     122707     8257700        122707\n\nchartSeries(head(BVSP, 30), \n            TA = \"addVo()\",\n            type = \"candlesticks\",\n            time.scale = \"years\",)\n\n\n\n\n\n\n\n\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+  },
+  {
+    "objectID": "apresentacao.html#visualização-dos-dados",
+    "href": "apresentacao.html#visualização-dos-dados",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Visualização dos dados",
+    "text": "Visualização dos dados\n\nPreços com quantmodRetornos com ggplot2Com plotly\n\n\n\n## Visualizar os preços com quantmod\ngraficoscandle &lt;- chartSeries(head(BVSP, 30), \n            TA = \"addVo()\",\n            type = \"candlesticks\",\n            time.scale = \"years\",)\n\n\n\n\n\n\n\n\n\n\n\nasset_returns_tbl &lt;- asset_returns_xts %&gt;% \n  tk_tbl(rename_index = \"Data\") %&gt;% #converte em um data frame para plotar com ggplot\n  pivot_longer(!\"Data\" ,names_to = \"assets\")#seleciona todas as colunas menos data\n\n#plotando com o ggplot e com o plotly\ng1 &lt;- ggplot(asset_returns_tbl) +\n  aes(x = Data, y = value, colour = assets) +\n  geom_line() +\n  scale_color_hue(direction = 1) +\n  labs(title = \"Retornos de 2019 a 2024\")+ #Aqui nos podemos mudar as legendas\n  theme_minimal()\ng1\n\n\n\n\n\n\n\n\n\n\n\nplotly::ggplotly(g1)"
+  },
+  {
+    "objectID": "apresentacao.html#visualizar-os-preços-com-quantmod",
+    "href": "apresentacao.html#visualizar-os-preços-com-quantmod",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Visualizar os preços com quantmod",
+    "text": "Visualizar os preços com quantmod\n\n## Visualizar os preços com quantmod\ngraficoscandle &lt;- chartSeries(head(BVSP, 30), \n            TA = \"addVo()\",\n            type = \"candlesticks\",\n            time.scale = \"years\",)"
+  },
+  {
+    "objectID": "apresentacao.html#visualizar-os-retornos-com-ggplot2",
+    "href": "apresentacao.html#visualizar-os-retornos-com-ggplot2",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Visualizar os retornos com ggplot2",
+    "text": "Visualizar os retornos com ggplot2\n\nasset_returns_tbl &lt;- asset_returns_xts %&gt;% \n  tk_tbl(rename_index = \"Data\") %&gt;% #converte em um data frame para plotar com ggplot\n  pivot_longer(!\"Data\" ,names_to = \"assets\")#seleciona todas as colunas menos data\n\n#plotando com o ggplot e com o plotly\ng1 &lt;- ggplot(asset_returns_tbl) +\n  aes(x = Data, y = value, colour = assets) +\n  geom_line() +\n  scale_color_hue(direction = 1) +\n  labs(title = \"Retornos de 2019 a 2024\")+ #Aqui nos podemos mudar as legendas\n  theme_minimal()\ng1\n\n\n\n\n\n\n\n\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+  },
+  {
+    "objectID": "apresentacao.html#não-sabe-usar-o-ggplot2",
+    "href": "apresentacao.html#não-sabe-usar-o-ggplot2",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Não sabe usar o ggplot2?",
+    "text": "Não sabe usar o ggplot2?\n\nEsquisseBox Plot dos retornos\n\n\n\nesquisse::esquisser(asset_returns_tbl)\n\n\n\n\n\n\n\n\n\n\n\n\n\npbp &lt;- ggplot(asset_returns_tbl) +\n  aes(x = \"\", y = value, fill = assets) +\n  geom_boxplot() +\n  scale_fill_brewer(palette = \"OrRd\", direction = 1) +\n  labs(\n    x = \"Ativos\",\n    y = \"Retornos\",\n    title = \"Box Plot - Retorno dos ativos\",\n    fill = \"Ativos\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16L,\n    face = \"bold\",\n    hjust = 0.5),\n    axis.title.y = element_text(face = \"bold\"),\n    axis.title.x = element_text(face = \"bold\")\n  )\n\npbp"
+  },
+  {
+    "objectID": "apresentacao.html#esquisse",
+    "href": "apresentacao.html#esquisse",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Esquisse",
+    "text": "Esquisse\n\nesquisse::esquisser(asset_returns_tbl)"
+  },
+  {
+    "objectID": "apresentacao.html#box-plot-dos-retornos",
+    "href": "apresentacao.html#box-plot-dos-retornos",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Box Plot dos retornos",
+    "text": "Box Plot dos retornos\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+  },
+  {
+    "objectID": "apresentacao.html#retorno-da-carteira.",
+    "href": "apresentacao.html#retorno-da-carteira.",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Retorno da carteira.",
+    "text": "Retorno da carteira.\n\nPesos dos ativosRetorno da carteira\n\n\nO somatório dos pesos deve ser igual a 1.\n\nw &lt;- c(0.2, 0.2, 0.2, 0.2, 0.2)\n\nO cálculo do retorno de uma carteira depende do retorno de cada ativo e de seu peso na carteira e pode ser obtido pela média ponderada:\n\\[ \\bar{k}=\\sum_{i=i}^n{w_i*k_i}\\]\n\n\n\nportfolio_returns_xts&lt;-PerformanceAnalytics::Return.portfolio(asset_returns_xts,\n                 weights = w,\n                 rebalance_on = \"months\",\n                 type= \"discrete\") %&gt;% \n  `colnames&lt;-`(\"CARTEIRA\")\nhead(portfolio_returns_xts,3)\n\n              CARTEIRA\n2020-02-29 -0.14953672\n2020-03-31 -0.31136597\n2020-04-30  0.07469357"
+  },
+  {
+    "objectID": "apresentacao.html#pesos-dos-ativos",
+    "href": "apresentacao.html#pesos-dos-ativos",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Pesos dos ativos",
+    "text": "Pesos dos ativos\nO somatório dos pesos deve ser igual a 1.\n\npesos &lt;- c(0.2, 0.2, 0.2, 0.2, 0.2)\n\nO cálculo do retorno de uma carteira depende do retorno de cada ativo e de seu peso na carteira e pode ser obtido pela média ponderada:\n\\[ \\bar{k}=\\sum_{i=i}^n{w_i*k_i}\\]\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+  },
+  {
+    "objectID": "apresentacao.html#exercícios-1",
+    "href": "apresentacao.html#exercícios-1",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Exercícios",
+    "text": "Exercícios\n\nExercício 2“”\n\n\n −+ 05:00 \nDeterminado agente possui uma carteira formada pelas seguintes posições: R$25000,00 no ativo A e R$50000,00 no ativo B.\nQuais os pesos de sua carteira?\nSe para a manutenção destas posições o agente tivesse emprestado R$40000,00 ao Banco X, qual seria a estrutura dos pesos de sua carteira?\n\n\n\n\n\n# Valores das posições\nativo_A &lt;- 25000\nativo_B &lt;- 50000\n\n# Valor total da carteira\ntotal &lt;- ativo_A + ativo_B\n\n# Pesos\npeso_A &lt;- ativo_A / total\npeso_B &lt;- ativo_B / total\n\npeso_A\n\n[1] 0.3333333\n\npeso_B\n\n[1] 0.6666667\n\n\n\n\nemprestimo &lt;- -40000\n\ntotal &lt;- total + emprestimo\n\npeso_A &lt;- ativo_A / total\npeso_B &lt;- ativo_B / total\nemprestimo &lt;- emprestimo / total\n\npeso_A\n\n[1] 0.7142857\n\npeso_B\n\n[1] 1.428571\n\nemprestimo\n\n[1] -1.142857\n\nsum(peso_A, peso_B, emprestimo)\n\n[1] 1"
+  },
+  {
+    "objectID": "apresentacao.html#exercício-2",
+    "href": "apresentacao.html#exercício-2",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Exercício 2",
+    "text": "Exercício 2\n −+ 05:00 \nDeterminado agente possui uma carteira formada pelas seguintes posições: R$25000,00 no ativo A e R$50000,00 no ativo B.\nQuais os pesos de sua carteira?\nSe para a manutenção destas posições o agente tivesse emprestado R$40000,00 ao Banco X, qual seria a estrutura dos pesos de sua carteira?"
+  },
+  {
+    "objectID": "apresentacao.html#section-1",
+    "href": "apresentacao.html#section-1",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "“”",
+    "text": "“”\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+  },
+  {
+    "objectID": "apresentacao.html#visualizar-o-retorno-da-carteira.",
+    "href": "apresentacao.html#visualizar-o-retorno-da-carteira.",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Visualizar o retorno da carteira.",
+    "text": "Visualizar o retorno da carteira.\n\nRetorno da carteiraCódigosAtivos vs CarteiraMercado vs Carteira\n\n\n\nplot(portfolio_returns_xts)\n\n\n\n\n\n\n\n\n\n\n\ncomparacao &lt;- cbind(asset_returns_xts, portfolio_returns_xts) %&gt;% \n  tk_tbl(rename_index = \"Data\") %&gt;% \n  pivot_longer(-Data, names_to = \"assets\", values_to = \"value\")\n\np &lt;- ggplot(comparacao, aes(x = Data, y = value, colour = assets)) +\n  geom_line() +\n  scale_color_hue(direction = 1) +\n  labs(\n    x = \"Data\",\n    y = \"Retornos\",\n    title = \"Retorno dos ativos vs carteira\",\n    fill = \"Ativos\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16L, face = \"bold\", hjust = 0.5),\n    axis.title.y = element_text(face = \"bold\"),\n    axis.title.x = element_text(face = \"bold\")\n  )\n\ncomp_mkt &lt;- plotly::ggplotly(comparacao %&gt;%\n filter(assets %in% c(\"X.BVSP\", \"CARTEIRA\")) %&gt;%\n ggplot() +\n  aes(x = Data, y = value, colour = assets) +\n  geom_line() +\n  scale_color_hue(direction = 1) +\n  labs(title = \"Carteira VS Índice do mercado - 2020 - 2023\")+\n  theme_minimal())\n\n\n\n\nggplotly(p)\n\n\n\n\n\n\n\n\ncomp_mkt"
+  },
+  {
+    "objectID": "apresentacao.html#análise-do-risco.",
+    "href": "apresentacao.html#análise-do-risco.",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Análise do risco.",
+    "text": "Análise do risco.\n\nRisco do ativo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
   }
 ]
