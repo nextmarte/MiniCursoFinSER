@@ -1,5 +1,6 @@
 ---
 title: "Mini-curso de finanças com R"
+bibliography: references.bib
 ---
 
 # Bem-vindo(a)!!
@@ -38,4 +39,8 @@ Para se preparar para o curso, você pode baixar o repositório do curso no link
 
 [Link para o ambiente de desenvolvimento Posit Cloud](https://cloud.positivestudio.com/)
 
-## Referências
+## Lista dos pacotes e livros usados na elaboração deste curso
+
+Tidyverse [@tidyverse], Quantmod[@quantmod], timetk [@timetk], plotly [@plotly], PerformanceAnalytics [@PerformanceAnalytics], DT [@DT] e Reproducible Finance with R [@regenstein2019]
+
+##  Referências
