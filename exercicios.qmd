@@ -10,9 +10,10 @@ execute:
 
 # Instruções
 
-OBS 1 - Caso você não tenha o R instalado em sua máquina, você pode acompanhar o curso através do site: .
+OBS 1 - Caso você não tenha o R instalado em sua máquina, você pode acompanhar o curso através do site: [Ambiente Posit Cloud](https://posit.cloud/content/8286998).
 
 OBS 2 - Caso esteja trabalhando no seu computador, você pode instalar os pacotes necessários para o curso e depois carregar as bibliotecas com o código abaixo:
+
 
 
 ```{r instalação dos pacotes}

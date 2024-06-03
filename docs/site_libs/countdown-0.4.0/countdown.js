@@ -14,7 +14,6 @@ class CountdownTimer {
     const duration = minutes * 60 + seconds
 
     function attrIsTrue (x) {
-      if (typeof x === 'undefined') return false
       if (x === true) return true
       return !!(x === 'true' || x === '' || x === '1')
     }
@@ -25,7 +24,7 @@ class CountdownTimer {
     this.is_running = false
     this.warn_when = parseInt(el.dataset.warnWhen) || -1
     this.update_every = parseInt(el.dataset.updateEvery) || 1
-    this.play_sound = attrIsTrue(el.dataset.playSound) || el.dataset.playSound
+    this.play_sound = attrIsTrue(el.dataset.playSound)
     this.blink_colon = attrIsTrue(el.dataset.blinkColon)
     this.startImmediately = attrIsTrue(el.dataset.startImmediately)
     this.timeout = null
@@ -77,7 +76,7 @@ class CountdownTimer {
           window.Reveal.on('slidechanged', revealStartTimer)
         }
       } else if (window.IntersectionObserver) {
-        // All other situations use IntersectionObserver
+        // All other situtations use IntersectionObserver
         const onVisible = (element, callback) => {
           new window.IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -109,7 +108,7 @@ class CountdownTimer {
     ;['click', 'touchend'].forEach(function (eventType) {
       self.element.addEventListener(eventType, function (ev) {
         haltEvent(ev)
-        self.is_running ? self.stop({manual: true}) : self.start()
+        self.is_running ? self.stop() : self.start()
       })
     })
     this.element.addEventListener('keydown', function (ev) {
@@ -120,7 +119,7 @@ class CountdownTimer {
       if (!isSpaceOrEnter(ev) && !isArrowUpOrDown(ev)) return
       haltEvent(ev)
       if (isSpaceOrEnter(ev)) {
-        self.is_running ? self.stop({manual: true}) : self.start()
+        self.is_running ? self.stop() : self.start()
         return
       }
 
@@ -197,7 +196,7 @@ class CountdownTimer {
       this.end = Date.now() + this.duration * 1000
     }
 
-    this.emitStateEvent('start')
+    this.reportStateToShiny('start')
 
     this.element.classList.remove('finished')
     this.element.classList.add('running')
@@ -263,18 +262,14 @@ class CountdownTimer {
       Math.round(remaining) % this.update_every === 0
 
     if (should_update) {
-      const is_warning = remaining <= this.warn_when
-      if (is_warning && !this.element.classList.contains('warning')) {
-        this.emitStateEvent('warning')
-      }
-      this.element.classList.toggle('warning', is_warning)
+      this.element.classList.toggle('warning', remaining <= this.warn_when)
       this.display = { minutes, seconds }
       setRemainingTime('.minutes', minutes)
       setRemainingTime('.seconds', seconds)
     }
   }
 
-  stop ({manual = false} = {}) {
+  stop () {
     const { remaining } = this.remainingTime()
     if (remaining > 1) {
       this.remaining = remaining
@@ -285,19 +280,17 @@ class CountdownTimer {
     this.element.classList.add('finished')
     this.is_running = false
     this.end = null
-    this.emitStateEvent(manual ? 'stop' : 'finished')
+    this.reportStateToShiny('stop')
     this.timeout = clearTimeout(this.timeout)
   }
 
   reset () {
-    this.stop({manual: true})
+    this.stop()
     this.remaining = null
     this.update(true)
-
+    this.reportStateToShiny('reset')
     this.element.classList.remove('finished')
     this.element.classList.remove('warning')
-    this.emitEvents = true
-    this.emitStateEvent('reset')
   }
 
   setValues (opts) {
@@ -323,7 +316,7 @@ class CountdownTimer {
         this.start()
       }
     }
-    this.emitStateEvent('update')
+    this.reportStateToShiny('update')
     this.update(true)
   }
 
@@ -340,7 +333,7 @@ class CountdownTimer {
       newRemaining = Math.round(newRemaining / 5) * 5
     }
     this.setRemaining(newRemaining)
-    this.emitStateEvent(val > 0 ? 'bumpUp' : 'bumpDown')
+    this.reportStateToShiny(val > 0 ? 'bumpUp' : 'bumpDown')
     this.update(true)
   }
 
@@ -377,7 +370,7 @@ class CountdownTimer {
 
   playSound () {
     let url = this.play_sound
-    if (!url || url === "false") return
+    if (!url) return
     if (typeof url === 'boolean') {
       const src = this.src_location
         ? this.src_location.replace('/countdown.js', '')
@@ -401,10 +394,15 @@ class CountdownTimer {
     }
   }
 
-  emitStateEvent (action) {
+  reportStateToShiny (action) {
+    if (!window.Shiny) return
+
+    const inputId = this.element.id
     const data = {
-      action,
-      time: new Date().toISOString(),
+      event: {
+        action,
+        time: new Date().toISOString()
+      },
       timer: {
         is_running: this.is_running,
         end: this.end ? new Date(this.end).toISOString() : null,
@@ -412,24 +410,15 @@ class CountdownTimer {
       }
     }
 
-    this.reportStateToShiny(data)
-    this.element.dispatchEvent(new CustomEvent('countdown', { detail: data, bubbles: true }))
-  }
-
-  reportStateToShiny (data) {
-    if (!window.Shiny) return
-
-    if (!window.Shiny.setInputValue) {
-      // We're in Shiny but it isn't ready for input updates yet
-      setTimeout(() => this.reportStateToShiny(data), 100)
-      return
+    function shinySetInputValue () {
+      if (!window.Shiny.setInputValue) {
+        setTimeout(shinySetInputValue, 100)
+        return
+      }
+      window.Shiny.setInputValue(inputId, data)
     }
 
-    const { action, time, timer } = data
-
-    const shinyData = { event: { action, time }, timer }
-
-    window.Shiny.setInputValue(this.element.id, shinyData)
+    shinySetInputValue()
   }
 }
 
@@ -464,7 +453,7 @@ class CountdownTimer {
       Shiny.addCustomMessageHandler('countdown:stop', function (id) {
         const el = document.getElementById(id)
         if (!el) return
-        el.countdown.stop({manual: true})
+        el.countdown.stop()
       })
 
       Shiny.addCustomMessageHandler('countdown:reset', function (id) {

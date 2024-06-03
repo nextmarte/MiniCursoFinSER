@@ -37,7 +37,7 @@ Para se preparar para o curso, você pode baixar o repositório do curso no link
 
 [Repositório no GitHub](https://github.com/nextmarte/MiniCursoFinSER)
 
-[Link para o ambiente de desenvolvimento Posit Cloud](https://cloud.positivestudio.com/)
+[Link para o ambiente de desenvolvimento Posit Cloud](https://posit.cloud/content/8286998)
 
 ## Lista dos pacotes e livros usados na elaboração deste curso
 
