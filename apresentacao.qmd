@@ -65,7 +65,7 @@ Possui graduação em Administração pela Universidade Federal Fluminense (2020
 
 ## Sumário
 
-1.  Relembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.
+1.  Relembrar conceitos de finanças e aplicar o R na análise e visualização de seu portfólio.
 
 2.  Importar os preços dos ativos da internet direto do yahoo.com
 
@@ -79,7 +79,7 @@ Possui graduação em Administração pela Universidade Federal Fluminense (2020
 
 7.  Análise do risco.
 
-8.  Beta do portifólio e de cada ativo.
+8.  Beta do portfólio e de cada ativo.
 
 9.  Índice sharpe
 
@@ -598,7 +598,7 @@ rr
 ## Beta da carteira e de cada ativo.
 
 ```{r}
-# Calculando o beta do portifólio e de cada ativo
+# Calculando o beta do portfólio e de cada ativo
 
 beta_long <- PerformanceAnalytics::CAPM.beta(cbind(asset_returns_xts, portfolio_returns_xts), asset_returns_xts$'^BVSP', Rf = 0) %>%
   as.data.frame() %>%

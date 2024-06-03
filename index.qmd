@@ -7,7 +7,7 @@ bibliography: references.bib
 
 Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será apresentado seguindo o roteiro abaixo:
 
-1.  Relembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.
+1.  Relembrar conceitos de finanças e aplicar o R na análise e visualização de seu portfólio.
 
 2.  Importar os preços dos ativos da internet direto do yahoo.com
 
@@ -21,7 +21,7 @@ Neste curso você aprenderá a utilizar o R para análise de dados financeiros. 
 
 7.  Análise do risco.
 
-8.  Beta do portifólio e de cada ativo.
+8.  Beta do portfólio e de cada ativo.
 
 9.  Índice sharpe
 

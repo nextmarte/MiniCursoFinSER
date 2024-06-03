@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mini-Curso - Explorando finanças com R - Mini-curso de finanças com R</title>
+<title>Mini-Curso - Explorando finanças com R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -113,7 +93,7 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="./index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Início</span></a>
   </li>  
@@ -155,8 +135,9 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bem-vindoa" id="toc-bem-vindoa" class="nav-link active" data-scroll-target="#bem-vindoa">Bem-vindo(a)!!</a>
+  <li><a href="#mini-curso-de-finanças-com-r" id="toc-mini-curso-de-finanças-com-r" class="nav-link active" data-scroll-target="#mini-curso-de-finanças-com-r">Mini-curso de finanças com R</a>
   <ul class="collapse">
+  <li><a href="#bem-vindoa" id="toc-bem-vindoa" class="nav-link" data-scroll-target="#bem-vindoa">Bem-vindo(a)!!</a></li>
   <li><a href="#pré-requisitos" id="toc-pré-requisitos" class="nav-link" data-scroll-target="#pré-requisitos">Pré-requisitos</a></li>
   <li><a href="#preparação" id="toc-preparação" class="nav-link" data-scroll-target="#preparação">Preparação</a></li>
   <li><a href="#lista-dos-pacotes-e-livros-usados-na-elaboração-deste-curso" id="toc-lista-dos-pacotes-e-livros-usados-na-elaboração-deste-curso" class="nav-link" data-scroll-target="#lista-dos-pacotes-e-livros-usados-na-elaboração-deste-curso">Lista dos pacotes e livros usados na elaboração deste curso</a></li>
@@ -168,85 +149,52 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Mini-curso de finanças com R</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="bem-vindoa" class="level1">
-<h1>Bem-vindo(a)!!</h1>
+<section id="mini-curso-de-finanças-com-r" class="level1">
+<h1>Mini-curso de finanças com R</h1>
+<section id="bem-vindoa" class="level2">
+<h2 class="anchored" data-anchor-id="bem-vindoa">Bem-vindo(a)!!</h2>
 <p>Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será apresentado seguindo o roteiro abaixo:</p>
 <ol type="1">
-<li><p>Relembrar conceitos de finanças e aplicar o R na análise e visualização de seu portfólio.</p></li>
-<li><p>Importar os preços dos ativos da internet direto do yahoo.com</p></li>
-<li><p>Transformar os preços diários em mensais e obter os retornos.</p></li>
-<li><p>Visualização dos dados.</p></li>
-<li><p>Retorno da carteira</p></li>
-<li><p>Visualizar o retorno da carteira.</p></li>
-<li><p>Análise do risco.</p></li>
-<li><p>Beta do portfólio e de cada ativo.</p></li>
-<li><p>Índice sharpe</p></li>
-<li><p>Aprender a criar um dashboard com seus dados e gráficos.</p></li>
+<li>Relembrar conceitos de finanças e aplicar o R na análise e visualização de seu portfólio.</li>
+<li>Importar os preços dos ativos da internet direto do yahoo.com</li>
+<li>Transformar os preços diários em mensais e obter os retornos.</li>
+<li>Visualização dos dados.</li>
+<li>Retorno da carteira</li>
+<li>Visualizar o retorno da carteira.</li>
+<li>Análise do risco.</li>
+<li>Beta do portfólio e de cada ativo.</li>
+<li>Índice Sharpe</li>
+<li>Aprender a criar um dashboard com seus dados e gráficos.</li>
 </ol>
+</section>
 <section id="pré-requisitos" class="level2">
 <h2 class="anchored" data-anchor-id="pré-requisitos">Pré-requisitos</h2>
-<p>Esperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso.</p>
+<p>Esperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositório do curso.</p>
 </section>
 <section id="preparação" class="level2">
 <h2 class="anchored" data-anchor-id="preparação">Preparação</h2>
 <p>Para se preparar para o curso, você pode baixar o repositório do curso no link abaixo:</p>
-<p><a href="https://github.com/nextmarte/MiniCursoFinSER">Repositório no GitHub</a></p>
-<p><a href="https://posit.cloud/content/8286998">Link para o ambiente de desenvolvimento Posit Cloud</a></p>
+<ul>
+<li><a href="https://github.com/nextmarte/MiniCursoFinSER">Repositório no GitHub</a></li>
+<li><a href="https://posit.cloud/content/8286998">Link para o ambiente de desenvolvimento Posit Cloud</a></li>
+</ul>
 </section>
 <section id="lista-dos-pacotes-e-livros-usados-na-elaboração-deste-curso" class="level2">
 <h2 class="anchored" data-anchor-id="lista-dos-pacotes-e-livros-usados-na-elaboração-deste-curso">Lista dos pacotes e livros usados na elaboração deste curso</h2>
-<p>Tidyverse <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span>, Quantmod<span class="citation" data-cites="quantmod">(<a href="#ref-quantmod" role="doc-biblioref">Ryan and Ulrich 2023</a>)</span>, timetk <span class="citation" data-cites="timetk">(<a href="#ref-timetk" role="doc-biblioref">Dancho and Vaughan 2023</a>)</span>, plotly <span class="citation" data-cites="plotly">(<a href="#ref-plotly" role="doc-biblioref">Sievert 2020</a>)</span>, PerformanceAnalytics <span class="citation" data-cites="PerformanceAnalytics">(<a href="#ref-PerformanceAnalytics" role="doc-biblioref">Peterson and Carl 2020</a>)</span>, DT <span class="citation" data-cites="DT">(<a href="#ref-DT" role="doc-biblioref">Xie, Cheng, and Tan 2024</a>)</span> e Reproducible Finance with R <span class="citation" data-cites="regenstein2019">(<a href="#ref-regenstein2019" role="doc-biblioref">Regenstein 2019</a>)</span></p>
+<p>Tidyverse, Quantmod, timetk, plotly, PerformanceAnalytics, DT e Reproducible Finance with R.</p>
 </section>
 <section id="referências" class="level2">
-
-
+<h2 class="anchored" data-anchor-id="referências">Referências</h2>
+<p>As referências bibliográficas estão disponíveis no arquivo <a href="references.bib">references.bib</a>.</p>
 
 
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-timetk" class="csl-entry" role="listitem">
-Dancho, Matt, and Davis Vaughan. 2023. <span>“Timetk: A Tool Kit for Working with Time Series.”</span> <a href="https://CRAN.R-project.org/package=timetk">https://CRAN.R-project.org/package=timetk</a>.
-</div>
-<div id="ref-PerformanceAnalytics" class="csl-entry" role="listitem">
-Peterson, Brian G., and Peter Carl. 2020. <span>“PerformanceAnalytics: Econometric Tools for Performance and Risk Analysis.”</span> <a href="https://CRAN.R-project.org/package=PerformanceAnalytics">https://CRAN.R-project.org/package=PerformanceAnalytics</a>.
-</div>
-<div id="ref-regenstein2019" class="csl-entry" role="listitem">
-Regenstein, Jonathan K. 2019. <em>Reproducible Finance with r: Code Flows and Shiny Apps for Portfolio Analysis</em>. Boca Raton, FL: CRC Press, an imprint of Taylor &amp; Francis Group.
-</div>
-<div id="ref-quantmod" class="csl-entry" role="listitem">
-Ryan, Jeffrey A., and Joshua M. Ulrich. 2023. <span>“Quantmod: Quantitative Financial Modelling Framework.”</span> <a href="https://CRAN.R-project.org/package=quantmod">https://CRAN.R-project.org/package=quantmod</a>.
-</div>
-<div id="ref-plotly" class="csl-entry" role="listitem">
-Sievert, Carson. 2020. <span>“Interactive Web-Based Data Visualization with r, Plotly, and Shiny.”</span> <a href="https://plotly-r.com">https://plotly-r.com</a>.
-</div>
-<div id="ref-tidyverse" class="csl-entry" role="listitem">
-Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span></span>Tidyverse<span></span>”</span> 4: 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
-</div>
-<div id="ref-DT" class="csl-entry" role="listitem">
-Xie, Yihui, Joe Cheng, and Xianying Tan. 2024. <span>“DT: A Wrapper of the JavaScript Library ’DataTables’.”</span> <a href="https://CRAN.R-project.org/package=DT">https://CRAN.R-project.org/package=DT</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

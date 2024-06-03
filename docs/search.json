@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Mini-curso de finanças com R",
     "section": "",
-    "text": "Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será apresentado seguindo o roteiro abaixo:\n\nRelembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.\nImportar os preços dos ativos da internet direto do yahoo.com\nTransformar os preços diários em mensais e obter os retornos.\nVisualização dos dados.\nRetorno da carteira\nVisualizar o retorno da carteira.\nAnálise do risco.\nBeta do portifólio e de cada ativo.\nÍndice sharpe\nAprender a criar um dashboard com seus dados e gráficos.\n\n\n\nEsperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso.\n\n\n\nPara se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud\n\n\n\nTidyverse (Wickham et al. 2019), Quantmod(Ryan and Ulrich 2023), timetk (Dancho and Vaughan 2023), plotly (Sievert 2020), PerformanceAnalytics (Peterson and Carl 2020), DT (Xie, Cheng, and Tan 2024) e Reproducible Finance with R (Regenstein 2019)"
+    "text": "Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será apresentado seguindo o roteiro abaixo:\n\nRelembrar conceitos de finanças e aplicar o R na análise e visualização de seu portfólio.\nImportar os preços dos ativos da internet direto do yahoo.com\nTransformar os preços diários em mensais e obter os retornos.\nVisualização dos dados.\nRetorno da carteira\nVisualizar o retorno da carteira.\nAnálise do risco.\nBeta do portfólio e de cada ativo.\nÍndice sharpe\nAprender a criar um dashboard com seus dados e gráficos.\n\n\n\nEsperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso.\n\n\n\nPara se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud\n\n\n\nTidyverse (Wickham et al. 2019), Quantmod(Ryan and Ulrich 2023), timetk (Dancho and Vaughan 2023), plotly (Sievert 2020), PerformanceAnalytics (Peterson and Carl 2020), DT (Xie, Cheng, and Tan 2024) e Reproducible Finance with R (Regenstein 2019)"
   },
   {
     "objectID": "index.html#pré-requisitos",
@@ -26,6 +26,48 @@
     "title": "Mini-curso de finanças com R",
     "section": "",
     "text": "Tidyverse (Wickham et al. 2019), Quantmod(Ryan and Ulrich 2023), timetk (Dancho and Vaughan 2023), plotly (Sievert 2020), PerformanceAnalytics (Peterson and Carl 2020), DT (Xie, Cheng, and Tan 2024) e Reproducible Finance with R (Regenstein 2019)"
+  },
+  {
+    "objectID": "READNE.html",
+    "href": "READNE.html",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será apresentado seguindo o roteiro abaixo:\n\nRelembrar conceitos de finanças e aplicar o R na análise e visualização de seu portfólio.\nImportar os preços dos ativos da internet direto do yahoo.com\nTransformar os preços diários em mensais e obter os retornos.\nVisualização dos dados.\nRetorno da carteira\nVisualizar o retorno da carteira.\nAnálise do risco.\nBeta do portfólio e de cada ativo.\nÍndice Sharpe\nAprender a criar um dashboard com seus dados e gráficos.\n\n\n\n\nEsperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositório do curso.\n\n\n\nPara se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\n\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud\n\n\n\n\nTidyverse, Quantmod, timetk, plotly, PerformanceAnalytics, DT e Reproducible Finance with R.\n\n\n\nAs referências bibliográficas estão disponíveis no arquivo references.bib."
+  },
+  {
+    "objectID": "READNE.html#bem-vindoa",
+    "href": "READNE.html#bem-vindoa",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será apresentado seguindo o roteiro abaixo:\n\nRelembrar conceitos de finanças e aplicar o R na análise e visualização de seu portfólio.\nImportar os preços dos ativos da internet direto do yahoo.com\nTransformar os preços diários em mensais e obter os retornos.\nVisualização dos dados.\nRetorno da carteira\nVisualizar o retorno da carteira.\nAnálise do risco.\nBeta do portfólio e de cada ativo.\nÍndice Sharpe\nAprender a criar um dashboard com seus dados e gráficos."
+  },
+  {
+    "objectID": "READNE.html#pré-requisitos",
+    "href": "READNE.html#pré-requisitos",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Esperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositório do curso."
+  },
+  {
+    "objectID": "READNE.html#preparação",
+    "href": "READNE.html#preparação",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Para se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\n\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud"
+  },
+  {
+    "objectID": "READNE.html#lista-dos-pacotes-e-livros-usados-na-elaboração-deste-curso",
+    "href": "READNE.html#lista-dos-pacotes-e-livros-usados-na-elaboração-deste-curso",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Tidyverse, Quantmod, timetk, plotly, PerformanceAnalytics, DT e Reproducible Finance with R."
+  },
+  {
+    "objectID": "READNE.html#referências",
+    "href": "READNE.html#referências",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "As referências bibliográficas estão disponíveis no arquivo references.bib."
   },
   {
     "objectID": "exercicios.html",
@@ -53,7 +95,7 @@
     "href": "apresentacao.html#sumário",
     "title": "Mini-Curso - Explorando finanças com R",
     "section": "Sumário",
-    "text": "Sumário\n\nRelembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.\nImportar os preços dos ativos da internet direto do yahoo.com\nTransformar os preços diários em mensais e obter os retornos.\nVisualização dos dados.\nRetorno da carteira\nVisualizar o retorno da carteira.\nAnálise do risco.\nBeta do portifólio e de cada ativo.\nÍndice sharpe\nAprender a criar um dashboard com seus dados e gráficos."
+    "text": "Sumário\n\nRelembrar conceitos de finanças e aplicar o R na análise e visualização de seu portfólio.\nImportar os preços dos ativos da internet direto do yahoo.com\nTransformar os preços diários em mensais e obter os retornos.\nVisualização dos dados.\nRetorno da carteira\nVisualizar o retorno da carteira.\nAnálise do risco.\nBeta do portfólio e de cada ativo.\nÍndice sharpe\nAprender a criar um dashboard com seus dados e gráficos."
   },
   {
     "objectID": "apresentacao.html#relembrando-conceitos-de-finanças",
@@ -88,7 +130,7 @@
     "href": "apresentacao.html#transformar-os-preços-diários-em-mensais-e-obter-os-retornos.",
     "title": "Mini-Curso - Explorando finanças com R",
     "section": "Transformar os preços diários em mensais e obter os retornos.",
-    "text": "Transformar os preços diários em mensais e obter os retornos.\n\nPreços mensaisRetornos mensais\n\n\n\nprices_monthly &lt;- to.monthly(prices, indexAt = \"lastof\", OHLC = FALSE)\n\nhead(prices_monthly)\n\n           VALE3.SA  PETR4.SA CMIG4.SA RADL3.SA ITUB4.SA  ^BVSP\n2020-01-31 33.69224 10.416773 4.109726 22.92487 27.17904 113761\n2020-02-29 29.69769  9.278069 3.837576 22.12761 26.89432 104172\n2020-03-31 28.96715  5.122343 2.449342 18.82075 19.41503  73020\n2020-04-30 30.06632  6.608884 2.617029 19.37390 19.15840  80506\n2020-05-31 35.52196  7.447353 2.968899 20.23554 19.39836  87403\n2020-06-30 37.47902  7.890387 3.029377 20.48136 21.44141  95056\n\n\n\n\n\nasset_returns_xts &lt;-\n PerformanceAnalytics::Return.calculate(prices_monthly, \n                   method = \"discrete\") %&gt;% \n  na.omit()\nhead(asset_returns_xts)\n\n              VALE3.SA    PETR4.SA    CMIG4.SA    RADL3.SA    ITUB4.SA\n2020-02-29 -0.11855974 -0.10931450 -0.06622096 -0.03477718 -0.01047584\n2020-03-31 -0.02459939 -0.44790847 -0.36174781 -0.14944491 -0.27809900\n2020-04-30  0.03794542  0.29020719  0.06846224  0.02939045 -0.01321840\n2020-05-31  0.18145343  0.12686999  0.13445411  0.04447432  0.01252534\n2020-06-30  0.05509432  0.05948875  0.02037034  0.01214789  0.10532049\n2020-07-31  0.08565798  0.03018298  0.08892930  0.12185828  0.05720434\n                 ^BVSP\n2020-02-29 -0.08429075\n2020-03-31 -0.29904389\n2020-04-30  0.10251986\n2020-05-31  0.08567063\n2020-06-30  0.08755992\n2020-07-31  0.08264602"
+    "text": "Transformar os preços diários em mensais e obter os retornos.\n\nPreços mensaisRetornos mensais\n\n\n\nprices_monthly &lt;- to.monthly(prices, indexAt = \"lastof\", OHLC = FALSE)\n\nhead(prices_monthly)\n\n           VALE3.SA  PETR4.SA CMIG4.SA RADL3.SA ITUB4.SA  ^BVSP\n2020-01-31 33.69224 10.416774 4.109726 22.92487 27.17904 113761\n2020-02-29 29.69770  9.278069 3.837577 22.12761 26.89432 104172\n2020-03-31 28.96715  5.122343 2.449341 18.82075 19.41503  73020\n2020-04-30 30.06632  6.608884 2.617029 19.37390 19.15841  80506\n2020-05-31 35.52196  7.447352 2.968899 20.23553 19.39836  87403\n2020-06-30 37.47901  7.890386 3.029377 20.48136 21.44140  95056\n\n\n\n\n\nasset_returns_xts &lt;-\n PerformanceAnalytics::Return.calculate(prices_monthly, \n                   method = \"discrete\") %&gt;% \n  na.omit()\nhead(asset_returns_xts)\n\n              VALE3.SA    PETR4.SA    CMIG4.SA    RADL3.SA    ITUB4.SA\n2020-02-29 -0.11855969 -0.10931449 -0.06622080 -0.03477693 -0.01047570\n2020-03-31 -0.02459932 -0.44790853 -0.36174804 -0.14944521 -0.27809920\n2020-04-30  0.03794522  0.29020728  0.06846275  0.02939065 -0.01321771\n2020-05-31  0.18145351  0.12686984  0.13445372  0.04447372  0.01252484\n2020-06-30  0.05509421  0.05948875  0.02037043  0.01214818  0.10531990\n2020-07-31  0.08565809  0.03018304  0.08892923  0.12185857  0.05720481\n                 ^BVSP\n2020-02-29 -0.08429075\n2020-03-31 -0.29904389\n2020-04-30  0.10251986\n2020-05-31  0.08567063\n2020-06-30  0.08755992\n2020-07-31  0.08264602"
   },
   {
     "objectID": "apresentacao.html#visualização-dos-dados",
@@ -109,7 +151,7 @@
     "href": "apresentacao.html#retorno-da-carteira.",
     "title": "Mini-Curso - Explorando finanças com R",
     "section": "Retorno da carteira.",
-    "text": "Retorno da carteira.\n\nPesos dos ativosRetorno da carteira\n\n\nO somatório dos pesos deve ser igual a 1.\n\nset.seed(1234) \nw &lt;- runif(5) # Gerando 4 pesos aleatórios\nw &lt;- w / sum(w) # Normalizando os pesos para que a soma seja 1\nw\n\n[1] 0.04018396 0.21992701 0.21532396 0.22030871 0.30425636\n\n\nO cálculo do retorno de uma carteira depende do retorno de cada ativo e de seu peso na carteira e pode ser obtido pela média ponderada:\n\\[ \\bar{k}=\\sum_{i=i}^n{w_i*k_i}\\]\n\n\n\n# removendo o índice do IBOV da lista de ativos para calcular o retorno da carteira\nretorno_ativos &lt;- asset_returns_xts[, tickers[1:5]]\n\nportfolio_returns_xts&lt;-PerformanceAnalytics::Return.portfolio(retorno_ativos,\n                 weights = w,\n                 rebalance_on = \"months\",\n                 type= \"discrete\",\n                 verbose = FALSE) %&gt;% \n  `colnames&lt;-`(\"CARTEIRA\")\nhead(portfolio_returns_xts,3)\n\n              CARTEIRA\n2020-02-29 -0.05391343\n2020-03-31 -0.29492605\n2020-04-30  0.08254395"
+    "text": "Retorno da carteira.\n\nPesos dos ativosRetorno da carteira\n\n\nO somatório dos pesos deve ser igual a 1.\n\nset.seed(1234) \nw &lt;- runif(5) # Gerando 4 pesos aleatórios\nw &lt;- w / sum(w) # Normalizando os pesos para que a soma seja 1\nw\n\n[1] 0.04018396 0.21992701 0.21532396 0.22030871 0.30425636\n\n\nO cálculo do retorno de uma carteira depende do retorno de cada ativo e de seu peso na carteira e pode ser obtido pela média ponderada:\n\\[ \\bar{k}=\\sum_{i=i}^n{w_i*k_i}\\]\n\n\n\n# removendo o índice do IBOV da lista de ativos para calcular o retorno da carteira\nretorno_ativos &lt;- asset_returns_xts[, tickers[1:5]]\n\nportfolio_returns_xts&lt;-PerformanceAnalytics::Return.portfolio(retorno_ativos,\n                 weights = w,\n                 rebalance_on = \"months\",\n                 type= \"discrete\",\n                 verbose = FALSE) %&gt;% \n  `colnames&lt;-`(\"CARTEIRA\")\nhead(portfolio_returns_xts,3)\n\n              CARTEIRA\n2020-02-29 -0.05391329\n2020-03-31 -0.29492623\n2020-04-30  0.08254432"
   },
   {
     "objectID": "apresentacao.html#exercícios-1",
@@ -137,14 +179,14 @@
     "href": "apresentacao.html#beta",
     "title": "Mini-Curso - Explorando finanças com R",
     "section": "Beta",
-    "text": "Beta\n\nBeta da carteira e de cada ativo.Beta vs RetornoGráfico - Beta vs Retorno\n\n\n\n# Calculando o beta do portifólio e de cada ativo\n\nbeta_long &lt;- PerformanceAnalytics::CAPM.beta(cbind(asset_returns_xts, portfolio_returns_xts), asset_returns_xts$'^BVSP', Rf = 0) %&gt;%\n  as.data.frame() %&gt;%\n  rownames_to_column(var = \"indice\") %&gt;%\n  pivot_longer(cols = -indice, names_to = \"Ativo\", values_to = \"beta\") %&gt;%\n  select(-indice) %&gt;% \n  inner_join(risco_retorno, by = \"Ativo\") %&gt;%\n  select(Ativo,Desvio, beta, Risco, Retorno)\n\nbeta_long\n\n# A tibble: 7 × 5\n  Ativo    Desvio  beta Risco Retorno\n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n1 VALE3.SA 0.0950 0.620  5.78 0.0164 \n2 PETR4.SA 0.123  1.31   3.72 0.0331 \n3 CMIG4.SA 0.101  0.995  4.44 0.0227 \n4 RADL3.SA 0.0747 0.627 14.8  0.00506\n5 ITUB4.SA 0.0951 1.06  13.0  0.00731\n6 X.BVSP   0.0737 1.00  17.1  0.00431\n7 CARTEIRA 0.0780 0.988  4.82 0.0162 \n\n\n\n\n\nbeta &lt;- plotly::ggplotly(ggplot(beta_long) +\n  aes(y = Retorno, x = beta, colour = Ativo) +\n  geom_point() +\n  scale_color_hue(direction = 1) +\n  labs(y = \"Retorno\", x = \"Beta\", title = \"Beta vs Retorno\") +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16L,\n    face = \"bold\",\n    hjust = 0.5)\n  ))\n\n\n\n\nbeta"
+    "text": "Beta\n\nBeta da carteira e de cada ativo.Beta vs RetornoGráfico - Beta vs Retorno\n\n\n\n# Calculando o beta do portfólio e de cada ativo\n\nbeta_long &lt;- PerformanceAnalytics::CAPM.beta(cbind(asset_returns_xts, portfolio_returns_xts), asset_returns_xts$'^BVSP', Rf = 0) %&gt;%\n  as.data.frame() %&gt;%\n  rownames_to_column(var = \"indice\") %&gt;%\n  pivot_longer(cols = -indice, names_to = \"Ativo\", values_to = \"beta\") %&gt;%\n  select(-indice) %&gt;% \n  inner_join(risco_retorno, by = \"Ativo\") %&gt;%\n  select(Ativo,Desvio, beta, Risco, Retorno)\n\nbeta_long\n\n# A tibble: 7 × 5\n  Ativo    Desvio  beta Risco Retorno\n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n1 VALE3.SA 0.0950 0.620  5.78 0.0164 \n2 PETR4.SA 0.123  1.31   3.72 0.0331 \n3 CMIG4.SA 0.101  0.995  4.44 0.0227 \n4 RADL3.SA 0.0747 0.627 14.8  0.00506\n5 ITUB4.SA 0.0951 1.06  13.0  0.00731\n6 X.BVSP   0.0737 1.00  17.1  0.00431\n7 CARTEIRA 0.0780 0.988  4.82 0.0162 \n\n\n\n\n\nbeta &lt;- plotly::ggplotly(ggplot(beta_long) +\n  aes(y = Retorno, x = beta, colour = Ativo) +\n  geom_point() +\n  scale_color_hue(direction = 1) +\n  labs(y = \"Retorno\", x = \"Beta\", title = \"Beta vs Retorno\") +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16L,\n    face = \"bold\",\n    hjust = 0.5)\n  ))\n\n\n\n\nbeta"
   },
   {
     "objectID": "apresentacao.html#indice-sharpe",
     "href": "apresentacao.html#indice-sharpe",
     "title": "Mini-Curso - Explorando finanças com R",
     "section": "Indice sharpe",
-    "text": "Indice sharpe\n\\[ SR = \\frac{R_p - R_f}{\\sigma_p}\\]\nOnde \\(R_p\\) é o retorno da carteira, \\(R_f\\) é a taxa livre de risco e \\(\\sigma_p\\) é o desvio padrão da carteira.\n\n# Calculando o índice sharpe com perfomance analytics\n\nsharpe_carteira &lt;- PerformanceAnalytics::SharpeRatio(portfolio_returns_xts, Rf = 0, p = 0.95, FUN = \"StdDev\")\n\nsharpe_ativos &lt;- PerformanceAnalytics::SharpeRatio(asset_returns_xts, Rf = 0, p = 0.95, FUN = \"StdDev\")\n\nsharpe_carteira\n\n                               CARTEIRA\nStdDev Sharpe (Rf=0%, p=95%): 0.2072599\n\nsharpe_ativos %&gt;% head()\n\n                               VALE3.SA  PETR4.SA  CMIG4.SA   RADL3.SA\nStdDev Sharpe (Rf=0%, p=95%): 0.1729673 0.2690394 0.2251256 0.06769502\n                                ITUB4.SA      ^BVSP\nStdDev Sharpe (Rf=0%, p=95%): 0.07693523 0.05850082"
+    "text": "Indice sharpe\n\\[ SR = \\frac{R_p - R_f}{\\sigma_p}\\]\nOnde \\(R_p\\) é o retorno da carteira, \\(R_f\\) é a taxa livre de risco e \\(\\sigma_p\\) é o desvio padrão da carteira.\n\n# Calculando o índice sharpe com perfomance analytics\n\nsharpe_carteira &lt;- PerformanceAnalytics::SharpeRatio(portfolio_returns_xts, Rf = 0, p = 0.95, FUN = \"StdDev\")\n\nsharpe_ativos &lt;- PerformanceAnalytics::SharpeRatio(asset_returns_xts, Rf = 0, p = 0.95, FUN = \"StdDev\")\n\nsharpe_carteira\n\n                               CARTEIRA\nStdDev Sharpe (Rf=0%, p=95%): 0.2072598\n\nsharpe_ativos %&gt;% head()\n\n                               VALE3.SA  PETR4.SA  CMIG4.SA   RADL3.SA\nStdDev Sharpe (Rf=0%, p=95%): 0.1729673 0.2690394 0.2251256 0.06769501\n                                ITUB4.SA      ^BVSP\nStdDev Sharpe (Rf=0%, p=95%): 0.07693525 0.05850082"
   },
   {
     "objectID": "apresentacao.html#exercício",
