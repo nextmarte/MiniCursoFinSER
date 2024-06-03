@@ -15,7 +15,7 @@ format:
 filters:
   - reveal-header
 date: today
-footer: PPGAd Universidade Federal de Fluminense
+footer: PPGAd Universidade Federal Fluminense
 toc: false
 css: styles.css
 execute: 
@@ -201,7 +201,7 @@ variacao_total
 ## Preços mensais
 
 ```{r}
-prices_monthly <- to.monthly(prices, indexAt = "lastof", OHLC = FALSE)
+prices_monthly <- xts::to.monthly(prices, indexAt = "lastof", OHLC = FALSE)
 
 head(prices_monthly)
 
@@ -340,7 +340,6 @@ set.seed(1234)
 w <- runif(5) # Gerando 4 pesos aleatórios
 w <- w / sum(w) # Normalizando os pesos para que a soma seja 1
 w
-
 
 ```
 

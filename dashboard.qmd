@@ -51,7 +51,6 @@ graficoscandle <- chartSeries(head(BVSP, 30),
 ## Row {.tabset height=40%}
 
 
-
 ```{r}
 #| title: Retorno dos ativos
 comp %>% plotly::ggplotly()
