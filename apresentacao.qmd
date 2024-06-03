@@ -84,6 +84,8 @@ Possui graduação em Administração pela Universidade Federal Fluminense (2020
 
 9.  Índice sharpe
 
+10. Aprender a criar um dashboard com seus dados e gráficos.
+
 ## Relembrando conceitos de finanças
 
 ::: panel-tabset
@@ -528,6 +530,7 @@ distribuicaodp <- plotly::ggplotly(asset_returns_tbl %>%
 
 ```
 
+
 ## Distribuição padronizada
 
 ```{r}
@@ -655,4 +658,8 @@ sharpe_ativos %>% head()
 
 ## Exercícios
 
-Selecione uma carteira adicionando pelo menos 6 ativos que supere o IBOV em resultados com no máximo 20% a mais de risco. 
+1. Selecione uma carteira adicionando pelo menos 6 ativos que supere o IBOV em resultados com no máximo 20% a mais de risco. 
+
+2. Crie um dashboard com os gráficos com seus dados e gráficos com base na carteira selecionada.
+
+`r countdown(minutes = 30, seconds = 00)`

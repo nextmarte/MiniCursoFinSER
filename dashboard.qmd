@@ -1,0 +1,99 @@
+---
+title: "Dashboard - carteira de investimentos"
+format: dashboard
+logo: "images/ser.png"
+css: styles.css
+---
+
+# Ativos selecionados
+
+```{r}
+#| echo: false
+
+# Importando variáveis
+source(here::here("script.r"))
+```
+
+```{r}
+#| echo: false
+
+tickers_string <- paste(tickers[1:5], collapse = ", ")
+
+```
+
+## Row {height=15%}
+
+```{r}
+#| content: valuebox
+#| title: "Ativos selecionados"
+list(
+  icon = "piggy-bank",
+  color = "info",
+  value = tickers_string
+)
+```
+
+
+## Row 
+
+```{r}
+#| title: Preços BVSP
+graficoscandle <- chartSeries(head(BVSP, 30),
+        TA = "addVo()",
+        type = "candlesticks",
+        time.scale = "years",
+)
+```
+
+
+# Análise dos ativos
+
+## Row {.tabset height=40%}
+
+
+
+```{r}
+#| title: Retorno dos ativos
+comp %>% plotly::ggplotly()
+```
+
+```{r}
+#| title: comparação com o mercado
+
+comp_mkt %>% plotly::ggplotly()
+```
+
+
+## Row {height=60%}
+
+### Colunm {.tabset}
+
+```{r}
+#| title: Box plot dos retornos
+
+pbp
+```
+
+```{r}
+#| title: Retornos x DP - PETR4.SA
+distribuicaodp
+```
+
+### Colunm {.tabset}
+
+```{r}
+#| title: Gráfico de Risco x Retorno por peso
+rr
+```
+
+```{r}
+#| title: Tabela de Retornos mensais
+DT::datatable(asset_returns_xts %>% 
+                tk_tbl(rename_index = "Data"))
+```
+
+```{r}
+#| title: Indicadores de risco e retorno
+DT::datatable(beta_long)
+```
+

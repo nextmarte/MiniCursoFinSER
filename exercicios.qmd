@@ -17,8 +17,7 @@ Neste arquivo você encontrará as instruções para realizar o mini-curso de fi
 #| message: false
 #| error: false
 
-
-pacotes <- c("tidyverse", "quantmod", "timetk", "plotly","PerformanceAnalytics")
+pacotes <- c("tidyverse", "quantmod", "timetk", "plotly", "PerformanceAnalytics","DT")
 purrr::walk(pacotes, library, character.only = TRUE)
 ```
 

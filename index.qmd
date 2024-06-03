@@ -6,17 +6,25 @@ title: "Mini-curso de finanças com R"
 
 Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será dividido em 3 partes:
 
-1.  Importar os preços dos ativos da internet em arquivos .csv ou .xls
+1.  Relembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.
 
-2.  Transformar os preços diários em mensais.
+2.  Importar os preços dos ativos da internet direto do yahoo.com
 
-3.  Obter os retornos mensais.
+3.  Transformar os preços diários em mensais e obter os retornos.
 
-4.  Visualizar os retornos mensais.
+4.  Visualização dos dados.
 
-5.  Calcular o retorno do portifólio utilizando os retornos mensais e pesos.
+5.  Retorno da carteira
 
-6.  Visualizar o retorno do portifólio.
+6.  Visualizar o retorno da carteira.
+
+7.  Análise do risco.
+
+8.  Beta do portifólio e de cada ativo.
+
+9.  Índice sharpe
+
+10. Aprender a criar um dashboard com seus dados e gráficos.
 
 ## Pré-requisitos
 
