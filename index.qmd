@@ -5,7 +5,7 @@ bibliography: references.bib
 
 # Bem-vindo(a)!!
 
-Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será dividido em 3 partes:
+Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será apresentado seguindo o roteiro abaixo:
 
 1.  Relembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.
 

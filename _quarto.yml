@@ -3,8 +3,10 @@ project:
   output-dir: docs
 
 website:
+  favicon: images/ser.png
   title: "Mini-Curso - Explorando finanças com R"
   navbar:
+    logo: images/ser.png
     left:
       - href: index.qmd
         text: Início
@@ -15,12 +17,20 @@ website:
       - href: exercicios.qmd
         text: Exercícios
         icon: bi-file-earmark-text
+      - href: dashboard.qmd
+        text: Dashboard
+        icon: bi-file-earmark-text
+    right: 
+      - href: https://github.com/nextmarte
+        text: GitHub
+        icon: bi-github
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+
 
 
 
