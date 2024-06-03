@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Neste curso você aprenderá a utilizar o R para análise de dados financeiros. O curso terá duração de 3 horas e será dividido em 3 partes:\n\nRelembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.\nImportar os preços dos ativos da internet direto do yahoo.com\nTransformar os preços diários em mensais e obter os retornos.\nVisualização dos dados.\nRetorno da carteira\nVisualizar o retorno da carteira.\nAnálise do risco.\nBeta do portifólio e de cada ativo.\nÍndice sharpe\nAprender a criar um dashboard com seus dados e gráficos.\n\n\n\nEsperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso.\n\n\n\nPara se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud\n\n\n\nTidyverse (Wickham et al. 2019), Quantmod(Ryan and Ulrich 2023), timetk (Dancho and Vaughan 2023), plotly (Sievert 2020), PerformanceAnalytics (Peterson and Carl 2020), DT (Xie, Cheng, and Tan 2024) e Reproducible Finance with R (Regenstein 2019)"
+  },
+  {
+    "objectID": "index.html#pré-requisitos",
+    "href": "index.html#pré-requisitos",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Esperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso."
+  },
+  {
+    "objectID": "index.html#preparação",
+    "href": "index.html#preparação",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Para se preparar para o curso, você pode baixar o repositório do curso no link abaixo:\nRepositório no GitHub\nLink para o ambiente de desenvolvimento Posit Cloud"
+  },
+  {
+    "objectID": "index.html#lista-dos-pacotes-e-livros-usados-na-elaboração-deste-curso",
+    "href": "index.html#lista-dos-pacotes-e-livros-usados-na-elaboração-deste-curso",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Tidyverse (Wickham et al. 2019), Quantmod(Ryan and Ulrich 2023), timetk (Dancho and Vaughan 2023), plotly (Sievert 2020), PerformanceAnalytics (Peterson and Carl 2020), DT (Xie, Cheng, and Tan 2024) e Reproducible Finance with R (Regenstein 2019)"
+  },
+  {
+    "objectID": "exercicios.html",
+    "href": "exercicios.html",
+    "title": "Mini-curso de finanças com R",
+    "section": "",
+    "text": "Instruções\nOBS 1 - Caso você não tenha o R instalado em sua máquina, você pode acompanhar o curso através do site: .\nOBS 2 - Caso esteja trabalhando no seu computador, você pode instalar os pacotes necessários para o curso e depois carregar as bibliotecas com o código abaixo:\n\npacotes &lt;- c(\"tidyverse\", \"quantmod\", \"timetk\", \"plotly\", \"PerformanceAnalytics\",\"DT\")\npurrr::walk(pacotes, library, character.only = TRUE)\n\nExercícios\n\nSuponha que uma ação caia 50% e depois suba 50%, de quanto foi a variação total no período? dica (Componha o retorno destes dois períodos utilizando juros compostos.)\n\n\nDeterminado agente possui uma carteira formada pelas seguintes posições: R$25000,00 no ativo A e R$50000,00 no ativo B.\n\nQuais os pesos de sua carteira?\nSe para a manutenção destas posições o agente tivesse emprestado R$40000,00 ao Banco X, qual seria a estrutura dos pesos de sua carteira?\n\nSelecione uma carteira adicionando pelo menos 6 ativos que supere o IBOV em resultados com no máximo 20% a mais de risco.\n\n\nCrie um dashboard com os gráficos com seus dados e gráficos com base na carteira selecionada."
+  },
+  {
+    "objectID": "apresentacao.html#ariel-levy",
+    "href": "apresentacao.html#ariel-levy",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Ariel Levy",
+    "text": "Ariel Levy\n\n\n\n\n\nDoutor em Economia (Universidade Federal Fluminense - 2013), mestre em Administração (IBMEC -2003) e engenheiro eletricista (Universidade Federal Fluminense - 1982). Sou Professor Associado da Universidade Federal Fluminense vinculado ao Departamento de Administração da Faculdade de Administração e Ciências Contábeis e fui coordenador do Curso de Graduação em Administração (2016-2021). Professor do quadro permanente do PPGAd - UFF e colaborador no MBA de Logística (LOGEMP - UFF), no MBA de Finanças (UFF), no MBA de Marketing (UFF) e dos cursos de Extensão em Ciências dos Dados (UFF) como atual coordenador. Possui experiência em Administração, com ênfase em Finanças Quantitativas; Finanças publicas; Planejamento e Controle: Ciências dos Dados: na linguagem R e na análise e visualização de dados. Organizador dos Seminários de Estatística R - Evento Internacional de Divulgação de Aplicações e Desenvolvimento de Linguagens R. Coordenador do Grupo de Pesquisa (CNPQ/UFF) - Métodos Quantitativos Aplicados à Administração."
+  },
+  {
+    "objectID": "apresentacao.html#marcus-ramalho",
+    "href": "apresentacao.html#marcus-ramalho",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Marcus Ramalho",
+    "text": "Marcus Ramalho\n\n\n\n\nPossui graduação em Administração pela Universidade Federal Fluminense (2020) e é candidato ao título de mestre em Administração pelo programa de pós-graduação em administração da UFF (PPGAd-UFF). É professor convidado dos MBAs de Ciências de Dados e de Finanças Corporativas e Mercados de Capitais na UFF. Tem experiência em ciência de dados com R e Python, programação funcional e desenvolvimento de bots, mapeamento e automação de processos administrativos. Tem interesse em Administração da Informação, Gestão do Conhecimento Pessoal, Economia Política, Finanças, R e Python."
+  },
+  {
+    "objectID": "apresentacao.html#sumário",
+    "href": "apresentacao.html#sumário",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Sumário",
+    "text": "Sumário\n\nRelembrar conceitos de finanças e aplicar o R na análise e visualização de seu portifólio.\nImportar os preços dos ativos da internet direto do yahoo.com\nTransformar os preços diários em mensais e obter os retornos.\nVisualização dos dados.\nRetorno da carteira\nVisualizar o retorno da carteira.\nAnálise do risco.\nBeta do portifólio e de cada ativo.\nÍndice sharpe\nAprender a criar um dashboard com seus dados e gráficos."
+  },
+  {
+    "objectID": "apresentacao.html#relembrando-conceitos-de-finanças",
+    "href": "apresentacao.html#relembrando-conceitos-de-finanças",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Relembrando conceitos de finanças",
+    "text": "Relembrando conceitos de finanças\n\nQual a sua motivação para investir?MotivaçãoRenda variávelOHLC\n\n\n\nQual a motivação para investir?\nJá investiu em renda variável?\nQuais os riscos?\nComo escolher seus ativos?"
+  },
+  {
+    "objectID": "apresentacao.html#importar-os-preços-dos-ativos-da-internet-direto-do-yahoo.com",
+    "href": "apresentacao.html#importar-os-preços-dos-ativos-da-internet-direto-do-yahoo.com",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Importar os preços dos ativos da internet direto do yahoo.com",
+    "text": "Importar os preços dos ativos da internet direto do yahoo.com\n\nFundamentuscarregar pacotes e selecionar ativosImportar preços dos ativosPrices\n\n\n\n\n\n\n\n\n\n## pacote utilizados\npacotes &lt;- c(\"tidyverse\", \"quantmod\", \"timetk\", \"plotly\", \"PerformanceAnalytics\")\npurrr::walk(pacotes, library, character.only = TRUE)\n\n# Ativos escolhidos\ntickers &lt;- c(\"VALE3.SA\",\"PETR4.SA\",\"CMIG4.SA\",\"RADL3.SA\",\"ITUB4.SA\",\"^BVSP\")\n\n# w &lt;- c(0.15, 0.25, 0.1, 0.2, 0.3)\n\n\n\n\nO Formato XTS\n\n\nprices_raw &lt;- \n  getSymbols(tickers, \n             src = 'yahoo', \n             from = \"2019-12-31\",\n             to = \"2024-05-31\",\n             auto.assign = TRUE, #obs auto asign carrega os resultados para o ambiente\n             warnings = FALSE,)\n\nprices&lt;-prices_raw %&gt;%             \n  map(~Ad(get(.))) %&gt;% \n  reduce(merge) %&gt;%\n  `colnames&lt;-`(tickers)\n\n\n\n\nprices %&gt;%\n  tk_tbl() %&gt;%\n  head()\n\n# A tibble: 6 × 7\n  index      VALE3.SA PETR4.SA CMIG4.SA RADL3.SA ITUB4.SA `^BVSP`\n  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;\n1 2020-01-02     36.4     11.2     3.82     21.2     31.5  118573\n2 2020-01-03     36.1     11.1     3.77     20.7     31.2  117707\n3 2020-01-06     35.9     11.3     3.83     20.3     30.7  116878\n4 2020-01-07     36.2     11.2     3.97     20.0     30.0  116662\n5 2020-01-08     36.2     11.2     4.08     20.3     29.5  116247\n6 2020-01-09     35.7     11.1     4.04     20.9     28.9  115947"
+  },
+  {
+    "objectID": "apresentacao.html#retornos-de-um-ativo",
+    "href": "apresentacao.html#retornos-de-um-ativo",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Retornos de um ativo",
+    "text": "Retornos de um ativo\nRetorno Linear = \\(\\frac{P_{t} - P_{t-1}}{P_{t-1}}\\)\nRetorno Logarítmico = \\(ln(\\frac{P_{t}}{P_{t-1}})\\)"
+  },
+  {
+    "objectID": "apresentacao.html#exercícios",
+    "href": "apresentacao.html#exercícios",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Exercícios",
+    "text": "Exercícios\n\nExercício 1” ”\n\n\n −+ 05:00 \n\nSuponha que uma ação caia 50% e depois suba 50%, de quanto foi a variação total no período? dica (Componha o retorno destes dois períodos utilizando juros compostos.)\n\n\n\n\nvalor_inicial &lt;- 100\nvalor_apos_queda &lt;- valor_inicial - (valor_inicial * 0.50)\nvalor_final &lt;- valor_apos_queda + (valor_apos_queda * 0.50)\n\nvariacao_total &lt;- (valor_final - valor_inicial) / valor_inicial\nvariacao_total\n\n[1] -0.25"
+  },
+  {
+    "objectID": "apresentacao.html#transformar-os-preços-diários-em-mensais-e-obter-os-retornos.",
+    "href": "apresentacao.html#transformar-os-preços-diários-em-mensais-e-obter-os-retornos.",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Transformar os preços diários em mensais e obter os retornos.",
+    "text": "Transformar os preços diários em mensais e obter os retornos.\n\nPreços mensaisRetornos mensais\n\n\n\nprices_monthly &lt;- to.monthly(prices, indexAt = \"lastof\", OHLC = FALSE)\n\nhead(prices_monthly)\n\n           VALE3.SA  PETR4.SA CMIG4.SA RADL3.SA ITUB4.SA  ^BVSP\n2020-01-31 33.69224 10.416775 4.109726 22.92486 27.17904 113761\n2020-02-29 29.69770  9.278069 3.837577 22.12761 26.89432 104172\n2020-03-31 28.96716  5.122344 2.449341 18.82075 19.41503  73020\n2020-04-30 30.06632  6.608884 2.617029 19.37390 19.15840  80506\n2020-05-31 35.52196  7.447352 2.968899 20.23553 19.39837  87403\n2020-06-30 37.47901  7.890386 3.029377 20.48136 21.44141  95056\n\n\n\n\n\nasset_returns_xts &lt;-\n PerformanceAnalytics::Return.calculate(prices_monthly, \n                   method = \"discrete\") %&gt;% \n  na.omit()\nhead(asset_returns_xts)\n\n              VALE3.SA    PETR4.SA    CMIG4.SA    RADL3.SA    ITUB4.SA\n2020-02-29 -0.11855963 -0.10931466 -0.06622080 -0.03477693 -0.01047570\n2020-03-31 -0.02459932 -0.44790842 -0.36174791 -0.14944499 -0.27809937\n2020-04-30  0.03794528  0.29020707  0.06846254  0.02939055 -0.01321811\n2020-05-31  0.18145336  0.12686992  0.13445372  0.04447402  0.01252544\n2020-06-30  0.05509421  0.05948875  0.02037051  0.01214799  0.10532028\n2020-07-31  0.08565829  0.03018304  0.08892914  0.12185847  0.05720434\n                 ^BVSP\n2020-02-29 -0.08429075\n2020-03-31 -0.29904389\n2020-04-30  0.10251986\n2020-05-31  0.08567063\n2020-06-30  0.08755992\n2020-07-31  0.08264602"
+  },
+  {
+    "objectID": "apresentacao.html#visualização-dos-dados",
+    "href": "apresentacao.html#visualização-dos-dados",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Visualização dos dados",
+    "text": "Visualização dos dados\n\nPreços com quantmodRetornos com ggplot2ggplot2Com plotly\n\n\n\n## Visualizar os preços com quantmod\ngraficoscandle &lt;- chartSeries(head(BVSP, 30), \n            TA = \"addVo()\",\n            type = \"candlesticks\",\n            time.scale = \"years\",)\n\n\n\n\n\n\n\n\n\n\n\nasset_returns_tbl &lt;- asset_returns_xts %&gt;% \n  tk_tbl(rename_index = \"Data\") %&gt;% #converte em um data frame para plotar com ggplot\n  pivot_longer(!\"Data\" ,names_to = \"assets\")#seleciona todas as colunas menos data\n\n#plotando com o ggplot e com o plotly\ng1 &lt;- ggplot(asset_returns_tbl) +\n  aes(x = Data, y = value, colour = assets) +\n  geom_line() +\n  scale_color_hue(direction = 1) +\n  labs(title = \"Retornos de 2019 a 2024\")+ #Aqui nos podemos mudar as legendas\n  theme_minimal()\n\n\n\n\ng1\n\n\n\n\n\n\n\n\n\n\n\nplotly::ggplotly(g1)"
+  },
+  {
+    "objectID": "apresentacao.html#não-sabe-usar-o-ggplot2",
+    "href": "apresentacao.html#não-sabe-usar-o-ggplot2",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Não sabe usar o ggplot2?",
+    "text": "Não sabe usar o ggplot2?\n\nEsquisseBox Plot dos retornos\n\n\n\nesquisse::esquisser(asset_returns_tbl)\n\n\n\n\n\n\n\n\n\n\n\n\n\npbp &lt;- ggplot(asset_returns_tbl) +\n  aes(x = \"\", y = value, fill = assets) +\n  geom_boxplot() +\n  scale_fill_brewer(palette = \"OrRd\", direction = 1) +\n  labs(\n    x = \"Ativos\",\n    y = \"Retornos\",\n    title = \"Box Plot - Retorno dos ativos\",\n    fill = \"Ativos\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16L,\n    face = \"bold\",\n    hjust = 0.5),\n    axis.title.y = element_text(face = \"bold\"),\n    axis.title.x = element_text(face = \"bold\")\n  )\n\npbp"
+  },
+  {
+    "objectID": "apresentacao.html#retorno-da-carteira.",
+    "href": "apresentacao.html#retorno-da-carteira.",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Retorno da carteira.",
+    "text": "Retorno da carteira.\n\nPesos dos ativosRetorno da carteira\n\n\nO somatório dos pesos deve ser igual a 1.\n\nset.seed(1234) \nw &lt;- runif(5) # Gerando 4 pesos aleatórios\nw &lt;- w / sum(w) # Normalizando os pesos para que a soma seja 1\nw\n\n[1] 0.04018396 0.21992701 0.21532396 0.22030871 0.30425636\n\n\nO cálculo do retorno de uma carteira depende do retorno de cada ativo e de seu peso na carteira e pode ser obtido pela média ponderada:\n\\[ \\bar{k}=\\sum_{i=i}^n{w_i*k_i}\\]\n\n\n\n# removendo o índice do IBOV da lista de ativos para calcular o retorno da carteira\nretorno_ativos &lt;- asset_returns_xts[, tickers[1:5]]\n\nportfolio_returns_xts&lt;-PerformanceAnalytics::Return.portfolio(retorno_ativos,\n                 weights = w,\n                 rebalance_on = \"months\",\n                 type= \"discrete\",\n                 verbose = FALSE) %&gt;% \n  `colnames&lt;-`(\"CARTEIRA\")\nhead(portfolio_returns_xts,3)\n\n              CARTEIRA\n2020-02-29 -0.05391333\n2020-03-31 -0.29492619\n2020-04-30  0.08254409"
+  },
+  {
+    "objectID": "apresentacao.html#exercícios-1",
+    "href": "apresentacao.html#exercícios-1",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Exercícios",
+    "text": "Exercícios\n\nExercício 2“”\n\n\n −+ 10:00 \n\nDeterminado agente possui uma carteira formada pelas seguintes posições: R$25000,00 no ativo A e R$50000,00 no ativo B.\n\nQuais os pesos de sua carteira?\nSe para a manutenção destas posições o agente tivesse emprestado R$40000,00 ao Banco X, qual seria a estrutura dos pesos de sua carteira?\n\n\n\n\n\n# Valores das posições\nativo_A &lt;- 25000\nativo_B &lt;- 50000\n\n# Valor total da carteira\ntotal &lt;- ativo_A + ativo_B\n\n# Pesos\npeso_A &lt;- ativo_A / total\npeso_B &lt;- ativo_B / total\n\npeso_A\n\n[1] 0.3333333\n\npeso_B\n\n[1] 0.6666667\n\n\n\n\nemprestimo &lt;- -40000\n\ntotal &lt;- total + emprestimo\n\npeso_A &lt;- ativo_A / total\npeso_B &lt;- ativo_B / total\nemprestimo &lt;- emprestimo / total\n\npeso_A\n\n[1] 0.7142857\n\npeso_B\n\n[1] 1.428571\n\nemprestimo\n\n[1] -1.142857\n\nsum(peso_A, peso_B, emprestimo)\n\n[1] 1"
+  },
+  {
+    "objectID": "apresentacao.html#visualizar-o-retorno-da-carteira.",
+    "href": "apresentacao.html#visualizar-o-retorno-da-carteira.",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Visualizar o retorno da carteira.",
+    "text": "Visualizar o retorno da carteira.\n\nRetorno da carteiraCódigosAtivos vs CarteiraMercado vs Carteira\n\n\n\nplot(portfolio_returns_xts)\n\n\n\n\n\n\n\n\n\n\n\ncomparacao &lt;- cbind(asset_returns_xts, portfolio_returns_xts) %&gt;% \n  tk_tbl(rename_index = \"Data\") %&gt;% \n  pivot_longer(-Data, names_to = \"assets\", values_to = \"value\")\n\np &lt;- ggplot(comparacao, aes(x = Data, y = value, colour = assets)) +\n  geom_line() +\n  scale_color_hue(direction = 1) +\n  labs(\n    x = \"Data\",\n    y = \"Retornos\",\n    title = \"Retorno dos ativos vs carteira\",\n    colour = \"Ativos\"  \n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16L, face = \"bold\", hjust = 0.5),\n    axis.title.y = element_text(face = \"bold\"),\n    axis.title.x = element_text(face = \"bold\")\n  )\n\ncomp_mkt &lt;- comparacao %&gt;%\n filter(assets %in% c(\"X.BVSP\", \"CARTEIRA\")) %&gt;%\n ggplot() +\n  aes(x = Data, y = value, colour = assets) +\n  geom_line() +\n  scale_color_hue(direction = 1) +\n  labs(title = \"Carteira VS Índice do mercado - 2020 - 2023\",\n        x = \"Data\",\n        y = \"Retornos\",\n        colour = \"Ativos\"  \n  )+\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16L, face = \"bold\", hjust = 0.5),\n    axis.title.y = element_text(face = \"bold\"),\n    axis.title.x = element_text(face = \"bold\")\n  )\n\n\n\n\nggplotly(p)\n\n\n\n\n\n\n\n\nggplotly(comp_mkt)"
+  },
+  {
+    "objectID": "apresentacao.html#análise-do-risco.",
+    "href": "apresentacao.html#análise-do-risco.",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Análise do risco.",
+    "text": "Análise do risco.\n\nDesvio padrãoDistribuição padronizadaRisco do ativoRisco vs Retorno\n\n\n\\[\\bar{X}=\\sum_{i=1}^n{\\pi_iX_i}\\]\n\n# desvio padrao dos precos dos ativos\n\nmean_value &lt;- mean(asset_returns_tbl$value, na.rm = TRUE)\nsd_value &lt;- sd(asset_returns_tbl$value, na.rm = TRUE)\n\ndistribuicaodp &lt;- plotly::ggplotly(asset_returns_tbl %&gt;%\n  filter(assets %in% \"PETR4.SA\") %&gt;%\n  mutate(faixa_inferior = if_else(value &lt; (mean_value - sd_value), value, as.numeric(NA)),\n         faixa_superior = if_else(value &gt; (mean_value + sd_value), value, as.numeric(NA)),\n         faixa_central = if_else(value &gt; (mean_value - sd_value) & value &lt; (mean_value + sd_value), value, as.numeric(NA))) %&gt;%\n  ggplot() +\n  geom_point(aes(x = Data, y = faixa_inferior), color = \"red\") +\n  geom_point(aes(x = Data, y = faixa_superior), color = \"green\") +\n  geom_point(aes(x = Data, y = faixa_central), color = \"blue\") +\n  geom_hline(yintercept = (mean_value + sd_value), color = \"purple\", linetype = \"dotted\") +\n  geom_hline(yintercept = (mean_value - sd_value), color = \"purple\", linetype = \"dotted\") +\n  labs(\n    x = \"Data\",\n    y = \"Retornos\",\n    title = \"Distribuição padronizada - PETR4.SA\",\n    color = \"Ativo\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16L, face = \"bold\", hjust = 0.5),\n    axis.title.y = element_text(face = \"bold\"),\n    axis.title.x = element_text(face = \"bold\")\n  ))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[ CV= \\frac{\\sigma}{\\bar{K}}\\]\n\n\n\n# Cria o data frame risco_retorno\nrisco_retorno &lt;- cbind(asset_returns_xts, portfolio_returns_xts) %&gt;% \n  tk_tbl(preserve_index = FALSE) %&gt;%\n  summarise(across(everything(), list(Desvio_padrao = sd, Retorno_Medio = mean, Risco = ~sd(.)/mean(.)))) %&gt;% \n  pivot_longer(cols = everything(), names_to = \"Ativo\", values_to = \"Valor\") %&gt;%\n  separate(Ativo, into = c(\"Ativo\", \"Medida\"), sep = \"_\", extra = \"drop\") %&gt;%\n  pivot_wider(names_from = \"Medida\", values_from = \"Valor\")\n\npesos_ativos &lt;- tibble(Ativo = tickers[1:5], Peso = w)\npesos_ativos &lt;- pesos_ativos %&gt;% add_row(Ativo = \"CARTEIRA\", Peso = 1)\n\n\n\n# Junta o novo data frame ao data frame risco_retorno\nrisco_retorno &lt;- risco_retorno %&gt;%\n  left_join(pesos_ativos, by = \"Ativo\")\n\n# Cria o gráfico\nrr &lt;- plotly::ggplotly(risco_retorno %&gt;%\n  ggplot(aes(x = Risco, y = Retorno, colour = Ativo, size = Peso)) +\n  geom_point() +\n  scale_color_hue(direction = 1) +\n  labs(title = \"Risco vs Retorno dos Ativos\", size = \"Pesos e\", colour = \"ativos\") +\n  theme_minimal() +\n  theme(plot.title = element_text(size = 16L, face = \"bold\", hjust = 0.5)))"
+  },
+  {
+    "objectID": "apresentacao.html#beta",
+    "href": "apresentacao.html#beta",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Beta",
+    "text": "Beta\n\nBeta da carteira e de cada ativo.Beta vs RetornoGráfico - Beta vs Retorno\n\n\n\n# Calculando o beta do portifólio e de cada ativo\n\nbeta_long &lt;- PerformanceAnalytics::CAPM.beta(cbind(asset_returns_xts, portfolio_returns_xts), asset_returns_xts$'^BVSP', Rf = 0) %&gt;%\n  as.data.frame() %&gt;%\n  rownames_to_column(var = \"indice\") %&gt;%\n  pivot_longer(cols = -indice, names_to = \"Ativo\", values_to = \"beta\") %&gt;%\n  select(-indice) %&gt;% \n  inner_join(risco_retorno, by = \"Ativo\") %&gt;%\n  select(Ativo,Desvio, beta, Risco, Retorno)\n\nbeta_long\n\n# A tibble: 7 × 5\n  Ativo    Desvio  beta Risco Retorno\n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n1 VALE3.SA 0.0950 0.620  5.78 0.0164 \n2 PETR4.SA 0.123  1.31   3.72 0.0331 \n3 CMIG4.SA 0.101  0.995  4.44 0.0227 \n4 RADL3.SA 0.0747 0.627 14.8  0.00506\n5 ITUB4.SA 0.0951 1.06  13.0  0.00731\n6 X.BVSP   0.0737 1     17.1  0.00431\n7 CARTEIRA 0.0780 0.988  4.82 0.0162 \n\n\n\n\n\nbeta &lt;- plotly::ggplotly(ggplot(beta_long) +\n  aes(y = Retorno, x = beta, colour = Ativo) +\n  geom_point() +\n  scale_color_hue(direction = 1) +\n  labs(y = \"Retorno\", x = \"Beta\", title = \"Beta vs Retorno\") +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(size = 16L,\n    face = \"bold\",\n    hjust = 0.5)\n  ))\n\n\n\n\nbeta"
+  },
+  {
+    "objectID": "apresentacao.html#indice-sharpe",
+    "href": "apresentacao.html#indice-sharpe",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Indice sharpe",
+    "text": "Indice sharpe\n\\[ SR = \\frac{R_p - R_f}{\\sigma_p}\\]\nOnde \\(R_p\\) é o retorno da carteira, \\(R_f\\) é a taxa livre de risco e \\(\\sigma_p\\) é o desvio padrão da carteira.\n\n# Calculando o índice sharpe com perfomance analytics\n\nsharpe_carteira &lt;- PerformanceAnalytics::SharpeRatio(portfolio_returns_xts, Rf = 0, p = 0.95, FUN = \"StdDev\")\n\nsharpe_ativos &lt;- PerformanceAnalytics::SharpeRatio(asset_returns_xts, Rf = 0, p = 0.95, FUN = \"StdDev\")\n\nsharpe_carteira\n\n                               CARTEIRA\nStdDev Sharpe (Rf=0%, p=95%): 0.2072599\n\nsharpe_ativos %&gt;% head()\n\n                               VALE3.SA  PETR4.SA  CMIG4.SA   RADL3.SA\nStdDev Sharpe (Rf=0%, p=95%): 0.1729673 0.2690393 0.2251256 0.06769507\n                                ITUB4.SA      ^BVSP\nStdDev Sharpe (Rf=0%, p=95%): 0.07693522 0.05850082"
+  },
+  {
+    "objectID": "apresentacao.html#exercício",
+    "href": "apresentacao.html#exercício",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Exercício",
+    "text": "Exercício\n\nSelecione uma carteira adicionando pelo menos 6 ativos que supere o IBOV em resultados com no máximo 20% a mais de risco.\nCrie um dashboard com os gráficos com seus dados e gráficos com base na carteira selecionada.\n\n −+ 30:00"
+  },
+  {
+    "objectID": "apresentacao.html#contato",
+    "href": "apresentacao.html#contato",
+    "title": "Mini-Curso - Explorando finanças com R",
+    "section": "Contato",
+    "text": "Contato\n\nMarcus Ramalho:\n\nGitHub\nE-mail: marcusantonio@id.uff.br\nlinkedin: Marcus Ramalho\n\nAriel Levy:\n\nGitHub\nE-mail: alevy@id.uff.br\nlinkedin: Ariel Levy\n\n\n\n\n\n\nPPGAd Universidade Federal de Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+  }
+]
