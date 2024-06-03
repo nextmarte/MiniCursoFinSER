@@ -4,19 +4,18 @@ author:
   - name: Marcus Ramalho & Ariel Levy
 format:
   revealjs:
-      incremental: true
+      incremental: false
       transition: slide
       background-transition: fade
       theme: night
       header: VIII SER - Seminário Internacional de Estatística com R
       header-logo: images/ser.png
       logo: images/uff.png
+      
 filters:
   - reveal-header
 date: today
 footer: PPGAd Universidade Federal de Fluminense
-# fontsize: 1.4em
-incremental: false
 toc: false
 css: styles.css
 execute: 
@@ -180,7 +179,7 @@ Retorno Logarítmico = $ln(\frac{P_{t}}{P_{t-1}})$
 
 `r countdown(minutes = 5, seconds = 00)`
 
-Suponha que uma ação caia 50% e depois suba 50%, de quanto foi a variação total no período? dica (Componha o retorno destes dois períodos utilizando juros compostos.)
+1. Suponha que uma ação caia 50% e depois suba 50%, de quanto foi a variação total no período? dica (Componha o retorno destes dois períodos utilizando juros compostos.)
 
 ## " "
 
@@ -373,7 +372,7 @@ head(portfolio_returns_xts,3)
 
 `r countdown(minutes = 10, seconds = 00)`
 
-Determinado agente possui uma carteira formada pelas seguintes posições: R\$25000,00 no ativo A e R\$50000,00 no ativo B.
+2. Determinado agente possui uma carteira formada pelas seguintes posições: R\$25000,00 no ativo A e R\$50000,00 no ativo B.
 
 Quais os pesos de sua carteira?
 
@@ -656,10 +655,22 @@ sharpe_ativos %>% head()
 
 ```
 
-## Exercícios
+## Exercício 
 
-1. Selecione uma carteira adicionando pelo menos 6 ativos que supere o IBOV em resultados com no máximo 20% a mais de risco. 
+3. Selecione uma carteira adicionando pelo menos 6 ativos que supere o IBOV em resultados com no máximo 20% a mais de risco. 
 
-2. Crie um dashboard com os gráficos com seus dados e gráficos com base na carteira selecionada.
+4. Crie um dashboard com os gráficos com seus dados e gráficos com base na carteira selecionada.
 
 `r countdown(minutes = 30, seconds = 00)`
+
+## Contato
+
+-   Marcus Ramalho:
+    -   [GitHub](https://github.com/nextmarte)
+    -   E-mail: marcusantonio@id.uff.br
+    -   linkedin: [Marcus Ramalho](https://www.linkedin.com/in/marcus-ramalho-8a440545/)
+
+-   Ariel Levy:
+    -   [GitHub](https://github.com/alevy59)
+    -   E-mail: alevy@id.uff.br
+    -   linkedin: [Ariel Levy](https://www.linkedin.com/in/ariel-levy-3623136/)

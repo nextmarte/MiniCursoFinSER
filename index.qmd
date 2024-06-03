@@ -28,18 +28,14 @@ Neste curso você aprenderá a utilizar o R para análise de dados financeiros. 
 
 ## Pré-requisitos
 
-Esperamos que você já tenha tido contato com R e Quarto. 
-Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso.
+Esperamos que você já tenha tido contato com R e Quarto. Um computador com acesso à internet para acessar o ambiente de desenvolvimento Posit Cloud ou baixar o repositorio do curso.
 
 ## Preparação
 
-Para se preparar para o curso, você pode baixar o repositório do curso no link abaixo: 
+Para se preparar para o curso, você pode baixar o repositório do curso no link abaixo:
 
 [Repositório no GitHub](https://github.com/nextmarte/MiniCursoFinSER)
 
 [Link para o ambiente de desenvolvimento Posit Cloud](https://cloud.positivestudio.com/)
 
-## Instrutores
-
-- Marcus Ramalho
-- Ariel Levy
+## Referências

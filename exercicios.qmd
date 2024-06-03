@@ -10,7 +10,9 @@ execute:
 
 # Instruções
 
-Neste arquivo você encontrará as instruções para realizar o mini-curso de finanças com R. Todos os pacotes necessários já estão instalados no ambiente da Posit Cloud  . Para começar, execute a célula abaixo.
+OBS 1 - Caso você não tenha o R instalado em sua máquina, você pode acompanhar o curso através do site: .
+
+OBS 2 - Caso esteja trabalhando no seu computador, você pode instalar os pacotes necessários para o curso e depois carregar as bibliotecas com o código abaixo:
 
 
 ```{r instalação dos pacotes}
@@ -21,39 +23,28 @@ pacotes <- c("tidyverse", "quantmod", "timetk", "plotly", "PerformanceAnalytics"
 purrr::walk(pacotes, library, character.only = TRUE)
 ```
 
-# Montando sua carteira
+Exercícios
 
-Acesse o site [Yahoo Finance](https://finance.yahoo.com/) e escolha 5 ações de empresas que você gostaria de incluir em sua carteira de investimentos. Depois de escolher crie um vetor com os códigos das ações e execute a célula abaixo.
-
-```{r escolha das ações}
-
-
-# Vetor com os códigos das ações numa variável chamada tickers
-
-
-
-```
-
-# Coletando os dados com o pacote quantmod
-
-1. Escolha um período de tempo para coletar os dados das ações, por exemplo, de 01/01/2020 até 01/01/2021.
-
-2. Utilize a função `getSymbols` do pacote `quantmod` para coletar os dados das ações escolhidas.
-
-3. Visualize os dados coletados.
-
-```{r download dos dados}
-
-# coloque o codigo para baixar os dados com quantmode abaixo. Consulte a documentação do quantmode para saber como fazer isso.
-
-
-```
-
-# Trabalhando com os dados
-
-Converta os dados diários para dados mensais usando a função `to.monthly` do pacote `quantmod`. Depois, utilize a função `tk_tbl` do pacote `timetk` para converter os dados para um tibble.
+1. Suponha que uma ação caia 50% e depois suba 50%, de quanto foi a variação total no período? dica (Componha o retorno destes dois períodos utilizando juros compostos.)
 
 ```{r}
 
 ```
 
+2. Determinado agente possui uma carteira formada pelas seguintes posições: R\$25000,00 no ativo A e R\$50000,00 no ativo B.
+
+Quais os pesos de sua carteira?
+
+Se para a manutenção destas posições o agente tivesse emprestado R\$40000,00 ao Banco X, qual seria a estrutura dos pesos de sua carteira?
+
+```{r}
+
+```
+
+3. Selecione uma carteira adicionando pelo menos 6 ativos que supere o IBOV em resultados com no máximo 20% a mais de risco. 
+
+```{r}
+
+```
+
+4. Crie um dashboard com os gráficos com seus dados e gráficos com base na carteira selecionada.
